@@ -1,0 +1,25 @@
+{
+  "name": "party-inspiration",
+  "title": "Party Inspiration",
+  "description": "A simple dashboard to manage party-based inspiration (and desperation!).",
+  "author": "Pretzl",
+  "url": "https://www.github.com/davelens/party-inspiration",
+  "version": "1.0.0",
+  "minimumCoreVersion": "0.7.5",
+  "dependencies": [
+    {
+      "name": "dnd5e",
+      "type": "system"
+    }
+  ],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    }
+  ],
+  "scripts": [
+    "scripts/init.js"
+  ]
+}
