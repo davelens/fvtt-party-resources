@@ -6,12 +6,7 @@
   "url": "https://www.github.com/davelens/party-inspiration",
   "version": "1.0.0",
   "minimumCoreVersion": "0.7.5",
-  "dependencies": [
-    {
-      "name": "dnd5e",
-      "type": "system"
-    }
-  ],
+  "system": "dnd5e",
   "languages": [
     {
       "lang": "en",

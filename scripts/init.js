@@ -8,14 +8,14 @@ Hooks.on("ready", function() {
 });
 
 Hooks.on("renderActorDirectory", (app, html, data) => {
-  const button = $(`<button class="inspiration-btn">${game.i18n.localize("PartyInspiration.InspirationButton")}</button>`);
+  const button = $(`<button class="inspiration-btn"><i class="fas fa-lightbulb"></i> ${game.i18n.localize("PartyInspiration.InspirationButton")}</button>`);
 
-  let header = html.find(".directory-header");
-  if (header.length === 0) {
-    header = $(`<header class="directory-header"><div class="header-actions action-buttons flexrow"></div></header>`);
-    html.append(header);
+  let footer = html.find(".directory-footer");
+  if (footer.length === 0) {
+    footer = $(`<footer class="directory-footer"><div class="footer-actions action-buttons flexrow"></div></footer>`);
+    html.append(footer);
   }
-  header.find('.header-actions.action-buttons').append(button);
+  footer.append(button);
 
   button.click(ev => {
     // TODO: render a modal with information.
