@@ -21,5 +21,9 @@
   ],
   "scripts": [
     "scripts/init.js"
-  ]
+  ],
+  "styles": [
+    "styles/init.css"
+  ],
+  "socket": true
 }
