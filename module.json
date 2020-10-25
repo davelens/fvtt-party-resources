@@ -15,6 +15,7 @@
     }
   ],
   "scripts": [
+    "scripts/html.js",
     "scripts/init.js"
   ],
   "styles": [
