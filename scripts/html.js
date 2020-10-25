@@ -1,6 +1,6 @@
 var dashboard_template = `
 <div id="party-resources" class="flexrow">
-  <h4 style="text-align: center;">Party Inspiration</h4>
+  <h4 style="text-align: center;">Party Resources</h4>
   <div class="flexrow">
     <h5>Inspiration</h5>
     {{ inspiration }}

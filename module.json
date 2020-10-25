@@ -1,9 +1,9 @@
 {
-  "name": "party-inspiration",
-  "title": "Party Inspiration",
-  "description": "A simple dashboard to manage party-based inspiration (and desperation!).",
+  "name": "party-resources",
+  "title": "Party Resources",
+  "description": "A simple dashboard to manage party-based resources (and desperation!).",
   "author": "Pretzl",
-  "url": "https://www.github.com/davelens/party-inspiration",
+  "url": "https://www.github.com/davelens/party-resources",
   "version": "1.0.0",
   "minimumCoreVersion": "0.7.5",
   "system": "dnd5e",
