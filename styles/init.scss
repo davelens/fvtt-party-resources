@@ -1,6 +1,11 @@
-#party-resources {
-  border-top: 1px solid grey;
-  padding: 4px;
+#party-resources-container {
+  .flexrow {
+    border-top: 1px solid grey;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    padding: 4px;
+  }
 
   h4 {
     text-align: center;

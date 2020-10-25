@@ -1,17 +1,25 @@
 var dashboard_template = `
-<div id="party-resources" class="flexrow">
-  <h4 style="text-align: center;">Party Resources</h4>
+<section id="party-resources-container">
+  <h4>Party Resources</h4>
   <div class="flexrow">
-    <h5>Inspiration</h5>
-    {{ inspiration }}
+    <div>
+      <p>
+        Inspiration
+        {{ inspiration }}
+      </p>
+    </div>
+    <div>
+      <p>
+        Desperation
+        {{ desperation }}
+      </p>
+    </div>
+    <div>
+      <p>
+        Influence Dice
+        {{ influence_dice }}
+      </p>
+    </div>
   </div>
-  <div class="flexrow">
-    <h5>Desperation</h5>
-    {{ desperation }}
-  </div>
-  <div class="flexrow">
-    <h5>Influence Dice</h5>
-    {{ influence_dice }}
-  </div>
-</div>
+</section>
 `.trim()
