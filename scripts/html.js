@@ -1,23 +1,23 @@
 var dashboard_template = `
 <section id="party-resources-container">
-  <h4>Party Resources</h4>
+  <h3>Party Resources</h3>
   <div class="flexrow">
-    <div>
+    <div class="flexcol">
       <p>
+        <span class="value">{{ inspiration }}</span><br>
         Inspiration
-        {{ inspiration }}
       </p>
     </div>
-    <div>
+    <div class="flexcol">
       <p>
+        <span class="value">{{ desperation }}</span><br>
         Desperation
-        {{ desperation }}
       </p>
     </div>
-    <div>
+    <div class="flexcol">
       <p>
+        <span class="value">{{ influence_dice }}</span><br>
         Influence Dice
-        {{ influence_dice }}
       </p>
     </div>
   </div>

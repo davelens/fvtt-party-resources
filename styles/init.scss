@@ -1,13 +1,21 @@
 #party-resources-container {
-  .flexrow {
+  h3 {
+    border-bottom: 1px solid grey;
     border-top: 1px solid grey;
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-around;
-    padding: 4px;
+    margin: 0;
+    text-align: center;
   }
 
-  h4 {
+  .flexrow {
+    justify-content: space-around;
+    padding: 0 4px;
+  }
+
+  .flexcol {
     text-align: center;
+
+    p span.value {
+      font-size: 1.2rem;
+    }
   }
 }
