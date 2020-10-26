@@ -4,6 +4,7 @@
   "description": "A simple dashboard to manage party-based resources (and desperation!).",
   "author": "Pretzl",
   "url": "https://www.github.com/davelens/party-resources",
+  "download": "https://github.com/davelens/party-resources/archive/1.0.0.zip",
   "version": "1.0.0",
   "minimumCoreVersion": "0.7.5",
   "system": "dnd5e",
