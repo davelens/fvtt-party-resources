@@ -14,9 +14,8 @@
       "path": "lang/en.json"
     }
   ],
-  "scripts": [
-    "scripts/html.js",
-    "scripts/init.js"
+  "esmodules": [
+    "modules/init.mjs"
   ],
   "styles": [
     "styles/init.css"

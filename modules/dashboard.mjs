@@ -1,4 +1,6 @@
-var dashboard_template = `
+export default class ResourcesDashboard {
+  static template() {
+    return `
 <section id="party-resources-container">
   <h3>Party Resources</h3>
   <div class="flexrow">
@@ -23,8 +25,5 @@ var dashboard_template = `
   </div>
 </section>
 `.trim()
-
-$('body').append(`
-  <script src="https://unpkg.com/@popperjs/core@2"></script>
-  <script src="https://unpkg.com/tippy.js@6"></script>
-`);
+  }
+}
