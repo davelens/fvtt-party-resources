@@ -1,6 +1,6 @@
-export default class PartyResourcesApi {
+export default class CustomResourcesApi {
   static get(name) {
-    return game.settings.get('party-resources', name)
+    return game.settings.get('fvtt-resource-tracker', name)
   }
 
   static set(name, value, options) {
@@ -9,6 +9,6 @@ export default class PartyResourcesApi {
       { scope: "client", config: false, default: 0 },
     )
 
-    game.settings.register('party-resources', name, properties);
+    game.settings.register('fvtt-resource-tracker', name, properties);
   }
 }

@@ -1,14 +1,14 @@
-#party-resources-container h3 {
+#custom-resources-container h3 {
   border-bottom: 1px solid grey;
   border-top: 1px solid grey;
   margin: 0;
   text-align: center; }
-#party-resources-container .flexrow {
+#custom-resources-container .flexrow {
   justify-content: space-around;
   padding: 0 4px; }
-#party-resources-container .flexcol {
+#custom-resources-container .flexcol {
   text-align: center; }
-  #party-resources-container .flexcol p span.value {
+  #custom-resources-container .flexcol p span.value {
     font-size: 1.2rem; }
 
 /*# sourceMappingURL=init.css.map */

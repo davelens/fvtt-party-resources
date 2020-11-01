@@ -1,13 +1,15 @@
-export default class ResourcesDashboard {
+// TODO: Find out if this HTML can be in an actual template file instead.
+
+export default class CustomResourcesDashboard {
   static template() {
     return `
-<section id="party-resources-container">
+<section id="custom-resources-container">
   <h3>Party Resources</h3>
   <div class="flexrow">
     <div class="flexcol">
       <p>
         <span class="value">{{ inspiration }} / {{ max_inspiration }}</span><br>
-        <span title="TESTING">Inspiration</span>
+        Inspiration
       </p>
     </div>
     <div class="flexcol">

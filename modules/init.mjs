@@ -1,20 +1,20 @@
 import ModuleSettings from "./settings.mjs";
-import PartyResourcesApi from "./api.mjs";
-import ResourcesDashboard from "./dashboard.mjs";
+import CustomResourcesApi from "./api.mjs";
+import CustomResourcesDashboard from "./dashboard.mjs";
 
 Hooks.once('init', () => {
   ModuleSettings.register()
 })
 
 Hooks.on("renderActorDirectory", (app, html, data) => {
-  let template = Handlebars.compile(ResourcesDashboard.template());
+  let template = Handlebars.compile(CustomResourcesDashboard.template());
   let dashboard_html = template({
-    inspiration: PartyResourcesApi.get('inspiration'),
-    desperation: PartyResourcesApi.get('desperation'),
-    influence_dice: PartyResourcesApi.get('influence_dice'),
-    max_inspiration: PartyResourcesApi.get('max_inspiration'),
-    max_desperation: PartyResourcesApi.get('max_desperation'),
-    max_influence_dice: PartyResourcesApi.get('max_influence_dice')
+    inspiration: CustomResourcesApi.get('inspiration'),
+    desperation: CustomResourcesApi.get('desperation'),
+    influence_dice: CustomResourcesApi.get('influence_dice'),
+    max_inspiration: CustomResourcesApi.get('max_inspiration'),
+    max_desperation: CustomResourcesApi.get('max_desperation'),
+    max_influence_dice: CustomResourcesApi.get('max_influence_dice')
   });
 
   let footer = html.find(".directory-footer");
