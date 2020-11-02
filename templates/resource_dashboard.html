@@ -1,10 +1,5 @@
-// TODO: Find out if this HTML can be in an actual template file instead.
-
-export default class CustomResourcesDashboard {
-  static template() {
-    return `
 <section id="custom-resources-container">
-  <h3>Party Resources</h3>
+  <h3><a class="resource-dashboard-btn" href="#">Party Resources</a></h3>
   <div class="flexrow">
     <div class="flexcol">
       <p>
@@ -26,6 +21,3 @@ export default class CustomResourcesDashboard {
     </div>
   </div>
 </section>
-`.trim()
-  }
-}

@@ -1,4 +1,5 @@
 {
   "FvttResourceTracker.Title": "Resource Tracker",
-  "FvttResourceTracker.NewResource": "Resource Tracker"
+  "FvttResourceTracker.FormSubmit": "Submit",
+  "FvttResourceTracker.NewResourceForm.Title": "Add a resource"
 }
