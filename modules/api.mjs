@@ -1,4 +1,4 @@
-export default class CustomResourcesApi {
+export default class PartyResourcesApi {
   static get(name) {
     return game.settings.get('fvtt-resource-tracker', name)
   }

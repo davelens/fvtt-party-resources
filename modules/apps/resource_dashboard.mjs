@@ -1,3 +1,4 @@
+import PartyResourcesApi from "./../api.mjs";
 import ResourceForm from "./resource_form.mjs";
 
 export default class ResourceDashboard extends Application {
@@ -10,14 +11,22 @@ export default class ResourceDashboard extends Application {
     return mergeObject(super.defaultOptions, {
       id: "fvtt-resource-tracker",
       classes: ["fvtt-resource-tracker"],
-      template: "modules/fvtt-resource-tracker/templates/resource_form.html",
-      width: 700,
-      height: 480,
+      template: "modules/fvtt-resource-tracker/templates/resource_dashboard.html",
       minimizable: true,
-      resizable: true,
       title: game.i18n.localize("FvttResourceTracker.Title"),
       tabs: [{navSelector: ".log-tabs", contentSelector: ".log-body", initial: "progress"}]
     });
+  }
+
+  getData() {
+    return {
+      inspiration: PartyResourcesApi.get('inspiration'),
+      desperation: PartyResourcesApi.get('desperation'),
+      influence_dice: PartyResourcesApi.get('influence_dice'),
+      max_inspiration: PartyResourcesApi.get('max_inspiration'),
+      max_desperation: PartyResourcesApi.get('max_desperation'),
+      max_influence_dice: PartyResourcesApi.get('max_influence_dice')
+    };
   }
 
   /**
