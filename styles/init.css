@@ -1,14 +1,14 @@
-#custom-resources-container h3 {
+#fvtt-party-resources-container h3 {
   border-bottom: 1px solid grey;
   border-top: 1px solid grey;
   margin: 0;
   text-align: center; }
-#custom-resources-container .flexrow {
+#fvtt-party-resources-container .flexrow {
   justify-content: space-around;
   padding: 0 4px; }
-#custom-resources-container .flexcol {
+#fvtt-party-resources-container .flexcol {
   text-align: center; }
-  #custom-resources-container .flexcol p span.value {
+  #fvtt-party-resources-container .flexcol p span.value {
     font-size: 1.2rem; }
 
 /*# sourceMappingURL=init.css.map */

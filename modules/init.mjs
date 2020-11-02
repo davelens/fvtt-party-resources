@@ -1,13 +1,13 @@
 import ModuleSettings from "./settings.mjs";
-import CustomResourcesApi from "./api.mjs";
-import ResourceDashboard from "./apps/resource_dashboard.mjs"
+import ResourcesApi from "./resources_api.mjs";
+import ResourcesDashboard from "./apps/resources_dashboard.mjs"
 
 Hooks.once('init', () => {
   ModuleSettings.register()
 });
 
 Hooks.once('setup', () => {
-  window.ResourceTracker = new ResourceDashboard();
+  window.ResourcesDashboard = new ResourcesDashboard();
 });
 
 Hooks.on("renderActorDirectory", (app, html, data) => {
@@ -16,7 +16,7 @@ Hooks.on("renderActorDirectory", (app, html, data) => {
     .promise()
     .done(function(){
       $('.resource-dashboard-btn').on('click', event => {
-        ResourceTracker.render(true);
+        ResourceDashboard.render(true);
       });
     });
 });
