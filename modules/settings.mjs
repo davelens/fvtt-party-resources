@@ -5,7 +5,7 @@ export default class ModuleSettings {
       config: false,
       type: String,
       default: 0,
-      onChange: value => { game.actors.render() }
+      onChange: value => { ResourceDashboard.render(true); }
     }
 
     game.settings.register('fvtt-party-resources', 'inspiration', properties)
