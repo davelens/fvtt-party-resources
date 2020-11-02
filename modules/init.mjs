@@ -7,7 +7,7 @@ Hooks.once('init', () => {
 });
 
 Hooks.once('setup', () => {
-  window.ResourcesDashboard = new ResourcesDashboard();
+  window.PartyResourcesDashboard = new ResourcesDashboard();
 });
 
 Hooks.on("renderActorDirectory", (app, html, data) => {
@@ -16,7 +16,7 @@ Hooks.on("renderActorDirectory", (app, html, data) => {
     .promise()
     .done(function(){
       $('.resource-dashboard-btn').on('click', event => {
-        ResourceDashboard.render(true);
+        PartyResourcesDashboard.render(true);
       });
     });
 });

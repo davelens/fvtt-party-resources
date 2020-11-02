@@ -5,7 +5,10 @@ export default class ModuleSettings {
       config: false,
       type: String,
       default: 0,
-      onChange: value => { ResourceDashboard.render(true); }
+      onChange: value => {
+        if (PartyResourcesDashboard.rendered)
+          PartyResourcesDashboard.render(true);
+      }
     }
 
     game.settings.register('fvtt-party-resources', 'inspiration', properties)
