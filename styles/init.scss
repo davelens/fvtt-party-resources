@@ -1,21 +1,50 @@
 #fvtt-party-resources-container {
-  h3 {
-    border-bottom: 1px solid grey;
-    border-top: 1px solid grey;
-    margin: 0;
+  display: grid;
+  grid-gap: .5rem;
+  grid-template-columns: auto auto auto;
+
+  .grid-item {
     text-align: center;
-  }
+    min-width: 150px;
 
-  .flexrow {
-    justify-content: space-around;
-    padding: 0 4px;
-  }
+    p {
+      border: 1px solid grey;
+      margin: 0;
+      padding: 8px 0;
+      position: relative;
 
-  .flexcol {
-    text-align: center;
+      a.change-value {
+        align-items: center;
+        display: flex;
+        height: 100%;
+        line-height: 50%;
+        padding: 0 4px;
+        position: absolute;
+        text-decoration: none;
+        top: 0;
 
-    p span.value {
-      font-size: 1.2rem;
+        &:hover {
+          background-color: #ccc;
+          text-shadow: none;
+        }
+
+        &.add {
+          border-left: 1px solid grey;
+          right: 0;
+          color: green;
+        }
+
+        &.subtract {
+          border-right: 1px solid grey;
+          left: 0;
+          color: red;
+        }
+      }
+
+      span.value {
+        font-size: 1.2rem;
+      }
     }
   }
+
 }

@@ -1,22 +1,38 @@
 <section id="fvtt-party-resources-container">
-  <div class="flexrow">
-    <div class="flexcol">
-      <p>
-        <span class="value">{{ inspiration }} / {{ max_inspiration }}</span><br>
-        Inspiration
-      </p>
-    </div>
-    <div class="flexcol">
-      <p>
-        <span class="value">{{ desperation }} / {{ max_desperation }}</span><br>
-        Desperation
-      </p>
-    </div>
-    <div class="flexcol">
-      <p>
-        <span class="value">{{ influence_dice }} / {{ max_influence_dice }}</span><br>
-        Influence Dice
-      </p>
-    </div>
+  <div class="grid-item">
+    <p>
+      <a class="change-value subtract" href="#" title="{{ localize 'FvttResourceTracker.Dashboard.SubtractButtonTitle' }}"><i class="fas fa-minus"></i></a>
+      <span class="value">
+        {{ inspiration }} / {{ max_inspiration }}
+      </span>
+      <br>
+      <strong>Inspiration</strong>
+      <a class="change-value add" href="#" title="{{ localize 'FvttResourceTracker.Dashboard.AddButtonTitle' }}"><i class="fas fa-plus"></i></a>
+    </p>
   </div>
+
+  <div class="grid-item">
+    <p>
+      <a class="change-value subtract" href="#" title="{{ localize 'FvttResourceTracker.Dashboard.SubtractButtonTitle' }}"><i class="fas fa-minus"></i></a>
+      <span class="value">
+        {{ desperation }} / {{ max_desperation }}
+      </span>
+      <br>
+      <strong>Desperation</strong>
+      <a class="change-value add" href="#" title="{{ localize 'FvttResourceTracker.Dashboard.AddButtonTitle' }}"><i class="fas fa-plus"></i></a>
+    </p>
+  </div>
+
+  <div class="grid-item">
+    <p>
+      <a class="change-value subtract" href="#" title="{{ localize 'FvttResourceTracker.Dashboard.SubtractButtonTitle' }}"><i class="fas fa-minus"></i></a>
+      <span class="value">
+        {{ influence_dice }} / {{ max_influence_dice }}
+      </span>
+      <br>
+      <strong>Influence Dice</strong>
+      <a class="change-value add" href="#" title="{{ localize 'FvttResourceTracker.Dashboard.AddButtonTitle' }}"><i class="fas fa-plus"></i></a>
+    </p>
+  </div>
+
 </section>

@@ -1,14 +1,41 @@
-#fvtt-party-resources-container h3 {
-  border-bottom: 1px solid grey;
-  border-top: 1px solid grey;
-  margin: 0;
-  text-align: center; }
-#fvtt-party-resources-container .flexrow {
-  justify-content: space-around;
-  padding: 0 4px; }
-#fvtt-party-resources-container .flexcol {
-  text-align: center; }
-  #fvtt-party-resources-container .flexcol p span.value {
-    font-size: 1.2rem; }
+#fvtt-party-resources-container {
+  display: grid;
+  grid-gap: .5rem;
+  grid-template-columns: auto auto auto; }
 
-/*# sourceMappingURL=init.css.map */
+#fvtt-party-resources-container .grid-item {
+  text-align: center;
+  min-width: 150px; }
+
+#fvtt-party-resources-container .grid-item p {
+  border: 1px solid grey;
+  margin: 0;
+  padding: 8px 0;
+  position: relative; }
+
+#fvtt-party-resources-container .grid-item p a.change-value {
+  align-items: center;
+  display: flex;
+  height: 100%;
+  line-height: 50%;
+  padding: 0 4px;
+  position: absolute;
+  text-decoration: none;
+  top: 0; }
+
+#fvtt-party-resources-container .grid-item p a.change-value:hover {
+  background-color: #ccc;
+  text-shadow: none; }
+
+#fvtt-party-resources-container .grid-item p a.change-value.add {
+  border-left: 1px solid grey;
+  right: 0;
+  color: green; }
+
+#fvtt-party-resources-container .grid-item p a.change-value.subtract {
+  border-right: 1px solid grey;
+  left: 0;
+  color: red; }
+
+#fvtt-party-resources-container .grid-item p span.value {
+  font-size: 1.2rem; }

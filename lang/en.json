@@ -1,5 +1,7 @@
 {
   "FvttResourceTracker.Title": "Resource Tracker",
   "FvttResourceTracker.FormSubmit": "Submit",
-  "FvttResourceTracker.NewResourceForm.Title": "Add a resource"
+  "FvttResourceTracker.NewResourceForm.Title": "Add a resource",
+  "FvttResourceTracker.Dashboard.AddButtonTitle": "Increase amount",
+  "FvttResourceTracker.Dashboard.SubtractButtonTitle": "Subtract amount"
 }
