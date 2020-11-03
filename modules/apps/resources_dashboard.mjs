@@ -12,12 +12,11 @@ export default class ResourcesDashboard extends Application {
       classes: ["fvtt-party-resources"],
       template: "modules/fvtt-party-resources/templates/resources_dashboard.html",
       minimizable: true,
-      title: game.i18n.localize("FvttResourceTracker.Title"),
-      tabs: [{navSelector: ".log-tabs", contentSelector: ".log-body", initial: "progress"}]
+      title: game.i18n.localize("FvttPartyResources.Title")
     });
   }
 
   getData() {
-    return ResourcesApi.resources()
+    return mergeObject(ResourcesApi.resources(), { is_gm: game.user.isGM })
   }
 }

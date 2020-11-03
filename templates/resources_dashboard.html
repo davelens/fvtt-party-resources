@@ -1,37 +1,49 @@
 <section id="fvtt-party-resources-container">
   <div class="grid-item">
     <p>
-      <a class="change-value subtract" href="#" title="{{ localize 'FvttResourceTracker.Dashboard.SubtractButtonTitle' }}"><i class="fas fa-minus"></i></a>
+      {{#if is_gm}}
+      <a class="change-value subtract" href="#" title="{{ localize 'FvttPartyResources.Dashboard.SubtractButtonTitle' }}"><i class="fas fa-minus"></i></a>
+      {{/if}}
       <span class="value">
         {{ inspiration }} / {{ max_inspiration }}
       </span>
       <br>
       <strong>Inspiration</strong>
-      <a class="change-value add" href="#" title="{{ localize 'FvttResourceTracker.Dashboard.AddButtonTitle' }}"><i class="fas fa-plus"></i></a>
+      {{#if is_gm}}
+      <a class="change-value add" href="#" title="{{ localize 'FvttPartyResources.Dashboard.AddButtonTitle' }}"><i class="fas fa-plus"></i></a>
+      {{/if}}
     </p>
   </div>
 
   <div class="grid-item">
     <p>
-      <a class="change-value subtract" href="#" title="{{ localize 'FvttResourceTracker.Dashboard.SubtractButtonTitle' }}"><i class="fas fa-minus"></i></a>
+      {{#if is_gm}}
+      <a class="change-value subtract" href="#" title="{{ localize 'FvttPartyResources.Dashboard.SubtractButtonTitle' }}"><i class="fas fa-minus"></i></a>
+      {{/if}}
       <span class="value">
         {{ desperation }} / {{ max_desperation }}
       </span>
       <br>
       <strong>Desperation</strong>
-      <a class="change-value add" href="#" title="{{ localize 'FvttResourceTracker.Dashboard.AddButtonTitle' }}"><i class="fas fa-plus"></i></a>
+      {{#if is_gm}}
+      <a class="change-value add" href="#" title="{{ localize 'FvttPartyResources.Dashboard.AddButtonTitle' }}"><i class="fas fa-plus"></i></a>
+      {{/if}}
     </p>
   </div>
 
   <div class="grid-item">
     <p>
-      <a class="change-value subtract" href="#" title="{{ localize 'FvttResourceTracker.Dashboard.SubtractButtonTitle' }}"><i class="fas fa-minus"></i></a>
+      {{#if is_gm}}
+      <a class="change-value subtract" href="#" title="{{ localize 'FvttPartyResources.Dashboard.SubtractButtonTitle' }}"><i class="fas fa-minus"></i></a>
+      {{/if}}
       <span class="value">
         {{ influence_dice }} / {{ max_influence_dice }}
       </span>
       <br>
       <strong>Influence Dice</strong>
-      <a class="change-value add" href="#" title="{{ localize 'FvttResourceTracker.Dashboard.AddButtonTitle' }}"><i class="fas fa-plus"></i></a>
+      {{#if is_gm}}
+      <a class="change-value add" href="#" title="{{ localize 'FvttPartyResources.Dashboard.AddButtonTitle' }}"><i class="fas fa-plus"></i></a>
+      {{/if}}
     </p>
   </div>
 
