@@ -1,13 +1,13 @@
 export default class ResourcesApi {
   static decrement(name) {
-    let value = ResourcesApi.get(name) - 1
-    ResourcesApi.set(name, value > 0 ? value : 0)
+    let value = this.get(name) - 1
+    this.set(name, value > 0 ? value : 0)
   }
 
   static increment(name) {
-    let value = ResourcesApi.get(name)
-    let max = ResourcesApi.get('max_'+ name)
-    ResourcesApi.set(name, value >= max ? value : value + 1)
+    let value = this.get(name)
+    let max = this.get('max_'+ name)
+    this.set(name, value >= max ? value : value + 1)
   }
 
   static get(name) {
@@ -21,12 +21,12 @@ export default class ResourcesApi {
   static resources() {
     // TODO: Make this dynamic once we have crud forms.
     return {
-      inspiration: ResourcesApi.get('inspiration'),
-      desperation: ResourcesApi.get('desperation'),
-      influence_dice: ResourcesApi.get('influence_dice'),
-      max_inspiration: ResourcesApi.get('max_inspiration'),
-      max_desperation: ResourcesApi.get('max_desperation'),
-      max_influence_dice: ResourcesApi.get('max_influence_dice')
+      inspiration: this.get('inspiration'),
+      desperation: this.get('desperation'),
+      influence_dice: this.get('influence_dice'),
+      max_inspiration: this.get('max_inspiration'),
+      max_desperation: this.get('max_desperation'),
+      max_influence_dice: this.get('max_influence_dice')
     };
   }
 }

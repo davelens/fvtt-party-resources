@@ -15,23 +15,21 @@ export default class ResourcesDashboard extends Application {
     super.activateListeners(html);
 
     html.on('click', '.change-value.add', event => {
-      event.stopPropagation()
-      event.preventDefault()
-      let anchor = $(event.currentTarget)
-      let setting = anchor.data('setting')
-      ResourcesApi.increment(setting)
+      this.setup_calculation(event, setting => { ResourcesApi.increment(setting) })
     })
 
     html.on('click', '.change-value.subtract', event => {
-      event.stopPropagation()
-      event.preventDefault()
-      let anchor = $(event.currentTarget)
-      let setting = anchor.data('setting')
-      ResourcesApi.decrement(setting)
+      this.setup_calculation(event, setting => { ResourcesApi.decrement(setting) })
     })
   }
 
   getData() {
     return mergeObject(ResourcesApi.resources(), { is_gm: game.user.isGM })
+  }
+
+  setup_calculation(event, process) {
+    event.stopPropagation()
+    event.preventDefault()
+    process($(event.currentTarget).data('setting'))
   }
 }
