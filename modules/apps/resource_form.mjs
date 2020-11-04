@@ -5,13 +5,11 @@ export default class ResourceForm extends FormApplication {
    * @returns {Object}
    */
   static get defaultOptions() {
-    console.log("%c"+ super.defaultOptions, 'color:green');
     return mergeObject(super.defaultOptions, {
-      id: "forien-quest-log-form",
-      template: "modules/forien-quest-log/templates/quest-form.html",
-      title: game.i18n.localize("ForienQuestLog.QuestForm.Title"),
-      width: 940,
-      height: 640,
+      id: "fvtt-party-resources",
+      template: "modules/fvtt-party-resources/templates/resource_form.html",
+      title: game.i18n.localize("FvttPartyResources.Title"),
+      height: 232,
       closeOnSubmit: true
     });
   }
@@ -23,7 +21,6 @@ export default class ResourceForm extends FormApplication {
    * @returns {Promise<Object>}
    */
   async getData(options = {}) {
-    console.log(options);
     return {};
   }
 

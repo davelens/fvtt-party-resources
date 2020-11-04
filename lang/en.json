@@ -1,7 +1,12 @@
 {
   "FvttPartyResources.Title": "Party Resources",
+  "FvttPartyResources.FormReset": "Reset Form",
   "FvttPartyResources.FormSubmit": "Submit",
-  "FvttPartyResources.NewResourceForm.Title": "Add a resource",
+  "FvttPartyResources.NewResourceForm.DefaultValue": "Default value",
+  "FvttPartyResources.NewResourceForm.Identifier": "Resource ID",
+  "FvttPartyResources.NewResourceForm.MaxValue": "Maximum value",
+  "FvttPartyResources.NewResourceForm.Name": "Resource name",
+  "FvttPartyResources.NewResourceForm.Title": "Add a new resource",
   "FvttPartyResources.Dashboard.AddButtonTitle": "Increase amount",
   "FvttPartyResources.Dashboard.SubtractButtonTitle": "Subtract amount"
 }
