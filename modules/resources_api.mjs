@@ -5,7 +5,9 @@ export default class ResourcesApi {
   }
 
   static increment(name) {
-    ResourcesApi.set(name, ResourcesApi.get(name) + 1)
+    let value = ResourcesApi.get(name)
+    let max = ResourcesApi.get('max_'+ name)
+    ResourcesApi.set(name, value >= max ? value : value + 1)
   }
 
   static get(name) {
