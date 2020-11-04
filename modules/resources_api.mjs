@@ -1,15 +1,19 @@
 export default class ResourcesApi {
+  static decrement(name) {
+    let value = ResourcesApi.get(name) - 1
+    ResourcesApi.set(name, value > 0 ? value : 0)
+  }
+
+  static increment(name) {
+    ResourcesApi.set(name, ResourcesApi.get(name) + 1)
+  }
+
   static get(name) {
-    return game.settings.get('fvtt-party-resources', name)
+    return parseInt(game.settings.get('fvtt-party-resources', name))
   }
 
   static set(name, value, options) {
-    let properties = $.merge(
-      options,
-      { scope: "client", config: false, default: 0 },
-    )
-
-    game.settings.register('fvtt-party-resources', name, properties);
+    game.settings.set('fvtt-party-resources', name, parseInt(value))
   }
 
   static resources() {
