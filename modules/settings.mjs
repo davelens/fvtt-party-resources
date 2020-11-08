@@ -1,28 +1,12 @@
+import ResourcesApi from "./resources_api.mjs";
+
 export default class ModuleSettings {
   static register() {
-    let properties = {
-      scope: "world",
-      config: false,
-      type: String,
-      default: 0,
-      onChange: value => {
-        if (PartyResourcesDashboard.rendered)
-          PartyResourcesDashboard.render(true);
-      }
-    }
-
-    game.settings.register('fvtt-party-resources', 'inspiration', properties)
-    game.settings.register('fvtt-party-resources', 'desperation', properties)
-    game.settings.register('fvtt-party-resources', 'influence_dice', properties)
-
-    game.settings.register('fvtt-party-resources', 'max_inspiration', $.merge({
-      default: 6
-    }, properties))
-    game.settings.register('fvtt-party-resources', 'max_desperation', $.merge({
-      default: 6
-    }, properties))
-    game.settings.register('fvtt-party-resources', 'max_influence_dice', $.merge({
-      default: 1
-    }, properties))
+    ResourcesApi.register('inspiration')
+    ResourcesApi.register('desperation')
+    ResourcesApi.register('influence_dice')
+    ResourcesApi.register('max_inspiration', { default: 6 })
+    ResourcesApi.register('max_desperation', { default: 6 })
+    ResourcesApi.register('max_influence_dice', { default: 1 })
   };
 }

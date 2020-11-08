@@ -14,6 +14,21 @@ export default class ResourcesApi {
     return parseInt(game.settings.get('fvtt-party-resources', name))
   }
 
+  static register(name, options) {
+    let properties = {
+      scope: "world",
+      config: false,
+      type: String,
+      default: 0,
+      onChange: value => {
+        if (PartyResourcesDashboard.rendered)
+          PartyResourcesDashboard.render(true);
+      }
+    }
+
+    game.settings.register('fvtt-party-resources', name, mergeObject(properties, options || {}))
+  }
+
   static set(name, value, options) {
     game.settings.set('fvtt-party-resources', name, parseInt(value))
   }
