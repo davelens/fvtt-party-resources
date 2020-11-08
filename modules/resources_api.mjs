@@ -6,42 +6,60 @@ export default class ResourcesApi {
 
   static increment(name) {
     let value = this.get(name)
-    let max = this.get('max_'+ name)
+    let max = this.get(name.concat('_max'))
     this.set(name, value >= max ? value : value + 1)
   }
 
   static get(name) {
-    return parseInt(game.settings.get('fvtt-party-resources', name))
+    return game.settings.get('fvtt-party-resources', name)
   }
 
   static register(name, options) {
     let properties = {
       scope: "world",
       config: false,
-      type: String,
-      default: 0,
       onChange: value => {
-        if (PartyResourcesDashboard.rendered)
-          PartyResourcesDashboard.render(true);
+        if(PartyResourcesDashboard.rendered)
+          PartyResourcesDashboard.render(true)
       }
     }
 
     game.settings.register('fvtt-party-resources', name, mergeObject(properties, options || {}))
   }
 
+  static cache_to_resource_list(name) {
+    let list = this.resource_list()
+    list.push(name)
+    this.set('resource_list', list)
+  }
+
+  static resource_list() {
+    return this.get('resource_list') || []
+  }
+
   static set(name, value, options) {
-    game.settings.set('fvtt-party-resources', name, parseInt(value))
+    game.settings.set('fvtt-party-resources', name, value)
   }
 
   static resources() {
-    // TODO: Make this dynamic once we have crud forms.
-    return {
-      inspiration: this.get('inspiration'),
-      desperation: this.get('desperation'),
-      influence_dice: this.get('influence_dice'),
-      max_inspiration: this.get('max_inspiration'),
-      max_desperation: this.get('max_desperation'),
-      max_influence_dice: this.get('max_influence_dice')
-    };
+    let results = []
+
+    this.resource_list().forEach((resource, index) => {
+      this.register(resource)
+      this.register(resource.concat('_name'))
+      this.register(resource.concat('_visible'), { default: true })
+      this.register(resource.concat('_max'))
+
+      results.push({
+        id: resource,
+        value: this.get(resource),
+        name: this.get(resource.concat('_name')),
+        max_value: this.get(resource.concat('_max')),
+        visible: this.get(resource.concat('_visible')),
+        is_gm: game.user.isGM
+      })
+    })
+
+    return { resources: results }
   }
 }

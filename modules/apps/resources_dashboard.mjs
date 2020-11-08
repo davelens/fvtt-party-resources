@@ -4,7 +4,7 @@ import ResourceForm from "./resource_form.mjs";
 export default class ResourcesDashboard extends Application {
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
-      id: "fvtt-party-resources",
+      id: "fvtt-party-resources-dashboard",
       classes: ["fvtt-party-resources"],
       template: "modules/fvtt-party-resources/templates/resources_dashboard.html",
       minimizable: true,

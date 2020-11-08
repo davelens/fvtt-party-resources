@@ -8,22 +8,14 @@ export default class ResourceForm extends FormApplication {
    */
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
-      id: "fvtt-party-resources",
+      id: "fvtt-party-resources-form",
+      classes: ["fvtt-party-resources"],
       template: "modules/fvtt-party-resources/templates/resource_form.html",
       title: game.i18n.localize("FvttPartyResources.Title"),
       height: 232,
+      width: 400,
       closeOnSubmit: true
     });
-  }
-
-  /**
-   * Retrieves Data to be used in rendering template.
-   *
-   * @param options
-   * @returns {Promise<Object>}
-   */
-  async getData(options = {}) {
-    return {};
   }
 
   /**
@@ -34,45 +26,18 @@ export default class ResourceForm extends FormApplication {
    * @private
    */
   async _updateObject(event, data) {
-    ResourcesApi.register(
-      data['resource[identifier]'],
-      { default: data['resource[default_value]'] }
-    )
+    let id = data['resource[identifier]']
 
-    ResourcesApi.register(
-      data['resource[identifier]'].concat('_name'),
-      { default: data['resource[name]'] }
-    )
+    ResourcesApi.cache_to_resource_list(id)
 
-    ResourcesApi.register(
-      data['resource[identifier]'].concat('_visible'),
-      { type: Boolean, default: true }
-    )
+    ResourcesApi.register(id)
+    ResourcesApi.register(id.concat('_name'))
+    ResourcesApi.register(id.concat('_visible'), { default: true })
+    ResourcesApi.register(id.concat('_max'))
 
-    ResourcesApi.register(
-      data['resource[identifier]'].concat('_max'),
-      { default: data['resource[max_value]'] }
-    )
-
-    this.close();
-  }
-
-  /**
-   * Fired whenever any of TinyMCE editors is saved.
-   * Just pass data to object's property, we handle save in one go after submit
-   *
-   * @see _updateObject()
-   *
-   * @param target
-   * @param element
-   * @param content
-   * @returns {Promise<void>}
-   * @private
-   */
-  async _onEditorSave(target, element, content) {
-    this[target] = content;
-
-    // keep function to override parent function
-    // we don't need to submit form on editor save
+    ResourcesApi.set(id, data['resource[default_value]'])
+    ResourcesApi.set(id.concat('_name'), data['resource[name]'])
+    ResourcesApi.set(id.concat('_visible'), data['resource[visible]'])
+    ResourcesApi.set(id.concat('_max'), data['resource[max_value]'])
   }
 };
