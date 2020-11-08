@@ -1,3 +1,5 @@
+import ResourcesApi from "./../resources_api.mjs";
+
 export default class ResourceForm extends FormApplication {
   /**
    * Default Application options
@@ -31,11 +33,28 @@ export default class ResourceForm extends FormApplication {
    * @param formData
    * @private
    */
-  async _updateObject(event, formData) {
-    console.log(formData);
-  }
+  async _updateObject(event, data) {
+    ResourcesApi.register(
+      data['resource[identifier]'],
+      { default: data['resource[default_value]'] }
+    )
 
-  async close() {
+    ResourcesApi.register(
+      data['resource[identifier]'].concat('_name'),
+      { default: data['resource[name]'] }
+    )
+
+    ResourcesApi.register(
+      data['resource[identifier]'].concat('_visible'),
+      { type: Boolean, default: true }
+    )
+
+    ResourcesApi.register(
+      data['resource[identifier]'].concat('_max'),
+      { default: data['resource[max_value]'] }
+    )
+
+    this.close();
   }
 
   /**

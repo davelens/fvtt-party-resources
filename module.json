@@ -8,7 +8,7 @@
   "download": "https://github.com/davelens/fvtt-party-resources/archive/1.0.5.zip",
   "version": "1.0.5",
   "minimumCoreVersion": "0.7.5",
-  "compatibleCoreVersion":"0.7.5",
+  "compatibleCoreVersion":"0.7.6",
   "system": "dnd5e",
   "languages": [
     {
