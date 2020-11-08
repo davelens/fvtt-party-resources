@@ -1,4 +1,5 @@
 import ResourcesApi from "./../resources_api.mjs";
+import ResourcesList from "./../resources_list.mjs";
 
 export default class ResourceForm extends FormApplication {
   /**
@@ -27,8 +28,9 @@ export default class ResourceForm extends FormApplication {
    */
   async _updateObject(event, data) {
     let id = data['resource[identifier]']
+    if(ResourcesList.all().includes(id)) return;
 
-    ResourcesApi.cache_to_resource_list(id)
+    ResourcesList.add(id)
 
     ResourcesApi.register(id)
     ResourcesApi.register(id.concat('_name'))

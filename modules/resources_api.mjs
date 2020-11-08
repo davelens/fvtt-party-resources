@@ -1,3 +1,5 @@
+import ResourcesList from "./resources_list.mjs";
+
 export default class ResourcesApi {
   static decrement(name) {
     let value = this.get(name) - 1
@@ -7,7 +9,7 @@ export default class ResourcesApi {
   static increment(name) {
     let value = this.get(name)
     let max = this.get(name.concat('_max'))
-    this.set(name, value >= max ? value : value + 1)
+    this.set(name, max && value >= max ? value : value + 1)
   }
 
   static get(name) {
@@ -27,16 +29,6 @@ export default class ResourcesApi {
     game.settings.register('fvtt-party-resources', name, mergeObject(properties, options || {}))
   }
 
-  static cache_to_resource_list(name) {
-    let list = this.resource_list()
-    list.push(name)
-    this.set('resource_list', list)
-  }
-
-  static resource_list() {
-    return this.get('resource_list') || []
-  }
-
   static set(name, value, options) {
     game.settings.set('fvtt-party-resources', name, value)
   }
@@ -44,7 +36,7 @@ export default class ResourcesApi {
   static resources() {
     let results = []
 
-    this.resource_list().forEach((resource, index) => {
+    ResourcesList.all().forEach((resource, index) => {
       this.register(resource)
       this.register(resource.concat('_name'))
       this.register(resource.concat('_visible'), { default: true })
