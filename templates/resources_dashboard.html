@@ -20,6 +20,10 @@
         <br>
         <strong>{{ name }}</strong>
         {{#if is_gm}}
+        <br>
+        <a class="delete" href="#" data-setting="{{ id }}" title="{{ localize 'FvttPartyResources.Dashboard.DeleteButtonTitle' }}"><i class="fas fa-trash"></i></a>
+        {{/if}}
+        {{#if is_gm}}
         <a class="change-value add" href="#" data-setting="{{ id }}" title="{{ localize 'FvttPartyResources.Dashboard.AddButtonTitle' }}"><i class="fas fa-plus"></i></a>
         {{/if}}
       </p>

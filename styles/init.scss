@@ -13,6 +13,19 @@
       padding: 8px 0;
       position: relative;
 
+      a {
+        text-decoration: none;
+
+        &:hover {
+          background-color: #ccc;
+          text-shadow: none;
+        }
+      }
+
+      a.delete {
+        color: red;
+      }
+
       a.change-value {
         align-items: center;
         display: flex;
@@ -20,13 +33,7 @@
         line-height: 50%;
         padding: 0 4px;
         position: absolute;
-        text-decoration: none;
         top: 0;
-
-        &:hover {
-          background-color: #ccc;
-          text-shadow: none;
-        }
 
         &.add {
           border-left: 1px solid grey;
@@ -51,4 +58,5 @@
 
 #fvtt-party-resources-dashboard {
   height: auto;
+  width: auto;
 }

@@ -25,7 +25,9 @@ export default class ResourcesApi {
           PartyResourcesDashboard.render(true)
           // I have no idea how to redraw a form so it fits itself to its
           // contents. Hence this is dumb workaround.
-          setTimeout(() => { $('#fvtt-party-resources-dashboard').css({ height: 'auto' }) }, 1)
+          setTimeout(() => {
+            $('#fvtt-party-resources-dashboard').css({ width: 'auto', height: 'auto' })
+          }, 1)
         }
       }
     }

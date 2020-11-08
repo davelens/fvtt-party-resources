@@ -17,6 +17,11 @@ Hooks.on("renderActorDirectory", (app, html, data) => {
     .done(function(){
       $('.resource-dashboard-btn').on('click', event => {
         PartyResourcesDashboard.render(true);
+        // I have no idea how to redraw a form so it fits itself to its
+        // contents. Hence this is dumb workaround.
+        setTimeout(() => {
+          $('#fvtt-party-resources-dashboard').css({ width: 'auto', height: 'auto' })
+        }, 1)
       });
     });
 });

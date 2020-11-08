@@ -11,4 +11,11 @@ export default class ResourcesList {
     list.push(name)
     ResourcesApi.set('resource_list', list)
   }
+
+  static remove(name) {
+    let list = this.all()
+    if(!list.includes(name)) return;
+    list.splice(list.indexOf(name), 1)
+    ResourcesApi.set('resource_list', list)
+  }
 }

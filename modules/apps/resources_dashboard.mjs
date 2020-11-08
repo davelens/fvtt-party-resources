@@ -1,4 +1,5 @@
 import ResourcesApi from "./../resources_api.mjs";
+import ResourcesList from "./../resources_list.mjs";
 import ResourceForm from "./resource_form.mjs";
 
 export default class ResourcesDashboard extends Application {
@@ -21,6 +22,10 @@ export default class ResourcesDashboard extends Application {
 
     html.on('click', '.change-value.subtract', event => {
       this.setup_calculation(event, setting => { ResourcesApi.decrement(setting) })
+    })
+
+    html.on('click', '.delete', event => {
+      this.setup_calculation(event, setting => { ResourcesList.remove(setting) })
     })
 
     html.on('click', '.new-resource-form-btn', event => {
