@@ -39,3 +39,6 @@
 
 #fvtt-party-resources-container .grid-item p span.value {
   font-size: 1.2rem; }
+
+#fvtt-party-resources-dashboard {
+  height: auto; }

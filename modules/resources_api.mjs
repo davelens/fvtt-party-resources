@@ -21,8 +21,12 @@ export default class ResourcesApi {
       scope: "world",
       config: false,
       onChange: value => {
-        if(PartyResourcesDashboard.rendered)
+        if(PartyResourcesDashboard.rendered) {
           PartyResourcesDashboard.render(true)
+          // I have no idea how to redraw a form so it fits itself to its
+          // contents. Hence this is dumb workaround.
+          setTimeout(() => { $('#fvtt-party-resources-dashboard').css({ height: 'auto' }) }, 1)
+        }
       }
     }
 
