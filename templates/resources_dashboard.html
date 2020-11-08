@@ -15,7 +15,7 @@
         <a class="change-value subtract" href="#" data-setting="{{ id }}" title="{{ localize 'FvttPartyResources.Dashboard.SubtractButtonTitle' }}"><i class="fas fa-minus"></i></a>
         {{/if}}
         <span class="value">
-          {{ value }} / {{ max_value }}
+          {{ value }} {{#if max_value}} / {{ max_value }}{{/if}}
         </span>
         <br>
         <strong>{{ name }}</strong>
