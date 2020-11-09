@@ -13,10 +13,10 @@ players. I needed a way to manage this value per game world in Foundry, and
 allow my players to check up on how many inspirations they have left.
 
 ### What the DM sees  
-![Image showing what the DM sees when opening the resources dashboard](https://davelens.be/screenshots/party-resources-dm.jpg)
+![Image showing what the DM sees when opening the resources dashboard](https://davelens.be/screenshots/party-resources-dm.jpg?t=1604960703)
 
 ### What the players see
-![Image showing what the players see when opening the resources dashboard](https://davelens.be/screenshots/party-resources-players.jpg)
+![Image showing what the players see when opening the resources dashboard](https://davelens.be/screenshots/party-resources-players.jpg?t=1604960703)
 
 ## Installation
 1. Install Party Resources in FoundryVTT using the manifest URL:
