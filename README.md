@@ -31,5 +31,4 @@ If you'd like to translate labels to your language of choice, feel free to
 submit a pull request on GitHub.
 
 ## License
-This work is licensed under Foundry Virtual Tabletop EULA - Limited License
-Agreement for module development from May 29, 2020.
+This work is licensed under the MIT license, as well as Foundry Virtual Tabletop EULA - Limited License Agreement for module development from May 29, 2020.
