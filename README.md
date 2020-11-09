@@ -4,9 +4,9 @@
 ![Downloads](https://img.shields.io/github/downloads/davelens/fvtt-party-resources/total?style=for-the-badge&label=Downloads+total)
 
 Party Resources is a module that allows you to store party-wide numeric values,
-scoped by the active game world. If this sounds abstract to you, consider the
-following example:
+scoped by the active game world.
 
+## Example
 I run my 5e games with party-based inspiration, rather than individual
 inspiration. The maximum inspiration a party can earn equals the total number of
 players. I needed a way to manage this value per game world in Foundry, and
