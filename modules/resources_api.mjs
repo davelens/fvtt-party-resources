@@ -1,22 +1,22 @@
 import ResourcesList from "./resources_list.mjs";
 
 export default class ResourcesApi {
-  static decrement(name) {
+  decrement(name) {
     let value = this.get(name) - 1
     this.set(name, value > 0 ? value : 0)
   }
 
-  static increment(name) {
+  increment(name) {
     let value = this.get(name)
     let max = this.get(name.concat('_max'))
     this.set(name, max && value >= max ? value : value + 1)
   }
 
-  static get(name) {
+  get(name) {
     return game.settings.get('fvtt-party-resources', name)
   }
 
-  static register(name, options) {
+  register(name, options) {
     let properties = {
       scope: "world",
       config: false,
@@ -35,14 +35,15 @@ export default class ResourcesApi {
     game.settings.register('fvtt-party-resources', name, mergeObject(properties, options || {}))
   }
 
-  static set(name, value, options) {
+  set(name, value, options) {
     game.settings.set('fvtt-party-resources', name, value)
   }
 
-  static resources() {
+  resources() {
     let results = []
 
     ResourcesList.all().forEach((resource, index) => {
+      console.log(this);
       this.register(resource)
       this.register(resource.concat('_name'))
       this.register(resource.concat('_visible'), { default: true })

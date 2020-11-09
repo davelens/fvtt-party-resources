@@ -1,4 +1,3 @@
-import ResourcesApi from "./../resources_api.mjs";
 import ResourcesList from "./../resources_list.mjs";
 import ResourceForm from "./resource_form.mjs";
 
@@ -17,11 +16,11 @@ export default class ResourcesDashboard extends Application {
     super.activateListeners(html);
 
     html.on('click', '.change-value.add', event => {
-      this.setup_calculation(event, setting => { ResourcesApi.increment(setting) })
+      this.setup_calculation(event, setting => { PartyResourcesApi.increment(setting) })
     })
 
     html.on('click', '.change-value.subtract', event => {
-      this.setup_calculation(event, setting => { ResourcesApi.decrement(setting) })
+      this.setup_calculation(event, setting => { PartyResourcesApi.decrement(setting) })
     })
 
     html.on('click', '.delete', event => {
@@ -34,7 +33,7 @@ export default class ResourcesDashboard extends Application {
   }
 
   getData() {
-    return mergeObject(ResourcesApi.resources(), { is_gm: game.user.isGM })
+    return mergeObject(PartyResourcesApi.resources(), { is_gm: game.user.isGM })
   }
 
   setup_calculation(event, process) {

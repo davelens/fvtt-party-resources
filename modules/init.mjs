@@ -3,11 +3,9 @@ import ResourcesApi from "./resources_api.mjs";
 import ResourcesDashboard from "./apps/resources_dashboard.mjs"
 
 Hooks.once('init', () => {
-  ModuleSettings.register()
-});
-
-Hooks.once('setup', () => {
   window.PartyResourcesDashboard = new ResourcesDashboard();
+  window.PartyResourcesApi = new ResourcesApi();
+  ModuleSettings.register()
 });
 
 Hooks.on("renderActorDirectory", (app, html, data) => {

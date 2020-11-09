@@ -1,4 +1,3 @@
-import ResourcesApi from "./../resources_api.mjs";
 import ResourcesList from "./../resources_list.mjs";
 
 export default class ResourceForm extends FormApplication {
@@ -32,14 +31,14 @@ export default class ResourceForm extends FormApplication {
 
     ResourcesList.add(id)
 
-    ResourcesApi.register(id)
-    ResourcesApi.register(id.concat('_name'))
-    ResourcesApi.register(id.concat('_visible'), { default: true })
-    ResourcesApi.register(id.concat('_max'))
+    PartyResourcesApi.register(id)
+    PartyResourcesApi.register(id.concat('_name'))
+    PartyResourcesApi.register(id.concat('_visible'), { default: true })
+    PartyResourcesApi.register(id.concat('_max'))
 
-    ResourcesApi.set(id, data['resource[default_value]'])
-    ResourcesApi.set(id.concat('_name'), data['resource[name]'])
-    ResourcesApi.set(id.concat('_visible'), data['resource[visible]'])
-    ResourcesApi.set(id.concat('_max'), data['resource[max_value]'])
+    PartyResourcesApi.set(id, data['resource[default_value]'])
+    PartyResourcesApi.set(id.concat('_name'), data['resource[name]'])
+    PartyResourcesApi.set(id.concat('_visible'), data['resource[visible]'])
+    PartyResourcesApi.set(id.concat('_max'), data['resource[max_value]'])
   }
 };
