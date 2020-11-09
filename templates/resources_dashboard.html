@@ -8,7 +8,7 @@
 
 <section id="fvtt-party-resources-container">
   {{#each resources}}
-    {{#if visible }}
+    {{#if visible_for_players }}
     <div class="grid-item">
       <p>
         {{#if is_gm}}
@@ -20,13 +20,23 @@
         <br>
         <strong>{{ name }}</strong>
         {{#if is_gm}}
-        <br>
-        <a class="delete" href="#" data-setting="{{ id }}" title="{{ localize 'FvttPartyResources.Dashboard.DeleteButtonTitle' }}"><i class="fas fa-trash"></i></a>
-        {{/if}}
-        {{#if is_gm}}
         <a class="change-value add" href="#" data-setting="{{ id }}" title="{{ localize 'FvttPartyResources.Dashboard.AddButtonTitle' }}"><i class="fas fa-plus"></i></a>
         {{/if}}
       </p>
+    {{/if}}
+
+    {{#if is_gm}}
+      <div class="gm-actions">
+        <a class="gm-action delete" href="#" data-setting="{{ id }}" title="{{ localize 'FvttPartyResources.Dashboard.DeleteButtonTitle' }}"><i class="fas fa-trash"></i></a>
+        {{#if visible}}
+        <a class="gm-action make-invisible" href="#" data-setting="{{ id }}" title="{{ localize 'FvttPartyResources.Dashboard.MakeInvisibleButtonTitle' }}"><i class="fas fa-eye-slash"></i></a>
+        {{else}}
+        <a class="gm-action make-visible" href="#" data-setting="{{ id }}" title="{{ localize 'FvttPartyResources.Dashboard.MakeVisibleButtonTitle' }}"><i class="fas fa-eye"></i></a>
+        {{/if}}
+      </div>
+    {{/if}}
+
+    {{#if visible_for_players }}
     </div>
     {{/if}}
   {{/each}}

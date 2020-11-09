@@ -27,6 +27,10 @@ export default class ResourcesDashboard extends Application {
       this.setup_calculation(event, setting => { ResourcesList.remove(setting) })
     })
 
+    html.on('click', '.make-visible, .make-invisible', event => {
+      this.setup_calculation(event, setting => { this.toggle_visiblity(setting) })
+    })
+
     html.on('click', '.new-resource-form-btn', event => {
       new ResourceForm({}).render(true);
     });
@@ -40,5 +44,12 @@ export default class ResourcesDashboard extends Application {
     event.stopPropagation()
     event.preventDefault()
     process($(event.currentTarget).data('setting'))
+  }
+
+  toggle_visiblity(setting) {
+    PartyResourcesApi.set(
+      setting.concat('_visible'),
+      !PartyResourcesApi.get(setting.concat('_visible'))
+    )
   }
 }

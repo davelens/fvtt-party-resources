@@ -9,5 +9,7 @@
   "FvttPartyResources.NewResourceForm.Title": "Add a new resource",
   "FvttPartyResources.Dashboard.AddButtonTitle": "Increase amount",
   "FvttPartyResources.Dashboard.DeleteButtonTitle": "Remove resource",
-  "FvttPartyResources.Dashboard.SubtractButtonTitle": "Subtract amount"
+  "FvttPartyResources.Dashboard.SubtractButtonTitle": "Subtract amount",
+  "FvttPartyResources.Dashboard.MakeInvisibleButtonTitle": "Hide this resource from players",
+  "FvttPartyResources.Dashboard.MakeVisibleButtonTitle": "Reveal this resource to players"
 }
