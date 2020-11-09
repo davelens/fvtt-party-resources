@@ -24,7 +24,7 @@ INSERT SCREENSHOT
 2. Enable the `Party Resources` module in the active game world.
 
 ## Usage
-Anyone can access the resources dashboard on top of the Actor directory.
+Anyone can access the resources dashboard at the top of the Actor directory.
 
 ## I18n
 If you'd like to translate labels to your language of choice, feel free to
