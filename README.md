@@ -12,11 +12,11 @@ inspiration. The maximum inspiration a party can earn equals the total number of
 players. I needed a way to manage this value per game world in Foundry, and
 allow my players to check up on how many inspirations they have left.
 
-This is what the GM sees:
-INSERT SCREENSHOT
+### What the DM sees  
+![Image showing what the DM sees when opening the resources dashboard](https://davelens.be/screenshots/party-resources-dm.jpg)
 
-This is what the players see:
-INSERT SCREENSHOT
+### What the players see
+![Image showing what the players see when opening the resources dashboard](https://davelens.be/screenshots/party-resources-players.jpg)
 
 ## Installation
 1. Install Party Resources in FoundryVTT using the manifest URL:
