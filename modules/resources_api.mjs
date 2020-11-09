@@ -6,14 +6,14 @@ export default class ResourcesApi {
     this.set(name, value > 0 ? value : 0)
   }
 
+  get(name) {
+    return game.settings.get('fvtt-party-resources', name)
+  }
+
   increment(name) {
     let value = this.get(name)
     let max = this.get(name.concat('_max'))
     this.set(name, max && value >= max ? value : value + 1)
-  }
-
-  get(name) {
-    return game.settings.get('fvtt-party-resources', name)
   }
 
   register(name, options) {
@@ -35,15 +35,10 @@ export default class ResourcesApi {
     game.settings.register('fvtt-party-resources', name, mergeObject(properties, options || {}))
   }
 
-  set(name, value, options) {
-    game.settings.set('fvtt-party-resources', name, value)
-  }
-
   resources() {
     let results = []
 
     ResourcesList.all().forEach((resource, index) => {
-      console.log(this);
       this.register(resource)
       this.register(resource.concat('_name'))
       this.register(resource.concat('_visible'), { default: true })
@@ -60,5 +55,9 @@ export default class ResourcesApi {
     })
 
     return { resources: results }
+  }
+
+  set(name, value, options) {
+    game.settings.set('fvtt-party-resources', name, value)
   }
 }
