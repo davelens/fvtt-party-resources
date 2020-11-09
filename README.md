@@ -20,7 +20,9 @@ allow my players to check up on how many inspirations they have left.
 
 ## Installation
 1. Install Party Resources in FoundryVTT using the manifest URL:
-   https://raw.githubusercontent.com/davelens/fvtt-party-resources/master/module.json
+```
+https://raw.githubusercontent.com/davelens/fvtt-party-resources/master/module.json
+```
 2. Enable the `Party Resources` module in the active game world.
 
 ## Usage
