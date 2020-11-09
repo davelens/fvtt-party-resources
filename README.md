@@ -4,7 +4,7 @@
 ![Downloads](https://img.shields.io/github/downloads/davelens/fvtt-party-resources/total?style=for-the-badge&label=Downloads+total)
 
 Party Resources is a module that allows you to store party-wide numeric values,
-scoped by the active game world.
+scoped on worlds.
 
 ## Example
 I run my 5e games with party-based inspiration, rather than individual
