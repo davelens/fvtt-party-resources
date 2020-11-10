@@ -12,7 +12,7 @@ export default class ResourceForm extends FormApplication {
       classes: ["fvtt-party-resources"],
       template: "modules/fvtt-party-resources/templates/resource_form.html",
       title: game.i18n.localize("FvttPartyResources.Title"),
-      height: 232,
+      height: 352,
       width: 400,
       closeOnSubmit: true
     });
