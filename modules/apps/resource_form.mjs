@@ -26,8 +26,8 @@ export default class ResourceForm extends FormApplication {
    * @private
    */
   async _updateObject(event, data) {
-    let id = data['resource[identifier]']
-    if(ResourcesList.all().includes(id)) return;
+    let id = this.sanitize_identifier(data['resource[identifier]'])
+    if(ResourcesList.all().includes(id)) return
 
     ResourcesList.add(id)
 
@@ -40,5 +40,12 @@ export default class ResourceForm extends FormApplication {
     PartyResourcesApi.set(id.concat('_name'), data['resource[name]'])
     PartyResourcesApi.set(id.concat('_visible'), data['resource[visible]'])
     PartyResourcesApi.set(id.concat('_max'), data['resource[max_value]'])
+  }
+
+  sanitize_identifier(string) {
+    return string
+      .toLowerCase()
+      .replace(/[0-9]+/, '')
+      .replace(' ', '')
   }
 };

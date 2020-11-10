@@ -5,7 +5,7 @@
   "FvttPartyResources.NewResourceForm.DefaultValue": "Default value",
   "FvttPartyResources.NewResourceForm.DefaultValueHint": "The resource's initial value.",
   "FvttPartyResources.NewResourceForm.Identifier": "Resource ID",
-  "FvttPartyResources.NewResourceForm.IdentifierHint": "The (lowercase) identifier that represents this resource in API requests.",
+  "FvttPartyResources.NewResourceForm.IdentifierHint": "The identifier that represents this resource in API requests. Should not contain spaces or numbers, and should be lowercase",
   "FvttPartyResources.NewResourceForm.MaxValue": "Maximum value",
   "FvttPartyResources.NewResourceForm.MaxValueHint": "When this integer is provided, you won't be able to increase the resource's value above the given number.",
   "FvttPartyResources.NewResourceForm.Name": "Resource name",
