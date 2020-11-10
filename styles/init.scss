@@ -25,6 +25,8 @@
       margin: 0 21px;
 
       .gm-action {
+        padding: 2px 0;
+
         &:not(:last-child) {
           border-right: 1px solid grey;
         }
