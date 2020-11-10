@@ -22,6 +22,9 @@
   grid-template-columns: auto auto;
   margin: 0 21px; }
 
+#fvtt-party-resources-container .grid-item .gm-actions .gm-action:not(:last-child) {
+  border-right: 1px solid grey; }
+
 #fvtt-party-resources-container .grid-item p {
   border: 1px solid grey;
   margin: 0;

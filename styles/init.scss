@@ -23,6 +23,12 @@
       display: grid;
       grid-template-columns: auto auto;
       margin: 0 21px;
+
+      .gm-action {
+        &:not(:last-child) {
+          border-right: 1px solid grey;
+        }
+      }
     }
 
     p {
