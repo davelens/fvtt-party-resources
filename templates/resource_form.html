@@ -8,7 +8,7 @@
     <div class="form-group">
       <label for="identifier">{{ localize 'FvttPartyResources.NewResourceForm.Identifier' }}</label>
       <div class="form-fields">
-        <input type="text" id="identifier" name="resource[identifier]" data-dtype="String">
+        <input type="text" id="identifier" name="resource[identifier]" data-dtype="String" required="true">
       </div>
       <p class="notes">{{ localize 'FvttPartyResources.NewResourceForm.IdentifierHint' }}</p>
     </div>
@@ -16,7 +16,7 @@
     <div class="form-group">
       <label for="name">{{ localize 'FvttPartyResources.NewResourceForm.Name' }}</label>
       <div class="form-fields">
-        <input type="text" id="name" name="resource[name]" data-dtype="String">
+        <input type="text" id="name" name="resource[name]" data-dtype="String" required="true">
       </div>
       <p class="notes">{{ localize 'FvttPartyResources.NewResourceForm.NameHint' }}</p>
     </div>
@@ -24,7 +24,7 @@
     <div class="form-group">
       <label for="default_value">{{ localize 'FvttPartyResources.NewResourceForm.DefaultValue' }}</label>
       <div class="form-fields">
-        <input type="number" id="default_value" name="resource[default_value]" data-dtype="Number">
+        <input type="number" id="default_value" name="resource[default_value]" data-dtype="Number" required="true">
       </div>
       <p class="notes">{{ localize 'FvttPartyResources.NewResourceForm.DefaultValueHint' }}</p>
     </div>
