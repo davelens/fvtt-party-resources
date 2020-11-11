@@ -8,14 +8,16 @@ export default class ResourceForm extends FormApplication {
    */
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
-      id: "fvtt-party-resources-form",
       classes: ["fvtt-party-resources"],
       template: "modules/fvtt-party-resources/templates/resource_form.html",
-      title: game.i18n.localize("FvttPartyResources.Title"),
-      height: 352,
+      height: 322,
       width: 400,
       closeOnSubmit: true
     });
+  }
+
+  getData(object) {
+    return mergeObject({ id_disabled: false }, this.object)
   }
 
   /**
@@ -26,8 +28,8 @@ export default class ResourceForm extends FormApplication {
    * @private
    */
   async _updateObject(event, data) {
-    let id = this.sanitize_identifier(data['resource[identifier]'])
-    if(ResourcesList.all().includes(id)) return
+    let id = this.sanitize_identifier(data['resource[identifier]'] || this.object.identifier)
+    if(id != this.object.identifier && ResourcesList.all().includes(id)) return
 
     ResourcesList.add(id)
 

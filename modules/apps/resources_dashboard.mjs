@@ -32,7 +32,26 @@ export default class ResourcesDashboard extends Application {
     })
 
     html.on('click', '.new-resource-form-btn', event => {
-      new ResourceForm({}).render(true);
+      new ResourceForm(
+        {},
+        {
+          id: "add-resource-form",
+          title: game.i18n.localize("FvttPartyResources.ResourceForm.AddFormTitle")
+        }
+      ).render(true)
+    });
+
+    html.on('click', '.edit', event => {
+      event.stopPropagation()
+      event.preventDefault()
+
+      new ResourceForm(
+        this.resource_data($(event.currentTarget).data('setting')),
+        {
+          id: "edit-resource-form",
+          title: game.i18n.localize("FvttPartyResources.ResourceForm.EditFormTitle")
+        }
+      ).render(true)
     });
   }
 
@@ -52,4 +71,15 @@ export default class ResourcesDashboard extends Application {
       !PartyResourcesApi.get(setting.concat('_visible'))
     )
   }
+
+  resource_data(id) {
+    return {
+      identifier: id,
+      default_value: PartyResourcesApi.get(id),
+      name: PartyResourcesApi.get(id.concat('_name')),
+      max_value: PartyResourcesApi.get(id.concat('_max')),
+      visible: PartyResourcesApi.get(id.concat('_visible'))
+    }
+  }
+
 }

@@ -1,45 +1,41 @@
-<form autocomplete="off">
-
-  <header>
-    <h2>{{localize 'FvttPartyResources.NewResourceForm.Title'}}</h2>
-  </header>
+<form autocomplete="off"{{#if identifier}} data-identifier="{{ identifier }}"{{/if}}>
 
   <section class="resource">
     <div class="form-group">
-      <label for="identifier">{{ localize 'FvttPartyResources.NewResourceForm.Identifier' }}</label>
+      <label for="identifier">{{ localize 'FvttPartyResources.ResourceForm.Identifier' }}</label>
       <div class="form-fields">
-        <input type="text" id="identifier" name="resource[identifier]" data-dtype="String" required="true">
+        <input type="text" id="identifier" name="resource[identifier]" value="{{ identifier }}" data-dtype="String" required="true"{{#if identifier}} disabled{{/if}}>
       </div>
-      <p class="notes">{{ localize 'FvttPartyResources.NewResourceForm.IdentifierHint' }}</p>
+      <p class="notes">{{ localize 'FvttPartyResources.ResourceForm.IdentifierHint' }}</p>
     </div>
 
     <div class="form-group">
-      <label for="name">{{ localize 'FvttPartyResources.NewResourceForm.Name' }}</label>
+      <label for="name">{{ localize 'FvttPartyResources.ResourceForm.Name' }}</label>
       <div class="form-fields">
-        <input type="text" id="name" name="resource[name]" data-dtype="String" required="true">
+        <input type="text" id="name" name="resource[name]" value="{{ name }}" data-dtype="String" required="true">
       </div>
-      <p class="notes">{{ localize 'FvttPartyResources.NewResourceForm.NameHint' }}</p>
+      <p class="notes">{{ localize 'FvttPartyResources.ResourceForm.NameHint' }}</p>
     </div>
 
     <div class="form-group">
-      <label for="default_value">{{ localize 'FvttPartyResources.NewResourceForm.DefaultValue' }}</label>
+      <label for="default_value">{{ localize 'FvttPartyResources.ResourceForm.DefaultValue' }}</label>
       <div class="form-fields">
-        <input type="number" id="default_value" name="resource[default_value]" data-dtype="Number" required="true">
+        <input type="number" id="default_value" name="resource[default_value]" value="{{ default_value }}" data-dtype="Number" required="true">
       </div>
-      <p class="notes">{{ localize 'FvttPartyResources.NewResourceForm.DefaultValueHint' }}</p>
+      <p class="notes">{{ localize 'FvttPartyResources.ResourceForm.DefaultValueHint' }}</p>
     </div>
 
     <div class="form-group">
-      <label for="max_value">{{ localize 'FvttPartyResources.NewResourceForm.MaxValue' }}</label>
+      <label for="max_value">{{ localize 'FvttPartyResources.ResourceForm.MaxValue' }}</label>
       <div class="form-fields">
-        <input type="number" id="max_value" name="resource[max_value]" data-dtype="Number">
+        <input type="number" id="max_value" name="resource[max_value]" value="{{ max_value }}" data-dtype="Number">
       </div>
-      <p class="notes">{{ localize 'FvttPartyResources.NewResourceForm.MaxValueHint' }}</p>
+      <p class="notes">{{ localize 'FvttPartyResources.ResourceForm.MaxValueHint' }}</p>
     </div>
   </section>
 
   <footer class="sheet-footer flexrow">
-    <button type="reset" name="reset">
+    <button type="button" name="reset">
       <i class="fas fa-undo"></i> {{localize 'FvttPartyResources.FormReset'}}
     </button>
     <button type="submit" name="submit">
