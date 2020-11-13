@@ -6,6 +6,13 @@
 Party Resources is a module that allows you to store party-wide numeric values,
 scoped on worlds.
 
+### Features
+* Add/Edit/Delete custom resources
+* Increment/decrement resource values
+* Live updates for players when a value changes
+* Optionally limit resources to a given maximum
+* Track DM resources by hiding certain resources for players
+
 ## Example
 I run my 5e games with party-based inspiration, rather than individual
 inspiration. The maximum inspiration a party can earn equals the total number of
