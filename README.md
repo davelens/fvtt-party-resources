@@ -6,7 +6,7 @@
 Party Resources is a module that allows you to store party-wide numeric values,
 scoped on worlds.
 
-### Features
+## Features
 * Add/Edit/Delete custom resources
 * Increment/decrement resource values
 * Live updates for players when a value changes
