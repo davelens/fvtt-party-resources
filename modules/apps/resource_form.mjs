@@ -13,6 +13,7 @@ export default class ResourceForm extends FormApplication {
       template: "modules/fvtt-party-resources/templates/resource_form.html",
       height: 322,
       width: 400,
+      minimizable: false,
       closeOnSubmit: true
     });
   }
