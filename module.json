@@ -5,11 +5,10 @@
   "author": "Dave Lens",
   "url": "https://github.com/davelens/fvtt-party-resources",
   "manifest": "https://raw.githubusercontent.com/davelens/fvtt-party-resources/master/module.json",
-  "download": "https://github.com/davelens/fvtt-party-resources/archive/1.0.8.zip",
-  "version": "1.0.8",
+  "download": "https://github.com/davelens/fvtt-party-resources/archive/1.0.9.zip",
+  "version": "1.0.9",
   "minimumCoreVersion": "0.7.5",
-  "compatibleCoreVersion":"0.7.6",
-  "system": "dnd5e",
+  "compatibleCoreVersion":"0.7.7",
   "languages": [
     {
       "lang": "en",
