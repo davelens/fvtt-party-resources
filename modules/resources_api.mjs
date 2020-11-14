@@ -21,18 +21,16 @@ export default class ResourcesApi {
       scope: "world",
       config: false,
       onChange: value => {
-        if(PartyResourcesDashboard.rendered) {
-          PartyResourcesDashboard.render(true)
-          // I have no idea how to redraw a form so it fits itself to its
-          // contents. Hence this is dumb workaround.
-          setTimeout(() => {
-            $('#fvtt-party-resources-dashboard').css({ width: 'auto', height: 'auto' })
-          }, 1)
-        }
+        PartyResourcesDashboard.render()
+        setTimeout(PartyResourcesDashboard.recalculate_height, 5);
       }
     }
 
-    game.settings.register('fvtt-party-resources', name, mergeObject(properties, options || {}))
+    game.settings.register(
+      'fvtt-party-resources',
+      name,
+      mergeObject(properties, options || {})
+    )
   }
 
   resources() {

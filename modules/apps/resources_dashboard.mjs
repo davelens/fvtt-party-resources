@@ -72,6 +72,13 @@ export default class ResourcesDashboard extends Application {
     )
   }
 
+  recalculate_height() {
+    $('#fvtt-party-resources-dashboard').css({
+      width: 'auto',
+      height: 'auto'
+    })
+  }
+
   resource_data(id) {
     return {
       identifier: id,
