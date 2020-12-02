@@ -39,7 +39,12 @@
       <i class="fas fa-undo"></i> {{localize 'FvttPartyResources.FormReset'}}
     </button>
     <button type="submit" name="submit">
-      <i class="far fa-save"></i> {{localize 'FvttPartyResources.FormSubmit'}}
+      <i class="far fa-save"></i>
+      {{#if identifier}}
+      {{localize 'FvttPartyResources.FormSaveChanges'}}
+      {{else}}
+      {{localize 'FvttPartyResources.FormSubmit'}}
+      {{/if}}
     </button>
   </footer>
 
