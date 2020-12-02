@@ -19,5 +19,7 @@
   "FvttPartyResources.ResourceForm.MaxValueHint": "When this (optional) integer is provided, you won't be able to increase the resource's value above the given number.",
   "FvttPartyResources.ResourceForm.Name": "Resource name",
   "FvttPartyResources.ResourceForm.NameHint": "The name shown in the resource dashboard.",
+  "FvttPartyResources.ResourceForm.PlayerManaged": "Allow players to manage this resource.",
+  "FvttPartyResources.ResourceForm.PlayerManagedHint": "Toggling this will allow players to increment/decrement the value of this resource.",
   "FvttPartyResources.Title": "Party Resources"
 }

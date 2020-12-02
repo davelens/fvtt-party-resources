@@ -32,6 +32,16 @@
       </div>
       <p class="notes">{{ localize 'FvttPartyResources.ResourceForm.MaxValueHint' }}</p>
     </div>
+
+    <hr>
+
+    <div class="form-group">
+      <label class="checkbox" for="player_managed">
+        <input type="checkbox" id="player_managed" name="resource[player_managed]" value="true"{{#if player_managed}} checked{{/if}} data-dtype="Boolean">
+        {{ localize 'FvttPartyResources.ResourceForm.PlayerManaged' }}
+      </label>
+      <p class="notes">{{ localize 'FvttPartyResources.ResourceForm.PlayerManagedHint' }}</p>
+    </div>
   </section>
 
   <footer class="sheet-footer flexrow">

@@ -85,6 +85,7 @@ export default class ResourcesDashboard extends Application {
       default_value: PartyResourcesApi.get(id),
       name: PartyResourcesApi.get(id.concat('_name')),
       max_value: PartyResourcesApi.get(id.concat('_max')),
+      player_managed: PartyResourcesApi.get(id.concat('_player_managed')),
       visible: PartyResourcesApi.get(id.concat('_visible'))
     }
   }

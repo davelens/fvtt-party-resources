@@ -41,12 +41,14 @@ export default class ResourcesApi {
       this.register(resource.concat('_name'))
       this.register(resource.concat('_visible'), { default: true })
       this.register(resource.concat('_max'))
+      this.register(resource.concat('_player_managed'))
 
       results.push({
         id: resource,
         value: this.get(resource),
         name: this.get(resource.concat('_name')),
         max_value: this.get(resource.concat('_max')),
+        player_managed: this.get(resource.concat('_player_managed')),
         visible: this.get(resource.concat('_visible')),
         visible_for_players: game.user.isGM || this.get(resource.concat('_visible')),
         is_gm: game.user.isGM
