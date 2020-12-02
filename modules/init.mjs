@@ -3,10 +3,10 @@ import ResourcesApi from "./resources_api.mjs";
 import ResourcesDashboard from "./apps/resources_dashboard.mjs"
 
 Hooks.once('init', () => {
-  window.PartyResourcesDashboard = new ResourcesDashboard();
-  window.PartyResourcesApi = new ResourcesApi();
+  window.PartyResourcesDashboard = new ResourcesDashboard()
+  window.PartyResourcesApi = new ResourcesApi()
   ModuleSettings.register()
-});
+})
 
 Hooks.on("renderActorDirectory", (app, html, data) => {
   html
@@ -16,7 +16,7 @@ Hooks.on("renderActorDirectory", (app, html, data) => {
     .done(() =>
       $('#btn-dashboard').on('click', e => {
         PartyResourcesDashboard.render(true)
-        setTimeout(PartyResourcesDashboard.recalculate_height, 5);
+        setTimeout(PartyResourcesDashboard.recalculate_height, 5)
       })
     )
-});
+})

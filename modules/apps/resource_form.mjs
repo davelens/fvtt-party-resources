@@ -15,7 +15,7 @@ export default class ResourceForm extends FormApplication {
       width: 400,
       minimizable: false,
       closeOnSubmit: true
-    });
+    })
   }
 
   getData(object) {
@@ -52,4 +52,4 @@ export default class ResourceForm extends FormApplication {
       .replace(/[0-9]+/, '')
       .replace(' ', '')
   }
-};
+}

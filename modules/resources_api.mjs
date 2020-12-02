@@ -22,7 +22,7 @@ export default class ResourcesApi {
       config: false,
       onChange: value => {
         PartyResourcesDashboard.render()
-        setTimeout(PartyResourcesDashboard.recalculate_height, 5);
+        setTimeout(PartyResourcesDashboard.recalculate_height, 5)
       }
     }
 

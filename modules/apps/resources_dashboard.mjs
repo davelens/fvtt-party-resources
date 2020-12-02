@@ -9,11 +9,11 @@ export default class ResourcesDashboard extends Application {
       template: "modules/fvtt-party-resources/templates/resources_dashboard.html",
       minimizable: true,
       title: game.i18n.localize("FvttPartyResources.Title")
-    });
+    })
   }
 
   activateListeners(html) {
-    super.activateListeners(html);
+    super.activateListeners(html)
 
     html.on('click', '.change-value.add', event => {
       this.setup_calculation(event, setting => { PartyResourcesApi.increment(setting) })
@@ -39,7 +39,7 @@ export default class ResourcesDashboard extends Application {
           title: game.i18n.localize("FvttPartyResources.ResourceForm.AddFormTitle")
         }
       ).render(true)
-    });
+    })
 
     html.on('click', '.edit', event => {
       event.stopPropagation()
@@ -52,7 +52,7 @@ export default class ResourcesDashboard extends Application {
           title: game.i18n.localize("FvttPartyResources.ResourceForm.EditFormTitle")
         }
       ).render(true)
-    });
+    })
   }
 
   getData() {
