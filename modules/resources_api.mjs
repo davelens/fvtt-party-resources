@@ -49,6 +49,7 @@ export default class ResourcesApi {
         name: this.get(resource.concat('_name')),
         max_value: this.get(resource.concat('_max')),
         player_managed: this.get(resource.concat('_player_managed')),
+        manageable: game.user.isGM || this.get(resource.concat('_player_managed')),
         visible: this.get(resource.concat('_visible')),
         visible_for_players: game.user.isGM || this.get(resource.concat('_visible')),
         is_gm: game.user.isGM
