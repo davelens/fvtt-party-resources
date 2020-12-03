@@ -1,3 +1,4 @@
+import Socket from "./socket.mjs";
 import ResourcesList from "./resources_list.mjs";
 
 export default class ResourcesApi {
@@ -18,12 +19,9 @@ export default class ResourcesApi {
 
   register(name, options) {
     let properties = {
-      scope: "world",
+      scope: "client",
       config: false,
-      onChange: value => {
-        PartyResourcesDashboard.render()
-        setTimeout(PartyResourcesDashboard.recalculate_height, 5)
-      }
+      onChange: value => Socket.refresh_dashboard()
     }
 
     game.settings.register(
