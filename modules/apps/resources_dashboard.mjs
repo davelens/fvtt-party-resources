@@ -79,6 +79,11 @@ export default class ResourcesDashboard extends Application {
     })
   }
 
+  redraw(force) {
+    this.render(force)
+    setTimeout(this.recalculate_height, 5)
+  }
+
   resource_data(id) {
     return {
       identifier: id,

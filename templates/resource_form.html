@@ -37,12 +37,25 @@
 
     <div class="form-group">
       <label class="checkbox" for="player_managed">
-        <input type="checkbox" id="player_managed" name="resource[player_managed]" value="true"{{#if player_managed}} checked{{/if}} data-dtype="Boolean">
+        <input type="checkbox" id="player_managed" name="resource[player_managed]" value="true"{{#if player_managed}} checked{{/if}}{{#unless allowed_to_modify_settings}} title="{{ localize 'FvttPartyResources.ResourceForm.PlayerManagedRestriction' }}" disabled{{/unless}} data-dtype="Boolean">
         {{ localize 'FvttPartyResources.ResourceForm.PlayerManaged' }}
       </label>
-      <p class="notes">{{ localize 'FvttPartyResources.ResourceForm.PlayerManagedHint' }}</p>
+
+      <p class="notes">
+        {{ localize 'FvttPartyResources.ResourceForm.PlayerManagedHint' }}
+        {{#unless allowed_to_modify_settings}}
+        <strong>
+          {{ localize 'FvttPartyResources.ResourceForm.PlayerManagedRestriction' }}
+        </strong>
+        {{/unless}}
+      </p>
+      {{#unless allowed_to_modify_settings}}
+      <button id="configure-permissions">Configure player permissions</button>
+      {{/unless}}
     </div>
   </section>
+
+  <hr>
 
   <footer class="sheet-footer flexrow">
     {{#unless identifier}}

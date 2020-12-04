@@ -1,6 +1,15 @@
 import ResourcesList from "./../resources_list.mjs";
 
 export default class ResourceForm extends FormApplication {
+  activateListeners(html) {
+    super.activateListeners(html)
+
+    html.on('click', '#configure-permissions', event => {
+      event.preventDefault()
+      $('[data-action="configure"]').trigger('click')
+    })
+  }
+
   /**
    * Default Application options
    *

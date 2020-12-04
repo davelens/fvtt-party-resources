@@ -1,4 +1,3 @@
-import Socket from "./socket.mjs";
 import ResourcesList from "./resources_list.mjs";
 
 export default class ResourcesApi {
@@ -19,9 +18,9 @@ export default class ResourcesApi {
 
   register(name, options) {
     let properties = {
-      scope: "client",
+      scope: "world",
       config: false,
-      onChange: value => Socket.refresh_dashboard()
+      onChange: value => PartyResourcesDashboard.redraw()
     }
 
     game.settings.register(
@@ -50,7 +49,8 @@ export default class ResourcesApi {
         manageable: game.user.isGM || this.get(resource.concat('_player_managed')),
         visible: this.get(resource.concat('_visible')),
         visible_for_players: game.user.isGM || this.get(resource.concat('_visible')),
-        is_gm: game.user.isGM
+        is_gm: game.user.isGM,
+        allowed_to_modify_settings: game.permissions.SETTINGS_MODIFY.includes(1)
       })
     })
 
