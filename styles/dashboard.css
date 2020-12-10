@@ -15,7 +15,7 @@
   display: flex;
   flex: initial;
   flex-wrap: wrap;
-  justify-content: space-between; }
+  justify-content: flex-start; }
 
 #fvtt-party-resources-dashboard .window-content .resources a {
   color: #555;
