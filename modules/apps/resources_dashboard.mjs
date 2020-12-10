@@ -8,6 +8,7 @@ export default class ResourcesDashboard extends Application {
       classes: ["fvtt-party-resources"],
       template: "modules/fvtt-party-resources/templates/resources_dashboard.html",
       minimizable: true,
+      resizable: true,
       title: game.i18n.localize("FvttPartyResources.Title")
     })
   }
@@ -72,6 +73,8 @@ export default class ResourcesDashboard extends Application {
     )
   }
 
+  // Deprecated and no longer in use since v1.1
+  // Leaving it here as a means to a "reset window size" button or something.
   recalculate_height() {
     $('#fvtt-party-resources-dashboard').css({
       width: 'auto',
@@ -81,7 +84,6 @@ export default class ResourcesDashboard extends Application {
 
   redraw(force) {
     this.render(force)
-    setTimeout(this.recalculate_height, 5)
   }
 
   resource_data(id) {
