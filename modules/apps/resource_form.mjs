@@ -47,7 +47,7 @@ export default class ResourceForm extends FormApplication {
     PartyResourcesApi.register(id.concat('_name'))
     PartyResourcesApi.register(id.concat('_visible'), { default: true })
     PartyResourcesApi.register(id.concat('_max'))
-    PartyResourcesApi.register(id.concat('_player_managed'))
+    PartyResourcesApi.register(id.concat('_player_managed'), { default: false })
 
     PartyResourcesApi.set(id, data['resource[default_value]'])
     PartyResourcesApi.set(id.concat('_name'), data['resource[name]'])
