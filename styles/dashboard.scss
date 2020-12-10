@@ -1,19 +1,24 @@
 #fvtt-party-resources-dashboard {
   height: auto;
-  min-height: 150px;
+  min-height: 175px;
   width: auto;
-  min-width: 482px;
 
   .window-content {
     > p {
       display: flex;
+      flex: initial;
       justify-content: center;
     }
 
+    .new-resource-form-btn {
+      max-height: 2rem;
+    }
+
     .resources {
-      display: grid;
-      grid-gap: .5rem;
-      grid-template-columns: auto auto auto;
+      display: flex;
+      flex: initial;
+      flex-wrap: wrap;
+      justify-content: space-between;
 
       a {
         color: #555;
@@ -25,8 +30,9 @@
         }
       }
 
-      .grid-item {
+      .resource {
         text-align: center;
+        margin: 4px;
         min-width: 175px;
 
         .gm-actions {
