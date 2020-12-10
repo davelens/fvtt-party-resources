@@ -19,10 +19,10 @@ scoped on worlds.
 * Tracking DM-specific mnemonics like poison counters, population totals, or player deaths 😈
 
 ### What the DM sees  
-![Image showing what the DM sees when opening the resources dashboard](https://davelens.be/screenshots/party-resources-dm.jpg?t=1604960703)
+![Image showing what the DM sees when opening the resources dashboard](https://davelens.be/screenshots/party-resources-dm.jpg?t=1607638881)
 
 ### What the players see
-![Image showing what the players see when opening the resources dashboard](https://davelens.be/screenshots/party-resources-players.jpg?t=1604960703)
+![Image showing what the players see when opening the resources dashboard](https://davelens.be/screenshots/party-resources-players.jpg?t=1607638881)
 
 ## Installation
 1. Install Party Resources in FoundryVTT using the manifest URL:
