@@ -8,24 +8,12 @@ Hooks.once('init', () => {
   ModuleSettings.register()
 })
 
-<<<<<<< Updated upstream
-Hooks.once('ready', () => {
-  Socket.listen();
-})
-
-Hooks.on("renderActorDirectory", (app, html, data) => {
-=======
 Hooks.on('renderActorDirectory', (app, html, data) => {
->>>>>>> Stashed changes
   html
     .find(".directory-header")
     .prepend('<div class="action-buttons flexrow"><button id="btn-dashboard"><i class="fas fa-calculator"> </i> Party Resources</div>')
     .promise()
-<<<<<<< Updated upstream
-    .done(() => $('#btn-dashboard').on('click', e => Socket.refresh_dashboard(true)))
-=======
     .done(() => {
       $('#btn-dashboard').on('click', e => PartyResourcesDashboard.redraw(true))
     })
->>>>>>> Stashed changes
 })
