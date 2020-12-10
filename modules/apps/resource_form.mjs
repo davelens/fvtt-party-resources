@@ -1,6 +1,15 @@
 import ResourcesList from "./../resources_list.mjs";
 
 export default class ResourceForm extends FormApplication {
+  activateListeners(html) {
+    super.activateListeners(html)
+
+    html.on('click', '#configure-permissions', event => {
+      event.preventDefault()
+      $('[data-action="configure"]').trigger('click')
+    })
+  }
+
   /**
    * Default Application options
    *
@@ -11,11 +20,10 @@ export default class ResourceForm extends FormApplication {
       id: "fvtt-party-resources-form",
       classes: ["fvtt-party-resources"],
       template: "modules/fvtt-party-resources/templates/resource_form.html",
-      height: 322,
       width: 400,
       minimizable: false,
       closeOnSubmit: true
-    });
+    })
   }
 
   getData(object) {
@@ -39,11 +47,13 @@ export default class ResourceForm extends FormApplication {
     PartyResourcesApi.register(id.concat('_name'))
     PartyResourcesApi.register(id.concat('_visible'), { default: true })
     PartyResourcesApi.register(id.concat('_max'))
+    PartyResourcesApi.register(id.concat('_player_managed'), { default: false })
 
     PartyResourcesApi.set(id, data['resource[default_value]'])
     PartyResourcesApi.set(id.concat('_name'), data['resource[name]'])
     PartyResourcesApi.set(id.concat('_visible'), data['resource[visible]'])
     PartyResourcesApi.set(id.concat('_max'), data['resource[max_value]'])
+    PartyResourcesApi.set(id.concat('_player_managed'), data['resource[player_managed]'])
   }
 
   sanitize_identifier(string) {
@@ -52,4 +62,4 @@ export default class ResourceForm extends FormApplication {
       .replace(/[0-9]+/, '')
       .replace(' ', '')
   }
-};
+}

@@ -9,11 +9,11 @@ export default class ResourcesDashboard extends Application {
       template: "modules/fvtt-party-resources/templates/resources_dashboard.html",
       minimizable: true,
       title: game.i18n.localize("FvttPartyResources.Title")
-    });
+    })
   }
 
   activateListeners(html) {
-    super.activateListeners(html);
+    super.activateListeners(html)
 
     html.on('click', '.change-value.add', event => {
       this.setup_calculation(event, setting => { PartyResourcesApi.increment(setting) })
@@ -39,7 +39,7 @@ export default class ResourcesDashboard extends Application {
           title: game.i18n.localize("FvttPartyResources.ResourceForm.AddFormTitle")
         }
       ).render(true)
-    });
+    })
 
     html.on('click', '.edit', event => {
       event.stopPropagation()
@@ -52,7 +52,7 @@ export default class ResourcesDashboard extends Application {
           title: game.i18n.localize("FvttPartyResources.ResourceForm.EditFormTitle")
         }
       ).render(true)
-    });
+    })
   }
 
   getData() {
@@ -79,12 +79,19 @@ export default class ResourcesDashboard extends Application {
     })
   }
 
+  redraw(force) {
+    this.render(force)
+    setTimeout(this.recalculate_height, 5)
+  }
+
   resource_data(id) {
     return {
       identifier: id,
       default_value: PartyResourcesApi.get(id),
       name: PartyResourcesApi.get(id.concat('_name')),
       max_value: PartyResourcesApi.get(id.concat('_max')),
+      player_managed: PartyResourcesApi.get(id.concat('_player_managed')),
+      allowed_to_modify_settings: game.permissions.SETTINGS_MODIFY.includes(1),
       visible: PartyResourcesApi.get(id.concat('_visible'))
     }
   }

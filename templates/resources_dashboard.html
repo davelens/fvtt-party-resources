@@ -12,7 +12,7 @@
       {{#if visible_for_players }}
       <div class="grid-item">
         <p>
-          {{#if is_gm}}
+          {{#if manageable}}
           <a class="change-value subtract" href="#" data-setting="{{ id }}" title="{{ localize 'FvttPartyResources.Dashboard.SubtractButtonTitle' }}"><i class="fas fa-minus"></i></a>
           {{/if}}
           <span class="value">
@@ -20,7 +20,7 @@
           </span>
           <br>
           <strong>{{ name }}</strong>
-          {{#if is_gm}}
+          {{#if manageable}}
           <a class="change-value add" href="#" data-setting="{{ id }}" title="{{ localize 'FvttPartyResources.Dashboard.AddButtonTitle' }}"><i class="fas fa-plus"></i></a>
           {{/if}}
         </p>

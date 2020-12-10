@@ -67,6 +67,9 @@
 
 #fvtt-party-resources-form {
   height: auto;
-  min-height: 322px;
   width: auto;
   min-width: 400px; }
+
+#fvtt-party-resources-form label .checkbox {
+  /* Not sure why this was on 11px tbh. */
+  font-size: 14px; }
