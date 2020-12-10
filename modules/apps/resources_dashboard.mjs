@@ -8,6 +8,7 @@ export default class ResourcesDashboard extends Application {
       classes: ["fvtt-party-resources"],
       template: "modules/fvtt-party-resources/templates/resources_dashboard.html",
       minimizable: true,
+      resizable: true,
       title: game.i18n.localize("FvttPartyResources.Title")
     })
   }
