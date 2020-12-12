@@ -11,19 +11,31 @@
     {{#each resources}}
       {{#if visible_for_players }}
       <div class="resource">
-        <p>
+        <div class="info">
           {{#if manageable}}
-          <a class="change-value subtract" href="#" data-setting="{{ id }}" title="{{ localize 'FvttPartyResources.Dashboard.SubtractButtonTitle' }}"><i class="fas fa-minus"></i></a>
+          <p>
+            <a class="change-value subtract" href="#" data-setting="{{ id }}" title="{{ localize 'FvttPartyResources.Dashboard.SubtractButtonTitle' }}">
+              <i class="fas fa-minus"></i>
+            </a>
+          </p>
           {{/if}}
-          <span class="value">
+
+          <div class="value">
             {{ value }} {{#if max_value}} / {{ max_value }}{{/if}}
-          </span>
-          <br>
-          <strong>{{ name }}</strong>
+          </div>
+
+          <div class="name">
+            <strong>{{ name }}</strong>
+          </div>
+
           {{#if manageable}}
-          <a class="change-value add" href="#" data-setting="{{ id }}" title="{{ localize 'FvttPartyResources.Dashboard.AddButtonTitle' }}"><i class="fas fa-plus"></i></a>
+          <p>
+            <a class="change-value add" href="#" data-setting="{{ id }}" title="{{ localize 'FvttPartyResources.Dashboard.AddButtonTitle' }}">
+              <i class="fas fa-plus"></i>
+            </a>
+          </p>
           {{/if}}
-        </p>
+        </div>
       {{/if}}
 
       {{#if is_gm}}

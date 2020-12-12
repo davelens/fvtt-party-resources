@@ -42,13 +42,24 @@
 #fvtt-party-resources-dashboard .window-content .resources .resource .gm-actions .gm-action:not(:last-child) {
   border-right: 1px solid grey; }
 
-#fvtt-party-resources-dashboard .window-content .resources .resource p {
+#fvtt-party-resources-dashboard .window-content .resources .resource .info {
   border: 1px solid grey;
   margin: 0;
   padding: 8px 0;
   position: relative; }
 
-#fvtt-party-resources-dashboard .window-content .resources .resource p a.change-value {
+#fvtt-party-resources-dashboard .window-content .resources .resource .info .value {
+  font-size: 1.2rem; }
+
+#fvtt-party-resources-dashboard .window-content .resources .resource .info .name {
+  margin: 0 auto;
+  width: 130px;
+  word-wrap: break-word; }
+
+#fvtt-party-resources-dashboard .window-content .resources .resource .info p {
+  margin: 0; }
+
+#fvtt-party-resources-dashboard .window-content .resources .resource .info p a.change-value {
   align-items: center;
   display: flex;
   height: 100%;
@@ -57,18 +68,15 @@
   position: absolute;
   top: 0; }
 
-#fvtt-party-resources-dashboard .window-content .resources .resource p a.change-value.add {
+#fvtt-party-resources-dashboard .window-content .resources .resource .info p a.change-value.add {
   border-left: 1px solid grey;
   right: 0;
   color: green; }
 
-#fvtt-party-resources-dashboard .window-content .resources .resource p a.change-value.subtract {
+#fvtt-party-resources-dashboard .window-content .resources .resource .info p a.change-value.subtract {
   border-right: 1px solid grey;
   left: 0;
   color: red; }
-
-#fvtt-party-resources-dashboard .window-content .resources .resource p span.value {
-  font-size: 1.2rem; }
 
 #fvtt-party-resources-form {
   height: auto;

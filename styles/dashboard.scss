@@ -50,39 +50,50 @@
           }
         }
 
-        p {
+        .info {
           border: 1px solid grey;
           margin: 0;
           padding: 8px 0;
           position: relative;
 
-          a {
-            &.change-value {
-              align-items: center;
-              display: flex;
-              height: 100%;
-              line-height: 50%;
-              padding: 0 4px;
-              position: absolute;
-              top: 0;
+          .value {
+            font-size: 1.2rem;
+          }
 
-              &.add {
-                border-left: 1px solid grey;
-                right: 0;
-                color: green;
-              }
+          .name {
+            margin: 0 auto;
+            width: 130px;
+            word-wrap: break-word;
+          }
 
-              &.subtract {
-                border-right: 1px solid grey;
-                left: 0;
-                color: red;
+          p {
+            margin: 0;
+
+            a {
+              &.change-value {
+                align-items: center;
+                display: flex;
+                height: 100%;
+                line-height: 50%;
+                padding: 0 4px;
+                position: absolute;
+                top: 0;
+
+                &.add {
+                  border-left: 1px solid grey;
+                  right: 0;
+                  color: green;
+                }
+
+                &.subtract {
+                  border-right: 1px solid grey;
+                  left: 0;
+                  color: red;
+                }
               }
             }
           }
 
-          span.value {
-            font-size: 1.2rem;
-          }
         }
       }
     }
