@@ -17,6 +17,8 @@
   "FvttPartyResources.ResourceForm.IdentifierHint": "The identifier that represents this resource in API requests. Should not contain spaces or numbers, and should be lowercase.",
   "FvttPartyResources.ResourceForm.MaxValue": "Maximum value",
   "FvttPartyResources.ResourceForm.MaxValueHint": "When this (optional) integer is provided, you won't be able to increase the resource's value above the given number.",
+  "FvttPartyResources.ResourceForm.MinValue": "Minimum value",
+  "FvttPartyResources.ResourceForm.MinValueHint": "When this (optional) integer is provided, you won't be able to lower the resource's value below the given number.",
   "FvttPartyResources.ResourceForm.Name": "Resource name",
   "FvttPartyResources.ResourceForm.NameHint": "The name shown in the resource dashboard.",
   "FvttPartyResources.ResourceForm.PlayerManaged": "Allow players to manage this resource.",
