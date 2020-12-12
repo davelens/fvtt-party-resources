@@ -2,7 +2,9 @@ import ResourcesList from "./resources_list.mjs";
 
 export default class ResourcesApi {
   decrement(name) {
-    this.set(name, this.get(name) - 1)
+    let value = this.get(name)
+    let min = this.get(name.concat('_min'))
+    this.set(name, min && value <= min ? value : value - 1)
   }
 
   get(name) {
@@ -37,6 +39,7 @@ export default class ResourcesApi {
       this.register(resource.concat('_name'))
       this.register(resource.concat('_visible'), { default: true })
       this.register(resource.concat('_max'))
+      this.register(resource.concat('_min'))
       this.register(resource.concat('_player_managed'))
 
       results.push({
@@ -44,6 +47,7 @@ export default class ResourcesApi {
         value: this.get(resource),
         name: this.get(resource.concat('_name')),
         max_value: this.get(resource.concat('_max')),
+        min_value: this.get(resource.concat('_min')),
         player_managed: this.get(resource.concat('_player_managed')),
         manageable: game.user.isGM || this.get(resource.concat('_player_managed')),
         visible: this.get(resource.concat('_visible')),

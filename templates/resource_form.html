@@ -26,6 +26,14 @@
     </div>
 
     <div class="form-group">
+      <label for="min_value">{{ localize 'FvttPartyResources.ResourceForm.MinValue' }}</label>
+      <div class="form-fields">
+        <input type="number" id="min_value" name="resource[min_value]" value="{{ min_value }}" data-dtype="Number">
+      </div>
+      <p class="notes">{{ localize 'FvttPartyResources.ResourceForm.MinValueHint' }}</p>
+    </div>
+
+    <div class="form-group">
       <label for="max_value">{{ localize 'FvttPartyResources.ResourceForm.MaxValue' }}</label>
       <div class="form-fields">
         <input type="number" id="max_value" name="resource[max_value]" value="{{ max_value }}" data-dtype="Number">
