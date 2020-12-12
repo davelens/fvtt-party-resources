@@ -2,8 +2,7 @@ import ResourcesList from "./resources_list.mjs";
 
 export default class ResourcesApi {
   decrement(name) {
-    let value = this.get(name) - 1
-    this.set(name, value > 0 ? value : 0)
+    this.set(name, this.get(name) - 1)
   }
 
   get(name) {
