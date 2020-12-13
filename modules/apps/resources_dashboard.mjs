@@ -17,11 +17,11 @@ export default class ResourcesDashboard extends Application {
     super.activateListeners(html)
 
     html.on('click', '.change-value.add', event => {
-      this.setup_calculation(event, setting => { PartyResourcesApi.increment(setting) })
+      this.setup_calculation(event, (setting, jump) => { PartyResourcesApi.increment(setting, jump) })
     })
 
     html.on('click', '.change-value.subtract', event => {
-      this.setup_calculation(event, setting => { PartyResourcesApi.decrement(setting) })
+      this.setup_calculation(event, (setting, jump) => { PartyResourcesApi.decrement(setting, jump) })
     })
 
     html.on('click', '.delete', event => {
@@ -63,7 +63,11 @@ export default class ResourcesDashboard extends Application {
   setup_calculation(event, process) {
     event.stopPropagation()
     event.preventDefault()
-    process($(event.currentTarget).data('setting'))
+
+    let jump = 1
+    if(event.ctrlKey) jump = 10
+    if(event.shiftKey) jump = 100
+    process($(event.currentTarget).data('setting'), jump)
   }
 
   toggle_visiblity(setting) {

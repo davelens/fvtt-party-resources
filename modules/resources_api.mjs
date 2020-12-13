@@ -1,20 +1,22 @@
 import ResourcesList from "./resources_list.mjs";
 
 export default class ResourcesApi {
-  decrement(name) {
+  decrement(name, jump) {
+    if(typeof jump == 'undefined') jump = 1
     let value = this.get(name)
     let min = this.get(name.concat('_min'))
-    this.set(name, min && value <= min ? value : value - 1)
+    this.set(name, min && (value - jump) < min ? min : value - jump)
   }
 
   get(name) {
     return game.settings.get('fvtt-party-resources', name)
   }
 
-  increment(name) {
+  increment(name, jump) {
+    if(typeof jump == 'undefined') jump = 1
     let value = this.get(name)
     let max = this.get(name.concat('_max'))
-    this.set(name, max && value >= max ? value : value + 1)
+    this.set(name, max && (value + jump) > max ? max : value + jump)
   }
 
   register(name, options) {
