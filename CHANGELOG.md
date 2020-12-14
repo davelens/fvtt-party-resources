@@ -1,5 +1,7 @@
 1.1.2
 --
+* Fixed an issue when a resource's min/max values were not respected when their
+  value was 0.
 * Pressing CTRL when clicking the +/- buttons will add/subtract 10 instead of 1.
 * Pressing SHIFT when clicking the +/- buttons will add/subtract 100 instead of 1.
 
