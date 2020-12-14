@@ -65,7 +65,7 @@ export default class ResourcesDashboard extends Application {
     event.preventDefault()
 
     let jump = 1
-    if(event.ctrlKey) jump = 10
+    if(event.ctrlKey || event.metaKey) jump = 10
     if(event.shiftKey) jump = 100
     process($(event.currentTarget).data('setting'), jump)
   }
