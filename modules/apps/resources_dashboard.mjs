@@ -16,23 +16,36 @@ export default class ResourcesDashboard extends Application {
   activateListeners(html) {
     super.activateListeners(html)
 
-    html.on('click', '.change-value.add', event => {
-      this.setup_calculation(event, setting => { PartyResourcesApi.increment(setting) })
+    html.on('click', '.change-value', e => {
+      this.setup_calculation(e, (setting, jump) => {
+        if($(e.currentTarget).hasClass('add')) {
+          PartyResourcesApi.increment(setting, jump)
+        } else {
+          PartyResourcesApi.decrement(setting, jump)
+        }
+      })
     })
 
-    html.on('click', '.change-value.subtract', event => {
-      this.setup_calculation(event, setting => { PartyResourcesApi.decrement(setting) })
+    html.on('mousemove', '.change-value', e => {
+      let jump = this.increment_jump(e)
+      if(jump == 1) return
+      let operation = $(e.currentTarget).hasClass('add') ? '+' : '-'
+      CursorTooltip.show(operation.concat(new String(jump)))
     })
 
-    html.on('click', '.delete', event => {
-      this.setup_calculation(event, setting => { ResourcesList.remove(setting) })
+    html.on('mouseout', '.change-value', e => {
+      CursorTooltip.hide()
     })
 
-    html.on('click', '.make-visible, .make-invisible', event => {
-      this.setup_calculation(event, setting => { this.toggle_visiblity(setting) })
+    html.on('click', '.delete', e => {
+      this.setup_calculation(e, setting => { ResourcesList.remove(setting) })
     })
 
-    html.on('click', '.new-resource-form-btn', event => {
+    html.on('click', '.invisible, .visible', e => {
+      this.setup_calculation(e, setting => { this.toggle_visiblity(setting) })
+    })
+
+    html.on('click', '.new-resource-form-btn', e => {
       new ResourceForm(
         {},
         {
@@ -42,18 +55,24 @@ export default class ResourcesDashboard extends Application {
       ).render(true)
     })
 
-    html.on('click', '.edit', event => {
-      event.stopPropagation()
-      event.preventDefault()
+    html.on('click', '.edit', e => {
+      e.stopPropagation()
+      e.preventDefault()
 
       new ResourceForm(
-        this.resource_data($(event.currentTarget).data('setting')),
+        this.resource_data($(e.currentTarget).data('setting')),
         {
           id: "edit-resource-form",
           title: game.i18n.localize("FvttPartyResources.ResourceForm.EditFormTitle")
         }
       ).render(true)
     })
+  }
+
+  increment_jump(event) {
+    if(event.ctrlKey || event.metaKey) return 10
+    if(event.shiftKey) return 100
+    return 1
   }
 
   getData() {
@@ -63,7 +82,10 @@ export default class ResourcesDashboard extends Application {
   setup_calculation(event, process) {
     event.stopPropagation()
     event.preventDefault()
-    process($(event.currentTarget).data('setting'))
+    process(
+      $(event.currentTarget).data('setting'),
+      this.increment_jump(event)
+    )
   }
 
   toggle_visiblity(setting) {
