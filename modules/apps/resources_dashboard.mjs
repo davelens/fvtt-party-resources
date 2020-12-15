@@ -16,23 +16,37 @@ export default class ResourcesDashboard extends Application {
   activateListeners(html) {
     super.activateListeners(html)
 
-    html.on('click', '.change-value.add', event => {
-      this.setup_calculation(event, (setting, jump) => { PartyResourcesApi.increment(setting, jump) })
+    html.on('click', '.change-value.add', e => {
+      this.setup_calculation(e, (setting, jump) => {
+        PartyResourcesApi.increment(setting, jump)
+      })
     })
 
-    html.on('click', '.change-value.subtract', event => {
-      this.setup_calculation(event, (setting, jump) => { PartyResourcesApi.decrement(setting, jump) })
+    html.on('click', '.change-value.subtract', e => {
+      this.setup_calculation(e, (setting, jump) => {
+        PartyResourcesApi.decrement(setting, jump)
+      })
     })
 
-    html.on('click', '.delete', event => {
-      this.setup_calculation(event, setting => { ResourcesList.remove(setting) })
+    html.on('mousemove', '.change-value', e => {
+      let jump = this.increment_jump(e)
+      if(jump == 1) return
+      CursorTooltip.show(new String(jump))
     })
 
-    html.on('click', '.make-visible, .make-invisible', event => {
-      this.setup_calculation(event, setting => { this.toggle_visiblity(setting) })
+    html.on('mouseout', '.change-value', e => {
+      CursorTooltip.hide()
     })
 
-    html.on('click', '.new-resource-form-btn', event => {
+    html.on('click', '.delete', e => {
+      this.setup_calculation(e, setting => { ResourcesList.remove(setting) })
+    })
+
+    html.on('click', '.invisible, .visible', e => {
+      this.setup_calculation(e, setting => { this.toggle_visiblity(setting) })
+    })
+
+    html.on('click', '.new-resource-form-btn', e => {
       new ResourceForm(
         {},
         {
@@ -42,12 +56,12 @@ export default class ResourcesDashboard extends Application {
       ).render(true)
     })
 
-    html.on('click', '.edit', event => {
-      event.stopPropagation()
-      event.preventDefault()
+    html.on('click', '.edit', e => {
+      e.stopPropagation()
+      e.preventDefault()
 
       new ResourceForm(
-        this.resource_data($(event.currentTarget).data('setting')),
+        this.resource_data($(e.currentTarget).data('setting')),
         {
           id: "edit-resource-form",
           title: game.i18n.localize("FvttPartyResources.ResourceForm.EditFormTitle")

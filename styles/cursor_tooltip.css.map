@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,eAAgB;EACd,WAAW,EAAE,kIAAkI;EAC/I,KAAK,EAAE,KAAK;EACZ,SAAS,EAAE,MAAM;EACjB,IAAI,EAAE,CAAC;EACP,OAAO,EAAE,GAAG;EACZ,QAAQ,EAAE,QAAQ;EAClB,GAAG,EAAE,CAAC;EACN,OAAO,EAAE,IAAI",
+"sources": ["cursor_tooltip.scss"],
+"names": [],
+"file": "cursor_tooltip.css"
+}
