@@ -56,6 +56,12 @@ export default class ResourcesDashboard extends Application {
     })
   }
 
+  increment_jump(event) {
+    if(event.ctrlKey || event.metaKey) return 10
+    if(event.shiftKey) return 100
+    return 1
+  }
+
   getData() {
     return mergeObject(PartyResourcesApi.resources(), { is_gm: game.user.isGM })
   }
@@ -63,11 +69,10 @@ export default class ResourcesDashboard extends Application {
   setup_calculation(event, process) {
     event.stopPropagation()
     event.preventDefault()
-
-    let jump = 1
-    if(event.ctrlKey || event.metaKey) jump = 10
-    if(event.shiftKey) jump = 100
-    process($(event.currentTarget).data('setting'), jump)
+    process(
+      $(event.currentTarget).data('setting'),
+      this.increment_jump(event)
+    )
   }
 
   toggle_visiblity(setting) {
