@@ -8,6 +8,8 @@ scoped on worlds.
 ## Features
 * Add/Edit/Delete custom resources
 * Increment/decrement resource values
+  * Hold `CTRL` (Windows) or `CMD` (MacOS) when clicking to jump by +/- 10
+  * Hold `SHIFT` when clicking to jump by +/- 100
 * Live updates for players when values change
 * Track DM resources by hiding certain resources for players
 * Optionally limit resources to a given maximum
@@ -18,7 +20,7 @@ scoped on worlds.
 * Tracking custom quantified "meta" resources like sanity, desperation, or fame levels
 * Tracking DM-specific mnemonics like poison counters, population totals, or player deaths 😈
 
-### What the DM sees  
+### What the DM sees
 ![Image showing what the DM sees when opening the resources dashboard](https://davelens.be/screenshots/party-resources-dm.jpg?t=1607638881)
 
 ### What the players see
