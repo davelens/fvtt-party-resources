@@ -16,22 +16,21 @@ export default class ResourcesDashboard extends Application {
   activateListeners(html) {
     super.activateListeners(html)
 
-    html.on('click', '.change-value.add', e => {
+    html.on('click', '.change-value', e => {
       this.setup_calculation(e, (setting, jump) => {
-        PartyResourcesApi.increment(setting, jump)
-      })
-    })
-
-    html.on('click', '.change-value.subtract', e => {
-      this.setup_calculation(e, (setting, jump) => {
-        PartyResourcesApi.decrement(setting, jump)
+        if($(e.currentTarget).hasClass('add')) {
+          PartyResourcesApi.increment(setting, jump)
+        } else {
+          PartyResourcesApi.decrement(setting, jump)
+        }
       })
     })
 
     html.on('mousemove', '.change-value', e => {
       let jump = this.increment_jump(e)
       if(jump == 1) return
-      CursorTooltip.show(new String(jump))
+      let operation = $(e.currentTarget).hasClass('add') ? '+' : '-'
+      CursorTooltip.show(operation.concat(new String(jump)))
     })
 
     html.on('mouseout', '.change-value', e => {
