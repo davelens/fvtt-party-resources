@@ -1,3 +1,7 @@
+#btn-dashboard.highlight {
+  border: 4px solid red;
+  height: inherit; }
+
 #fvtt-party-resources-dashboard {
   height: auto;
   min-height: 120px;
@@ -79,5 +83,22 @@
   position: absolute;
   top: 0;
   z-index: 9999; }
+
+#fvtt-party-resources-directions {
+  animation: 250ms infinite alternate slidein;
+  background-color: transparent;
+  color: white;
+  font-size: 8rem;
+  position: absolute;
+  right: 310px;
+  text-shadow: 4px 0 0 black, -4px 0 0 black, 0 4px 0 black, 0 -4px 0 black, 2px 2px black, -2px -2px 0 black, 2px -2px 0 black, -2px 2px 0 black;
+  top: -10px;
+  z-index: 999; }
+
+@keyframes slidein {
+  from {
+    right: 310px; }
+  to {
+    right: 330px; } }
 
 /*# sourceMappingURL=init.css.map */

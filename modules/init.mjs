@@ -1,6 +1,7 @@
 import ModuleSettings from "./settings.mjs";
 import ResourcesApi from "./resources_api.mjs";
 import CursorTooltip from "./cursor_tooltip.mjs";
+import DashboardDirections from "./dashboard_directions.mjs";
 import ResourcesDashboard from "./apps/resources_dashboard.mjs"
 
 Hooks.once('init', () => {

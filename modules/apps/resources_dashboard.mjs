@@ -1,4 +1,5 @@
 import ResourcesList from "./../resources_list.mjs";
+import DashboardDirections from "./../dashboard_directions.mjs";
 import ResourceForm from "./resource_form.mjs";
 
 export default class ResourcesDashboard extends Application {
@@ -105,6 +106,7 @@ export default class ResourcesDashboard extends Application {
   }
 
   redraw(force) {
+    DashboardDirections.remove()
     this.render(force)
   }
 
