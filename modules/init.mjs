@@ -3,12 +3,17 @@ import ResourcesApi from "./resources_api.mjs";
 import CursorTooltip from "./cursor_tooltip.mjs";
 import DashboardDirections from "./dashboard_directions.mjs";
 import ResourcesDashboard from "./apps/resources_dashboard.mjs"
+let notification
 
 Hooks.once('init', () => {
   window.PartyResourcesDashboard = new ResourcesDashboard()
   window.PartyResourcesApi = new ResourcesApi()
   window.CursorTooltip = new CursorTooltip()
   ModuleSettings.register()
+})
+
+Hooks.once('ready', () => {
+  notification = DashboardDirections.notify();
 })
 
 Hooks.on('renderActorDirectory', (app, html, data) => {
@@ -19,4 +24,6 @@ Hooks.on('renderActorDirectory', (app, html, data) => {
     .done(() => {
       $('#btn-dashboard').on('click', e => PartyResourcesDashboard.redraw(true))
     })
+
+  DashboardDirections.bind_clicks(notification)
 })
