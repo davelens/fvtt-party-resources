@@ -25,7 +25,7 @@ export default class ResourcesApi {
     let properties = {
       scope: "world",
       config: false,
-      onChange: value => PartyResourcesDashboard.redraw()
+      onChange: value => window.pr.dashboard.redraw()
     }
 
     game.settings.register(

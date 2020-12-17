@@ -43,19 +43,19 @@ export default class ResourceForm extends FormApplication {
 
     ResourcesList.add(id)
 
-    PartyResourcesApi.register(id)
-    PartyResourcesApi.register(id.concat('_name'))
-    PartyResourcesApi.register(id.concat('_visible'), { default: true })
-    PartyResourcesApi.register(id.concat('_max'))
-    PartyResourcesApi.register(id.concat('_min'))
-    PartyResourcesApi.register(id.concat('_player_managed'), { default: false })
+    window.pr.api.register(id)
+    window.pr.api.register(id.concat('_name'))
+    window.pr.api.register(id.concat('_visible'), { default: true })
+    window.pr.api.register(id.concat('_max'))
+    window.pr.api.register(id.concat('_min'))
+    window.pr.api.register(id.concat('_player_managed'), { default: false })
 
-    PartyResourcesApi.set(id, data['resource[default_value]'])
-    PartyResourcesApi.set(id.concat('_name'), data['resource[name]'])
-    PartyResourcesApi.set(id.concat('_visible'), data['resource[visible]'])
-    PartyResourcesApi.set(id.concat('_max'), data['resource[max_value]'])
-    PartyResourcesApi.set(id.concat('_min'), data['resource[min_value]'])
-    PartyResourcesApi.set(id.concat('_player_managed'), data['resource[player_managed]'])
+    window.pr.api.set(id, data['resource[default_value]'])
+    window.pr.api.set(id.concat('_name'), data['resource[name]'])
+    window.pr.api.set(id.concat('_visible'), data['resource[visible]'])
+    window.pr.api.set(id.concat('_max'), data['resource[max_value]'])
+    window.pr.api.set(id.concat('_min'), data['resource[min_value]'])
+    window.pr.api.set(id.concat('_player_managed'), data['resource[player_managed]'])
   }
 
   sanitize_identifier(string) {
