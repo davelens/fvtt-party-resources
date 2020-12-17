@@ -6,7 +6,7 @@ export default class ResourceForm extends FormApplication {
 
     html.on('click', '#configure-permissions', event => {
       event.preventDefault()
-      $('[data-action="configure"]').trigger('click')
+      game.permissions.SETTINGS_MODIFY.push(1)
     })
   }
 
