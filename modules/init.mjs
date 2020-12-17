@@ -17,10 +17,8 @@ Hooks.once('init', () => {
 })
 
 Hooks.once('ready', () => {
-  let anchor = '<a id="fvtt-party-resources-guide-me" href="#">Click here</a>'
-  let message = game.i18n.format('FvttPartyResources.FirstTimeNotification', { anchor: anchor })
-  window.pr.notifications.queue(message)
-  window.pr.notifications.render()
+  if(!window.pr.api.get('first-time-startup-notification-shown'))
+    first_time_startup_notification()
 })
 
 Hooks.on('renderActorDirectory', (app, html, data) => {
@@ -32,3 +30,11 @@ Hooks.on('renderActorDirectory', (app, html, data) => {
       $('#btn-dashboard').on('click', e => window.pr.dashboard.redraw(true))
     })
 })
+
+function first_time_startup_notification() {
+  let anchor = '<a id="fvtt-party-resources-guide-me" href="#">Click here</a>'
+  let message = game.i18n.format('FvttPartyResources.FirstTimeNotification', { anchor: anchor })
+  window.pr.notifications.queue(message)
+  window.pr.notifications.render()
+  window.pr.api.set('first-time-startup-notification-shown', true)
+}

@@ -1,11 +1,11 @@
 #fvtt-party-resources-notifications {
   background: rgba(0, 0, 0, 0.5);
+  max-width: 540px;
+  left: 50%;
   position: absolute;
-  bottom: 70px;
-  left: 222px;
-  max-width: 540px; }
-  #fvtt-party-resources-notifications .resource-notification {
-    color: white;
-    padding: 20px; }
+  top: 50%;
+  transform: translate(-50%, -50%); }
 
-/*# sourceMappingURL=resource_notifications.css.map */
+#fvtt-party-resources-notifications .resource-notification {
+  color: white;
+  padding: 20px; }
