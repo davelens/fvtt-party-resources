@@ -9,6 +9,13 @@
   min-height: 120px;
   width: auto; }
 
+#fvtt-party-resources-dashboard .version {
+  color: #aaa;
+  position: absolute;
+  top: 7px;
+  left: 50%;
+  transform: translateX(-50%); }
+
 #fvtt-party-resources-dashboard .window-content > p {
   display: flex;
   flex: initial;

@@ -11,6 +11,14 @@
   min-height: 120px;
   width: auto;
 
+  .version {
+    color: #aaa;
+    position: absolute;
+    top: 7px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
   .window-content {
     > p {
       display: flex;

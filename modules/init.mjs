@@ -7,10 +7,11 @@ import ResourcesDashboard from "./apps/resources_dashboard.mjs"
 
 Hooks.once('init', () => {
   window.pr = {
+    version: game.modules.get('fvtt-party-resources').data.version,
     dashboard: new ResourcesDashboard(),
     api: new ResourcesApi(),
     cursor_tooltip: new CursorTooltip(),
-    notifications: new ResourceNotifications(),
+    notifications: new ResourceNotifications()
   }
 
   ModuleSettings.register()
@@ -34,7 +35,7 @@ Hooks.on('renderActorDirectory', (app, html, data) => {
 function first_time_startup_notification() {
   let message = game.i18n.format('FvttPartyResources.FirstTimeNotification', {
     anchor: '<a class="guide-me" href="#">Click here</a>',
-    version: game.modules.get("fvtt-party-resources").data.version
+    version: window.pr.version
   })
 
   let notification = window.pr.notifications.queue(message)

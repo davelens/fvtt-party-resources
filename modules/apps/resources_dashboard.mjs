@@ -77,7 +77,10 @@ export default class ResourcesDashboard extends Application {
   }
 
   getData() {
-    return mergeObject(window.pr.api.resources(), { is_gm: game.user.isGM })
+    return mergeObject(window.pr.api.resources(), {
+      is_gm: game.user.isGM,
+      version: window.pr.version
+    })
   }
 
   setup_calculation(event, process) {
