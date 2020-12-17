@@ -2,6 +2,7 @@ import ModuleSettings from "./settings.mjs";
 import ResourcesApi from "./resources_api.mjs";
 import CursorTooltip from "./cursor_tooltip.mjs";
 import DashboardDirections from "./dashboard_directions.mjs";
+import ResourceNotifications from "./resource_notifications.mjs"
 import ResourcesDashboard from "./apps/resources_dashboard.mjs"
 
 Hooks.once('init', () => {
@@ -9,13 +10,17 @@ Hooks.once('init', () => {
     dashboard: new ResourcesDashboard(),
     api: new ResourcesApi(),
     cursor_tooltip: new CursorTooltip(),
-    notification: new ResourcesNotification(),
+    notifications: new ResourceNotifications(),
   }
 
   ModuleSettings.register()
 })
 
 Hooks.once('ready', () => {
+  let anchor = '<a id="fvtt-party-resources-guide-me" href="#">Click here</a>'
+  let message = game.i18n.format('FvttPartyResources.FirstTimeNotification', { anchor: anchor })
+  window.pr.notifications.queue(message)
+  window.pr.notifications.render()
 })
 
 Hooks.on('renderActorDirectory', (app, html, data) => {
