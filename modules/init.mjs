@@ -17,7 +17,7 @@ Hooks.once('init', () => {
 })
 
 Hooks.once('ready', () => {
-  if(!window.pr.api.get('first-time-startup-notification-shown'))
+  //if(!window.pr.api.get('first-time-startup-notification-shown'))
     first_time_startup_notification()
 })
 
@@ -32,9 +32,19 @@ Hooks.on('renderActorDirectory', (app, html, data) => {
 })
 
 function first_time_startup_notification() {
-  let anchor = '<a id="fvtt-party-resources-guide-me" href="#">Click here</a>'
-  let message = game.i18n.format('FvttPartyResources.FirstTimeNotification', { anchor: anchor })
-  window.pr.notifications.queue(message)
+  let message = game.i18n.format('FvttPartyResources.FirstTimeNotification', {
+    anchor: '<a class="guide-me" href="#">Click here</a>',
+    version: game.modules.get("fvtt-party-resources").data.version
+  })
+
+  let notification = window.pr.notifications.queue(message)
+  notification.find('a.guide-me').on('click', e => {
+    e.preventDefault()
+    e.stopPropagation()
+    DashboardDirections.render()
+    setTimeout(() => { window.pr.notifications.clear(notification) }, 2000)
+  })
+
   window.pr.notifications.render()
   window.pr.api.set('first-time-startup-notification-shown', true)
 }

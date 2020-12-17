@@ -103,14 +103,49 @@
   top: 0;
   z-index: 9999; }
 
-#fvtt-party-resources-notifications {
-  background: rgba(0, 0, 0, 0.5);
-  max-width: 540px;
-  left: 50%;
+#fvtt-party-resources-directions {
+  animation: 250ms infinite alternate slidein;
+  background-color: transparent;
+  color: white;
+  font-size: 8rem;
   position: absolute;
+  right: 310px;
+  text-shadow: 4px 0 0 black, -4px 0 0 black, 0 4px 0 black, 0 -4px 0 black, 2px 2px black, -2px -2px 0 black, 2px -2px 0 black, -2px 2px 0 black;
+  top: -15px;
+  z-index: 999; }
+
+@keyframes slidein {
+  from {
+    right: 310px; }
+  to {
+    right: 330px; } }
+
+#fvtt-party-resources-notifications {
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 5px;
+  left: 50%;
+  position: fixed;
   top: 50%;
-  transform: translate(-50%, -50%); }
+  transform: translate(-50%, -50%);
+  width: 540px; }
 
 #fvtt-party-resources-notifications .resource-notification {
-  color: white;
-  padding: 20px; }
+  color: #eee;
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 20px;
+  position: relative;
+  text-align: center; }
+
+#fvtt-party-resources-notifications .resource-notification:hover {
+  background: rgba(0, 0, 0, 0.2); }
+
+#fvtt-party-resources-notifications .resource-notification i.close {
+  color: #ff6400;
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%); }
+
+#fvtt-party-resources-notifications .resource-notification i.close:hover {
+  text-shadow: 0 0 8px red; }

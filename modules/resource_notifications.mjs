@@ -4,30 +4,35 @@ export default class ResourceNotifications {
     return $('#fvtt-party-resources-notifications')
   }
 
+  html(message) {
+    return $(`<div class="resource-notification">${message}<i class="fas fa-times close"></i></div>`)
+  }
+
   constructor() {
     this.notifications = []
 
-    if ($('#fvtt-party-resources-notifications').length === 0) {
+    if($('#fvtt-party-resources-notifications').length === 0) {
       $('body').append(`<div id="fvtt-party-resources-notifications"></div>`);
     }
   }
 
   queue(message) {
-    this.notifications.push(message)
+    let element = this.html(message)
+    element.on('click', e => { this.clear(element) })
+    this.notifications.push(element)
+    return element
   }
 
   render() {
-    this.notifications.forEach((message, index) => {
-      this.container()
-        .append('<div class="resource-notification">'+ message +'</div>')
-        .find('.resource-notification').on('click', (e) => { this.clear(e) })
+    this.notifications.forEach((notification, index) => {
+      this.container().append(notification)
     })
   }
 
-  clear(event) {
-    this.fade($(event.currentTarget))
+  clear(element) {
+    this.fade(element)
 
-    if(this.container().find('.resource-notification').length > 0) {
+    if(this.container().find('.resource-notification').length == 0) {
       this.fade(this.container())
     }
   }

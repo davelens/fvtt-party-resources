@@ -1,13 +1,34 @@
 #fvtt-party-resources-notifications {
-  background: rgba(0, 0, 0, 0.5);
-  max-width: 540px;
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 5px;
   left: 50%;
-  position: absolute;
+  position: fixed;
   top: 50%;
   transform: translate(-50%, -50%);
+  width: 540px;
 
   .resource-notification {
-    color: white;
+    color: #eee;
+    font-size: 1rem;
+    cursor: pointer;
     padding: 20px;
+    position: relative;
+    text-align: center;
+
+    &:hover {
+      background: rgba(0, 0, 0, 0.2);
+    }
+
+    i.close {
+      color: #ff6400;
+      position: absolute;
+      top: 50%;
+      right: 10px;
+      transform: translateY(-50%);
+
+      &:hover {
+        text-shadow: 0 0 8px red;
+      }
+    }
   }
 }
