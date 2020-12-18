@@ -42,9 +42,9 @@ Any permission level can access it through the button at the top of the Actor di
 
 No, the intent for this module was to have global numeric values everyone could keep an eye on. However, [ardittristan/5eSheet-resourcesPlus](https://github.com/ardittristan/5eSheet-resourcesPlus) would probably serve your players better by having custom resources assigned to their character sheet.
 
-### Why do I need to give players explicit permission to edit module settings in order to manage resources?
+### Why do I need to explicitly allow players to modify configuration settings so they can manage resources?
 
-Because the custom resources are in fact an amalgam of various settings scoped on `world` instead of the usual `client` scope. Foundry requires explicit permission to allow players to adjust the values linked to settings with a scope of `world`. Not doing so will result in error popups stating a player is not allowed to edit settings.
+Because resources are an amalgam of settings scoped on `world`, to make them persist in the world for all players. Foundry requires explicit permission to allow players to adjust the values linked to these settings with a scope of `world`. Not doing so will result in error popups stating a player is not allowed to edit settings.
 
 ### Do you write Foundry modules full time?
 

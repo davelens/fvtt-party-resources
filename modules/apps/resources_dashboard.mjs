@@ -1,4 +1,5 @@
 import ResourcesList from "./../resources_list.mjs";
+import DashboardDirections from "./../dashboard_directions.mjs";
 import ResourceForm from "./resource_form.mjs";
 
 export default class ResourcesDashboard extends Application {
@@ -19,9 +20,9 @@ export default class ResourcesDashboard extends Application {
     html.on('click', '.change-value', e => {
       this.setup_calculation(e, (setting, jump) => {
         if($(e.currentTarget).hasClass('add')) {
-          PartyResourcesApi.increment(setting, jump)
+          window.pr.api.increment(setting, jump)
         } else {
-          PartyResourcesApi.decrement(setting, jump)
+          window.pr.api.decrement(setting, jump)
         }
       })
     })
@@ -30,11 +31,11 @@ export default class ResourcesDashboard extends Application {
       let jump = this.increment_jump(e)
       if(jump == 1) return
       let operation = $(e.currentTarget).hasClass('add') ? '+' : '-'
-      CursorTooltip.show(operation.concat(new String(jump)))
+      window.pr.cursor_tooltip.show(operation.concat(new String(jump)))
     })
 
     html.on('mouseout', '.change-value', e => {
-      CursorTooltip.hide()
+      window.pr.cursor_tooltip.hide()
     })
 
     html.on('click', '.delete', e => {
@@ -76,7 +77,10 @@ export default class ResourcesDashboard extends Application {
   }
 
   getData() {
-    return mergeObject(PartyResourcesApi.resources(), { is_gm: game.user.isGM })
+    return mergeObject(window.pr.api.resources(), {
+      is_gm: game.user.isGM,
+      version: window.pr.version
+    })
   }
 
   setup_calculation(event, process) {
@@ -89,9 +93,9 @@ export default class ResourcesDashboard extends Application {
   }
 
   toggle_visiblity(setting) {
-    PartyResourcesApi.set(
+    window.pr.api.set(
       setting.concat('_visible'),
-      !PartyResourcesApi.get(setting.concat('_visible'))
+      !window.pr.api.get(setting.concat('_visible'))
     )
   }
 
@@ -105,19 +109,20 @@ export default class ResourcesDashboard extends Application {
   }
 
   redraw(force) {
+    DashboardDirections.remove()
     this.render(force)
   }
 
   resource_data(id) {
     return {
       identifier: id,
-      default_value: PartyResourcesApi.get(id),
-      name: PartyResourcesApi.get(id.concat('_name')),
-      max_value: PartyResourcesApi.get(id.concat('_max')),
-      min_value: PartyResourcesApi.get(id.concat('_min')),
-      player_managed: PartyResourcesApi.get(id.concat('_player_managed')),
+      default_value: window.pr.api.get(id),
+      name: window.pr.api.get(id.concat('_name')),
+      max_value: window.pr.api.get(id.concat('_max')),
+      min_value: window.pr.api.get(id.concat('_min')),
+      player_managed: window.pr.api.get(id.concat('_player_managed')),
       allowed_to_modify_settings: game.permissions.SETTINGS_MODIFY.includes(1),
-      visible: PartyResourcesApi.get(id.concat('_visible'))
+      visible: window.pr.api.get(id.concat('_visible'))
     }
   }
 
