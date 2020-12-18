@@ -25,7 +25,7 @@ Hooks.once('ready', () => {
 Hooks.on('renderActorDirectory', (app, html, data) => {
   html
     .find(".directory-header")
-    .prepend('<div class="action-buttons flexrow"><button id="btn-dashboard"><i class="fas fa-calculator"> </i> Party Resources</div>')
+    .prepend(`<div class="action-buttons flexrow"><button id="btn-dashboard"><i class="fas fa-calculator"> </i> ${game.i18n.localize('FvttPartyResources.Title')}</div>`)
     .promise()
     .done(() => {
       $('#btn-dashboard').on('click', e => window.pr.dashboard.redraw(true))
