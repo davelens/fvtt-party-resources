@@ -11,9 +11,14 @@ export default class ResourceForm extends FormApplication {
       permissions.SETTINGS_MODIFY.push(1)
       game.settings.set('core', 'permissions', permissions)
 
-      this.submit()
-      if(this.id == 'edit-resource-form')
+      if(this.id == 'edit-resource-form') {
+        this.submit()
+        setTimeout(() => {
+          $(`a.edit[data-setting="${this.object.identifier}"]`).trigger('click')
+        }, 250)
+      } else {
         setTimeout(() => { this.render(true) }, 250)
+      }
     })
   }
 
@@ -49,7 +54,10 @@ export default class ResourceForm extends FormApplication {
    * @private
    */
   async _updateObject(event, data) {
-    let id = this.sanitize_identifier(data['resource[identifier]'] || this.object.identifier)
+    let identifier = data['resource[identifier]'] || this.object.identifier
+    if(typeof identifier == 'undefined') return
+
+    let id = this.sanitize_identifier(identifier)
     if(id != this.object.identifier && ResourcesList.all().includes(id)) return
 
     ResourcesList.add(id)
