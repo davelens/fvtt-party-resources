@@ -1,3 +1,11 @@
+1.1.3
+--
+* Added a first-time-startup popup to guide new users to the dashboard.
+* Replace the permissions button in the resource form with a way to set the
+  correct permission automatically.
+* Reworked how the public APIs are exposed, now through `window.pr.*`.
+
+
 1.1.2
 --
 * Fixed an issue where a resource's min/max values were not respected when their
