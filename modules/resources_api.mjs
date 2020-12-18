@@ -39,6 +39,8 @@ export default class ResourcesApi {
     let results = []
 
     ResourcesList.all().forEach((resource, index) => {
+      if(resource == '') return ResourcesList.remove(resource)
+
       this.register(resource)
       this.register(resource.concat('_name'))
       this.register(resource.concat('_visible'), { default: true })

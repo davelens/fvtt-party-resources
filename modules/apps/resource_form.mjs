@@ -6,7 +6,14 @@ export default class ResourceForm extends FormApplication {
 
     html.on('click', '#configure-permissions', event => {
       event.preventDefault()
-      game.permissions.SETTINGS_MODIFY.push(1)
+
+      let permissions = game.settings.get('core', 'permissions')
+      permissions.SETTINGS_MODIFY.push(1)
+      game.settings.set('core', 'permissions', permissions)
+
+      this.submit()
+      if(this.id == 'edit-resource-form')
+        setTimeout(() => { this.render(true) }, 250)
     })
   }
 
@@ -27,7 +34,11 @@ export default class ResourceForm extends FormApplication {
   }
 
   getData(object) {
-    return mergeObject({ id_disabled: false }, this.object)
+    let defaults = {
+      id_disabled: false,
+      allowed_to_modify_settings: game.permissions.SETTINGS_MODIFY.includes(1)
+    }
+    return mergeObject(defaults, this.object)
   }
 
   /**
