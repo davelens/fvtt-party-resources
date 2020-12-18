@@ -6,24 +6,22 @@
   top: 50%;
   transform: translate(-50%, -50%);
   width: 540px; }
+  #fvtt-party-resources-notifications .resource-notification {
+    color: #eee;
+    font-size: 1rem;
+    cursor: pointer;
+    padding: 20px;
+    position: relative;
+    text-align: center; }
+    #fvtt-party-resources-notifications .resource-notification:hover {
+      background: rgba(0, 0, 0, 0.2); }
+    #fvtt-party-resources-notifications .resource-notification i.close {
+      color: #ff6400;
+      position: absolute;
+      top: 50%;
+      right: 10px;
+      transform: translateY(-50%); }
+      #fvtt-party-resources-notifications .resource-notification i.close:hover {
+        text-shadow: 0 0 8px red; }
 
-#fvtt-party-resources-notifications .resource-notification {
-  color: #eee;
-  font-size: 1rem;
-  cursor: pointer;
-  padding: 20px;
-  position: relative;
-  text-align: center; }
-
-#fvtt-party-resources-notifications .resource-notification:hover {
-  background: rgba(0, 0, 0, 0.2); }
-
-#fvtt-party-resources-notifications .resource-notification i.close {
-  color: #ff6400;
-  position: absolute;
-  top: 50%;
-  right: 10px;
-  transform: translateY(-50%); }
-
-#fvtt-party-resources-notifications .resource-notification i.close:hover {
-  text-shadow: 0 0 8px red; }
+/*# sourceMappingURL=resource_notifications.css.map */

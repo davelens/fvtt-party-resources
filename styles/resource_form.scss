@@ -1,12 +1,9 @@
-#fvtt-party-resources-form {
-  height: auto;
-  width: auto;
-  min-width: 400px;
-
+#add-resource-form, #edit-resource-form {
   label {
-    .checkbox {
+    &.checkbox {
       /* Not sure why this was on 11px tbh. */
-      font-size: 14px;
+      font-size: 14px !important;
+      margin-bottom: 5px;
     }
   }
 }

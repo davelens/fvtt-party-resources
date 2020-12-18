@@ -73,13 +73,10 @@
               left: 0;
               color: red; }
 
-#fvtt-party-resources-form {
-  height: auto;
-  width: auto;
-  min-width: 400px; }
-  #fvtt-party-resources-form label .checkbox {
-    /* Not sure why this was on 11px tbh. */
-    font-size: 14px; }
+#add-resource-form label.checkbox, #edit-resource-form label.checkbox {
+  /* Not sure why this was on 11px tbh. */
+  font-size: 14px !important;
+  margin-bottom: 5px; }
 
 #cursor-tooltip {
   text-shadow: 2px 0 0 black, -2px 0 0 black, 0 2px 0 black, 0 -2px 0 black, 1px 1px black, -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black;
@@ -107,7 +104,6 @@
     right: 310px; }
   to {
     right: 330px; } }
-
 #fvtt-party-resources-notifications {
   background: rgba(0, 0, 0, 0.8);
   border-radius: 5px;
@@ -133,3 +129,5 @@
       transform: translateY(-50%); }
       #fvtt-party-resources-notifications .resource-notification i.close:hover {
         text-shadow: 0 0 8px red; }
+
+/*# sourceMappingURL=init.css.map */

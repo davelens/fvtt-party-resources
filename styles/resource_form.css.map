@@ -1,6 +1,6 @@
 {
 "version": 3,
-"mappings": "AAAA,0BAA2B;EACzB,MAAM,EAAE,IAAI;EACZ,KAAK,EAAE,IAAI;EACX,SAAS,EAAE,KAAK;EAGd,0CAAU;IACR,wCAAwC;IACxC,SAAS,EAAE,IAAI",
+"mappings": "AAEI,qEAAW;EACT,wCAAwC;EACxC,SAAS,EAAE,eAAe;EAC1B,aAAa,EAAE,GAAG",
 "sources": ["resource_form.scss"],
 "names": [],
 "file": "resource_form.css"
