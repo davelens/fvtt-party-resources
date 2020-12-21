@@ -1,6 +1,7 @@
+import ResourceForm from "./resource_form.mjs";
 import ResourcesList from "./../resources_list.mjs";
 import DashboardDirections from "./../dashboard_directions.mjs";
-import ResourceForm from "./resource_form.mjs";
+import CursorTooltip from "./../cursor_tooltip.mjs";
 
 export default class ResourcesDashboard extends Application {
   static get defaultOptions() {
@@ -31,11 +32,11 @@ export default class ResourcesDashboard extends Application {
       let jump = this.increment_jump(e)
       if(jump == 1) return
       let operation = $(e.currentTarget).hasClass('add') ? '+' : '-'
-      window.pr.cursor_tooltip.show(operation.concat(new String(jump)))
+      CursorTooltip.show(operation.concat(new String(jump)))
     })
 
     html.on('mouseout', '.change-value', e => {
-      window.pr.cursor_tooltip.hide()
+      CursorTooltip.hide()
     })
 
     html.on('click', '.delete', e => {

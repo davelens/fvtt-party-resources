@@ -1,27 +1,26 @@
 export default class CursorTooltip {
-  container = $('<div id="cursor-tooltip"></div>')
-
-  html() {
+  static html() {
     if($('body').find('#cursor-tooltip').length == 0) {
-      $('body').append(this.container)
+      $('body').append($('<div id="cursor-tooltip"></div>'))
     }
 
     return $('#cursor-tooltip')
   }
 
-  hide() {
+  static hide() {
     $('#cursor-tooltip').remove()
   }
 
-  show(message) {
+  static show(message) {
+    let html = this.html()
     let position = {
       "left": event.pageX + 15,
       'top': event.pageY - 10,
       'z-index': 999,
     }
-    this.html().text(message)
-    this.html().offset(position)
-    this.html().removeAttr('hidden')
-    return this.html()
+    html.text(message)
+    html.offset(position)
+    html.removeAttr('hidden')
+    return html
   }
 }
