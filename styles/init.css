@@ -1,77 +1,96 @@
 #btn-dashboard {
   height: inherit; }
-  #btn-dashboard.highlight {
-    border: 4px solid red; }
+
+#btn-dashboard.highlight {
+  border: 4px solid red; }
 
 #fvtt-party-resources-dashboard {
   height: auto;
   min-height: 120px;
   width: auto; }
-  #fvtt-party-resources-dashboard .version {
-    color: #aaa;
-    position: absolute;
-    top: 7px;
-    left: 50%;
-    transform: translateX(-50%); }
-  #fvtt-party-resources-dashboard .window-content > p {
-    display: flex;
-    flex: initial;
-    justify-content: center; }
-  #fvtt-party-resources-dashboard .window-content .new-resource-form-btn {
-    max-height: 2rem; }
-  #fvtt-party-resources-dashboard .window-content .resources {
-    display: flex;
-    flex: initial;
-    flex-wrap: wrap;
-    justify-content: flex-start; }
-    #fvtt-party-resources-dashboard .window-content .resources a {
-      color: #555;
-      text-decoration: none; }
-      #fvtt-party-resources-dashboard .window-content .resources a:hover {
-        background-color: #ccc;
-        text-shadow: none; }
-    #fvtt-party-resources-dashboard .window-content .resources .resource {
-      text-align: center;
-      margin: 4px;
-      min-width: 175px; }
-      #fvtt-party-resources-dashboard .window-content .resources .resource .gm-actions {
-        border: 1px solid grey;
-        border-top: none;
-        display: grid;
-        grid-template-columns: auto auto auto; }
-        #fvtt-party-resources-dashboard .window-content .resources .resource .gm-actions .gm-action {
-          padding: 2px 0; }
-          #fvtt-party-resources-dashboard .window-content .resources .resource .gm-actions .gm-action:not(:last-child) {
-            border-right: 1px solid grey; }
-      #fvtt-party-resources-dashboard .window-content .resources .resource .info {
-        border: 1px solid grey;
-        margin: 0;
-        padding: 8px 0;
-        position: relative; }
-        #fvtt-party-resources-dashboard .window-content .resources .resource .info .value {
-          font-size: 1.2rem; }
-        #fvtt-party-resources-dashboard .window-content .resources .resource .info .name {
-          margin: 0 auto;
-          width: 130px;
-          word-wrap: break-word; }
-        #fvtt-party-resources-dashboard .window-content .resources .resource .info p {
-          margin: 0; }
-          #fvtt-party-resources-dashboard .window-content .resources .resource .info p a.change-value {
-            align-items: center;
-            display: flex;
-            height: 100%;
-            line-height: 50%;
-            padding: 0 4px;
-            position: absolute;
-            top: 0; }
-            #fvtt-party-resources-dashboard .window-content .resources .resource .info p a.change-value.add {
-              border-left: 1px solid grey;
-              right: 0;
-              color: green; }
-            #fvtt-party-resources-dashboard .window-content .resources .resource .info p a.change-value.subtract {
-              border-right: 1px solid grey;
-              left: 0;
-              color: red; }
+
+#fvtt-party-resources-dashboard .version {
+  color: #aaa;
+  position: absolute;
+  top: 7px;
+  left: 50%;
+  transform: translateX(-50%);
+  pointer-events: none; }
+
+#fvtt-party-resources-dashboard .window-content > p {
+  display: flex;
+  flex: initial;
+  justify-content: center; }
+
+#fvtt-party-resources-dashboard .window-content .new-resource-form-btn {
+  max-height: 2rem; }
+
+#fvtt-party-resources-dashboard .window-content .resources {
+  display: flex;
+  flex: initial;
+  flex-wrap: wrap;
+  justify-content: flex-start; }
+
+#fvtt-party-resources-dashboard .window-content .resources a {
+  color: #555;
+  text-decoration: none; }
+
+#fvtt-party-resources-dashboard .window-content .resources a:hover {
+  background-color: #ccc;
+  text-shadow: none; }
+
+#fvtt-party-resources-dashboard .window-content .resources .resource {
+  text-align: center;
+  margin: 4px;
+  min-width: 175px; }
+
+#fvtt-party-resources-dashboard .window-content .resources .resource .gm-actions {
+  border: 1px solid grey;
+  border-top: none;
+  display: grid;
+  grid-template-columns: auto auto auto; }
+
+#fvtt-party-resources-dashboard .window-content .resources .resource .gm-actions .gm-action {
+  padding: 2px 0; }
+
+#fvtt-party-resources-dashboard .window-content .resources .resource .gm-actions .gm-action:not(:last-child) {
+  border-right: 1px solid grey; }
+
+#fvtt-party-resources-dashboard .window-content .resources .resource .info {
+  border: 1px solid grey;
+  margin: 0;
+  padding: 8px 0;
+  position: relative; }
+
+#fvtt-party-resources-dashboard .window-content .resources .resource .info .value {
+  font-size: 1.2rem; }
+
+#fvtt-party-resources-dashboard .window-content .resources .resource .info .name {
+  margin: 0 auto;
+  width: 130px;
+  word-wrap: break-word; }
+
+#fvtt-party-resources-dashboard .window-content .resources .resource .info p {
+  margin: 0; }
+
+#fvtt-party-resources-dashboard .window-content .resources .resource .info p a.change-value {
+  align-items: center;
+  display: flex;
+  height: 100%;
+  line-height: 50%;
+  padding: 0 4px;
+  position: absolute;
+  top: 0; }
+
+#fvtt-party-resources-dashboard .window-content .resources .resource .info p a.change-value.add {
+  border-left: 1px solid grey;
+  right: 0;
+  color: green; }
+
+#fvtt-party-resources-dashboard .window-content .resources .resource .info p a.change-value.subtract {
+  border-right: 1px solid grey;
+  left: 0;
+  color: red; }
 
 #add-resource-form label.checkbox, #edit-resource-form label.checkbox {
   /* Not sure why this was on 11px tbh. */
@@ -104,6 +123,7 @@
     right: 310px; }
   to {
     right: 330px; } }
+
 #fvtt-party-resources-notifications {
   background: rgba(0, 0, 0, 0.8);
   border-radius: 5px;
@@ -112,22 +132,24 @@
   top: 50%;
   transform: translate(-50%, -50%);
   width: 540px; }
-  #fvtt-party-resources-notifications .resource-notification {
-    color: #eee;
-    font-size: 1rem;
-    cursor: pointer;
-    padding: 20px;
-    position: relative;
-    text-align: center; }
-    #fvtt-party-resources-notifications .resource-notification:hover {
-      background: rgba(0, 0, 0, 0.2); }
-    #fvtt-party-resources-notifications .resource-notification i.close {
-      color: #ff6400;
-      position: absolute;
-      top: 50%;
-      right: 10px;
-      transform: translateY(-50%); }
-      #fvtt-party-resources-notifications .resource-notification i.close:hover {
-        text-shadow: 0 0 8px red; }
 
-/*# sourceMappingURL=init.css.map */
+#fvtt-party-resources-notifications .resource-notification {
+  color: #eee;
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 20px;
+  position: relative;
+  text-align: center; }
+
+#fvtt-party-resources-notifications .resource-notification:hover {
+  background: rgba(0, 0, 0, 0.2); }
+
+#fvtt-party-resources-notifications .resource-notification i.close {
+  color: #ff6400;
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%); }
+
+#fvtt-party-resources-notifications .resource-notification i.close:hover {
+  text-shadow: 0 0 8px red; }

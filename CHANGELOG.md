@@ -1,3 +1,10 @@
+1.1.4
+--
+* Fixed an issue with the version number in the menu bar of the resource
+  dashboard blocking the click+drag functionality of the window.
+* Moved CursorTooltip out of the public facing API.
+
+
 1.1.3
 --
 * Added a first-time-startup popup to guide new users to the dashboard.
