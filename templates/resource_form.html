@@ -68,15 +68,15 @@
   <footer class="sheet-footer flexrow">
     {{#unless identifier}}
     <button type="reset" name="reset">
-      <i class="fas fa-undo"></i> {{localize 'FvttPartyResources.FormReset'}}
+      <i class="fas fa-undo"></i> {{localize 'FvttPartyResources.ResourceForm.Reset'}}
     </button>
     {{/unless}}
     <button type="submit" name="submit">
       <i class="far fa-save"></i>
       {{#if identifier}}
-      {{localize 'FvttPartyResources.FormSaveChanges'}}
+      {{localize 'FvttPartyResources.ResourceForm.SaveChanges'}}
       {{else}}
-      {{localize 'FvttPartyResources.FormCreateResource'}}
+      {{localize 'FvttPartyResources.ResourceForm.CreateResource'}}
       {{/if}}
     </button>
   </footer>

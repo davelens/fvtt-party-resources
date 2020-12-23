@@ -7,11 +7,9 @@
   "FvttPartyResources.Dashboard.MakeVisibleButtonTitle": "Reveal this resource to players",
   "FvttPartyResources.Dashboard.SubtractButtonTitle": "Subtract amount",
   "FvttPartyResources.FirstTimeNotification": "Welcome to <strong>Party Resources v{version}</strong>!<br>This is the first time you're using this module.<br>{anchor} to be guided to the resources dashboard.",
-  "FvttPartyResources.FormCreateResource": "Create resource",
-  "FvttPartyResources.FormReset": "Reset Form",
-  "FvttPartyResources.FormSaveChanges": "Save changes",
   "FvttPartyResources.ResourceForm.AddFormTitle": "Add a new resource",
   "FvttPartyResources.ResourceForm.AllowPlayersToModifySettings": "Allow players to modify configuration settings",
+  "FvttPartyResources.ResourceForm.CreateResource": "Create resource",
   "FvttPartyResources.ResourceForm.DefaultValue": "Default value",
   "FvttPartyResources.ResourceForm.DefaultValueHint": "The resource's initial value.",
   "FvttPartyResources.ResourceForm.EditFormTitle": "Edit resource",
@@ -26,5 +24,7 @@
   "FvttPartyResources.ResourceForm.PlayerManaged": "Allow players to manage this resource.",
   "FvttPartyResources.ResourceForm.PlayerManagedHint": "Toggling this will allow players to increment/decrement the value of this resource.",
   "FvttPartyResources.ResourceForm.PlayerManagedRestriction": "This checkbox can only be enabled by giving players explicit permission to modify configuration settings.",
+  "FvttPartyResources.ResourceForm.Reset": "Reset Form",
+  "FvttPartyResources.ResourceForm.SaveChanges": "Save changes",
   "FvttPartyResources.Title": "Party Resources"
 }
