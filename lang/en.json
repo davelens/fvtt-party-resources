@@ -26,5 +26,7 @@
   "FvttPartyResources.ResourceForm.PlayerManagedRestriction": "This checkbox can only be enabled by giving players explicit permission to modify configuration settings.",
   "FvttPartyResources.ResourceForm.Reset": "Reset Form",
   "FvttPartyResources.ResourceForm.SaveChanges": "Save changes",
+  "FvttPartyResources.GMSettingsForm.ShowActorsButtonForPlayers": "Toggle the Party Resources button.",
+  "FvttPartyResources.GMSettingsForm.ShowActorsButtonForPlayersHint": "When this is disabled, it will no longer show the Party Resources button to your players. Only the GM will be able to see and use it.",
   "FvttPartyResources.Title": "Party Resources"
 }

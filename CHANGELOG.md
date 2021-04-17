@@ -3,6 +3,9 @@
 * Fixed an issue with the version number in the menu bar of the resource
   dashboard blocking the click+drag functionality of the window.
 * Moved CursorTooltip out of the public facing API.
+* Changed the initial popup to only show up for DMs, not players.
+* Added a module setting to control the Party Resources button visibility for
+  players.
 
 
 1.1.3
