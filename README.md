@@ -36,7 +36,7 @@ https://raw.githubusercontent.com/davelens/fvtt-party-resources/master/module.js
 ## FAQ
 ### Where can I access the resource dashboard?
 
-Any permission level can access it through the button at the top of the Actor directory.
+By default, any permission level can access it through the button at the top of the Actor directory. However, a DM has the option to hide this button.
 
 ### What about player-specific resources, can they be tracked too?
 
@@ -49,6 +49,10 @@ Because resources are an amalgam of settings scoped on `world`, to make them per
 ### Do you write Foundry modules full time?
 
 No, I don't have a Patreon going and don't get paid to write or maintain modules. I'm a software engineer by trade, and I've been writing web apps for 15 years. My main stack is both Ruby and Elixir, and I'm somewhat proficient in JavaScript, HTML, and CSS. Most of my work is backend-related so I'm not a frontend developer, and I'm sure it shows in the source code for those among you who are. I get by, though.
+
+### I have a different question about your module. Can I ping you on Discord?
+
+Sure: `Pretzl#3613` - I'm in the official FoundryVTT Discord.
 
 ## License
 This work is licensed under the MIT license, as well as Foundry Virtual Tabletop EULA - Limited License Agreement for module development from May 29, 2020.
