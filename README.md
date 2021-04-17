@@ -14,6 +14,7 @@ scoped on worlds.
 * Track DM resources by hiding certain resources for players
 * Optionally limit resources to a given maximum
 * Optionally hand over resource management to players
+* Change resource values in script macros through a public-facing API
 
 ## Examples
 * Tracking the quantity of ingame resources like building materials, ingredients, or army sizes
@@ -45,6 +46,21 @@ No, the intent for this module was to have global numeric values everyone could 
 ### Why do I need to explicitly allow players to modify configuration settings so they can manage resources?
 
 Because resources are an amalgam of settings scoped on `world`, to make them persist in the world for all players. Foundry requires explicit permission to allow players to adjust the values linked to these settings with a scope of `world`. Not doing so will result in error popups stating a player is not allowed to edit settings.
+
+### How do I change resource values in a script macro?
+As an example, say you wanted to change a resource called `Fate Counters` that you gave a resource ID of `fate` when you created it.
+
+To retrieve the value of the `fate` resource:
+```js
+window.pr.api.get('fate')
+```
+
+To set the value of the `fate` resource to `5`:
+```js
+window.pr.api.set('fate', 5)
+```
+
+The resource dashboard will then process the change in real time.
 
 ### Do you write Foundry modules full time?
 
