@@ -16,7 +16,7 @@ Hooks.once('init', () => {
 })
 
 Hooks.once('ready', () => {
-  if(!window.pr.api.get('first-time-startup-notification-shown'))
+  if(game.user.isGM && !window.pr.api.get('first-time-startup-notification-shown'))
     first_time_startup_notification()
 })
 
