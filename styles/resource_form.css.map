@@ -1,7 +1,0 @@
-{
-"version": 3,
-"mappings": "AAEI,qEAAW;EACT,wCAAwC;EACxC,SAAS,EAAE,eAAe;EAC1B,aAAa,EAAE,GAAG",
-"sources": ["resource_form.scss"],
-"names": [],
-"file": "resource_form.css"
-}
