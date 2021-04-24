@@ -70,7 +70,7 @@ export default class ResourceForm extends FormApplication {
     window.pr.api.register(id.concat('_min'))
     window.pr.api.register(id.concat('_player_managed'), { default: false })
 
-    window.pr.api.set(id, data['resource[default_value]'])
+    window.pr.api.set(id, data['resource[default_value]'], { notify: true })
     window.pr.api.set(id.concat('_name'), data['resource[name]'])
     window.pr.api.set(id.concat('_visible'), data['resource[visible]'])
     window.pr.api.set(id.concat('_notify_chat'), data['resource[notify_chat]'])

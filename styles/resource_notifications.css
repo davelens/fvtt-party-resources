@@ -11,10 +11,13 @@
   font-weight: 700;
   text-align: center; }
 
-.fvtt-party-resources-chat-notification .green {
+.fvtt-party-resources-chat-notification table tr td .small {
+  font-size: 12px; }
+
+.fvtt-party-resources-chat-notification table tr td .green {
   color: green; }
 
-.fvtt-party-resources-chat-notification .red {
+.fvtt-party-resources-chat-notification table tr td .red {
   color: red; }
 
 #fvtt-party-resources-notifications {

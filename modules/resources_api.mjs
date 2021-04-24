@@ -5,7 +5,9 @@ export default class ResourcesApi {
     if(!this.get(name.concat('_notify_chat')) || new_value == value) return;
     let resource = this.get(name.concat('_name'))
     let color = new_value >= value ? 'green' : 'red'
-    let message = `<div class="fvtt-party-resources-chat-notification">A resource value has changed. <table><tr><td>${resource}</td><td class="${color}">${new_value}</td></tr></table></div>`
+    let jump = new String(new_value-value)
+    if(jump > 0) jump = '+'.concat(jump)
+    let message = `<div class="fvtt-party-resources-chat-notification">A resource value has changed. <table><tr><td>${resource}</td><td><span class="${color}">${new_value}</span> <span class="small">(${jump})</span></td></tr></table></div>`
     ChatMessage.create({content: message})
 
     window.pr.dashboard.redraw()
@@ -17,8 +19,7 @@ export default class ResourcesApi {
     let min = this.get(name.concat('_min'))
     let exceeds_boundary = (typeof min == "number") && (value - jump) < min
     let new_value = exceeds_boundary ? min : value - jump
-    this.set(name, new_value)
-    this.notify_chat(name, value, new_value)
+    this.set(name, new_value, { notify: true })
   }
 
   get(name) {
@@ -31,8 +32,7 @@ export default class ResourcesApi {
     let max = this.get(name.concat('_max'))
     let exceeds_boundary = (typeof max == "number") && (value + jump) > max
     let new_value = exceeds_boundary ? max : value + jump
-    this.set(name, new_value)
-    this.notify_chat(name, value, new_value)
+    this.set(name, new_value, { notify: true })
   }
 
   register(name, options) {
@@ -83,6 +83,11 @@ export default class ResourcesApi {
   }
 
   set(name, value, options) {
+    if(typeof options != 'undefined' && options['notify']) {
+      let old_value = this.get(name)
+      this.notify_chat(name, old_value, value)
+    }
+
     game.settings.set('fvtt-party-resources', name, value)
   }
 }
