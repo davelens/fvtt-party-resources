@@ -4,6 +4,11 @@ export default class ResourceForm extends FormApplication {
   activateListeners(html) {
     super.activateListeners(html)
 
+    html.on('change', '#notify_chat', event => {
+      $('#notify_chat_message')
+        .prop('disabled', !$(event.target).prop('checked'))
+    })
+
     html.on('click', '#configure-permissions', event => {
       event.preventDefault()
 
@@ -62,10 +67,12 @@ export default class ResourceForm extends FormApplication {
 
     ResourcesList.add(id)
 
+    // TODO: SPOTify from ResourcesApi.resources()
     window.pr.api.register(id)
     window.pr.api.register(id.concat('_name'))
     window.pr.api.register(id.concat('_visible'), { default: true })
     window.pr.api.register(id.concat('_notify_chat'), { default: true })
+    window.pr.api.register(id.concat('_notify_chat_message'), { default: "A resource value has changed." })
     window.pr.api.register(id.concat('_max'))
     window.pr.api.register(id.concat('_min'))
     window.pr.api.register(id.concat('_player_managed'), { default: false })
@@ -74,6 +81,7 @@ export default class ResourceForm extends FormApplication {
     window.pr.api.set(id.concat('_name'), data['resource[name]'])
     window.pr.api.set(id.concat('_visible'), data['resource[visible]'])
     window.pr.api.set(id.concat('_notify_chat'), data['resource[notify_chat]'])
+    window.pr.api.set(id.concat('_notify_chat_message'), data['resource[notify_chat_message]'])
     window.pr.api.set(id.concat('_max'), data['resource[max_value]'])
     window.pr.api.set(id.concat('_min'), data['resource[min_value]'])
     window.pr.api.set(id.concat('_player_managed'), data['resource[player_managed]'])

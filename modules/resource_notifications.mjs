@@ -1,5 +1,4 @@
 export default class ResourceNotifications {
-
   container() {
     return $('#fvtt-party-resources-notifications')
   }

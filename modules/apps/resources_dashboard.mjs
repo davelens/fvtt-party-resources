@@ -123,6 +123,7 @@ export default class ResourcesDashboard extends Application {
       min_value: window.pr.api.get(id.concat('_min')),
       player_managed: window.pr.api.get(id.concat('_player_managed')),
       notify_chat: window.pr.api.get(id.concat('_notify_chat')),
+      notify_chat_message: window.pr.api.get(id.concat('_notify_chat_message')),
       allowed_to_modify_settings: game.permissions.SETTINGS_MODIFY.includes(1),
       visible: window.pr.api.get(id.concat('_visible'))
     }

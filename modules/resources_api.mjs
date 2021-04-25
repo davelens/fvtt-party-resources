@@ -7,7 +7,7 @@ export default class ResourcesApi {
     let color = new_value >= value ? 'green' : 'red'
     let jump = new String(new_value-value)
     if(jump > 0) jump = '+'.concat(jump)
-    let message = `<div class="fvtt-party-resources-chat-notification">A resource value has changed. <table><tr><td>${resource}</td><td><span class="${color}">${new_value}</span> <span class="small">(${jump})</span></td></tr></table></div>`
+    let message = `<div class="fvtt-party-resources-chat-notification">${this.get(name.concat('_notify_chat_message'))} <table><tr><td>${resource}</td><td><span class="${color}">${new_value}</span> <span class="small">(${jump})</span></td></tr></table></div>`
     ChatMessage.create({content: message})
 
     window.pr.dashboard.redraw()
@@ -55,10 +55,12 @@ export default class ResourcesApi {
     ResourcesList.all().forEach((resource, index) => {
       if(resource == '') return ResourcesList.remove(resource)
 
+      // TODO: SPOTify from ReseourceForm._updateObject()
       this.register(resource)
       this.register(resource.concat('_name'))
       this.register(resource.concat('_visible'), { default: true })
       this.register(resource.concat('_notify_chat'), { default: true })
+      this.register(resource.concat('_notify_chat_message'), { default: "A resource value has changed." })
       this.register(resource.concat('_max'))
       this.register(resource.concat('_min'))
       this.register(resource.concat('_player_managed'))
@@ -73,6 +75,7 @@ export default class ResourcesApi {
         manageable: game.user.isGM || this.get(resource.concat('_player_managed')),
         visible: this.get(resource.concat('_visible')),
         notify_chat: this.get(resource.concat('_notify_chat')),
+        notify_chat_message: this.get(resource.concat('_notify_chat_message')),
         visible_for_players: game.user.isGM || this.get(resource.concat('_visible')),
         is_gm: game.user.isGM,
         allowed_to_modify_settings: game.permissions.SETTINGS_MODIFY.includes(1)
