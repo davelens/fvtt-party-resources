@@ -13,7 +13,7 @@ export default class ModuleSettings {
   }
 
   static register() {
-    window.pr.api.register('resource_list')
+    window.pr.api.register_setting('resource_list')
 
     game.settings.register(
       'fvtt-party-resources',

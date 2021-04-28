@@ -1,3 +1,10 @@
+1.2.0
+--
+* Refactored the registration of resources into a SPOT.
+* Fix an issue with newly made resources showing `undefined` in their first
+  notification.
+
+
 1.1.5
 --
 * Added functionality to notify players in chat when a resource changes.
