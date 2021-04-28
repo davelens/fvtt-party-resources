@@ -60,6 +60,12 @@ To set the value of the `fate` resource to `5`:
 window.pr.api.set('fate', 5)
 ```
 
+To set the value of the `fate` resource to `5`, and notify players with a chat
+message:
+```js
+window.pr.api.set('fate', 5, { notify: true })
+```
+
 The resource dashboard will then process the change in real time.
 
 ### Do you write Foundry modules full time?

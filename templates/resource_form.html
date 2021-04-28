@@ -44,6 +44,27 @@
     <hr>
 
     <div class="form-group">
+      <label class="checkbox" for="notify_chat">
+        <input type="checkbox" id="notify_chat" name="resource[notify_chat]" value="true"{{#if notify_chat}} checked{{/if}} data-dtype="Boolean">
+        {{ localize 'FvttPartyResources.ResourceForm.NotifyChat' }}
+      </label>
+
+      <p class="notes">{{ localize 'FvttPartyResources.ResourceForm.NotifyChatHint' }}</p>
+    </div>
+
+    <div class="form-group">
+      <label class="checkbox" for="notify_chat_message">
+        {{ localize 'FvttPartyResources.ResourceForm.NotifyChatMessage' }}
+      </label>
+      <div class="form-fields">
+        <input type="text" id="notify_chat_message" name="resource[notify_chat_message]" value="{{ notify_chat_message }}" data-dtype="String"{{#unless notify_chat}} disabled{{/unless}}>
+      </div>
+      <p class="notes">{{ localize 'FvttPartyResources.ResourceForm.NotifyChatMessageHint' }}</p>
+    </div>
+
+    <hr>
+
+    <div class="form-group">
       <label class="checkbox" for="player_managed">
         <input type="checkbox" id="player_managed" name="resource[player_managed]" value="true"{{#if player_managed}} checked{{/if}}{{#unless allowed_to_modify_settings}} title="{{ localize 'FvttPartyResources.ResourceForm.PlayerManagedRestriction' }}" disabled{{/unless}} data-dtype="Boolean">
         {{ localize 'FvttPartyResources.ResourceForm.PlayerManaged' }}
