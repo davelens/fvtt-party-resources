@@ -18,14 +18,6 @@ Hooks.once('init', () => {
 Hooks.once('ready', () => {
   if(game.user.isGM && !window.pr.api.get('first-time-startup-notification-shown'))
     first_time_startup_notification()
-
-  ModuleSettings.add('toggle-actors-button-for-players', {
-    name: game.i18n.localize('FvttPartyResources.GMSettingsForm.ShowActorsButtonForPlayers'),
-    hint: game.i18n.localize('FvttPartyResources.GMSettingsForm.ShowActorsButtonForPlayersHint'),
-    default: true,
-    type: Boolean,
-    onChange: value => ActorDirectory.collection.render('actors')
-  });
 })
 
 Hooks.on('renderActorDirectory', (app, html, data) => {

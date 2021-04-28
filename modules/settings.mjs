@@ -20,5 +20,13 @@ export default class ModuleSettings {
       'first-time-startup-notification-shown',
       { scope: "client", config: false, type: Boolean, default: false }
     )
+
+    this.add('toggle-actors-button-for-players', {
+      name: game.i18n.localize('FvttPartyResources.GMSettingsForm.ShowActorsButtonForPlayers'),
+      hint: game.i18n.localize('FvttPartyResources.GMSettingsForm.ShowActorsButtonForPlayersHint'),
+      default: true,
+      type: Boolean,
+      onChange: value => ActorDirectory.collection.render('actors')
+    });
   }
 }
