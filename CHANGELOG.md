@@ -1,3 +1,9 @@
+1.1.5
+--
+* Added functionality to notify players in chat when a resource changes.
+* Added a way for DMs to customise the chat message for resource value changes.
+
+
 1.1.4
 --
 * Fixed an issue with the version number in the menu bar of the resource
