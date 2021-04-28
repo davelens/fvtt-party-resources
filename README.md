@@ -12,6 +12,7 @@ scoped on worlds.
   * Hold `SHIFT` when clicking to jump by +/- 100
 * Live updates for players when values change
 * Track DM resources by hiding certain resources for players
+* Optionally notify players through chat when a resource value changes.
 * Optionally limit resources to a given maximum
 * Optionally hand over resource management to players
 * Change resource values in script macros through a public-facing API
