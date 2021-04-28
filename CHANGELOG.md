@@ -1,5 +1,6 @@
 1.2.0
 --
+* Added Azzurite's settings extender as a lib to make use of file uploads.
 * Refactored the registration of resources into a SPOT.
 * Fix an issue with newly made resources showing `undefined` in their first
   notification.

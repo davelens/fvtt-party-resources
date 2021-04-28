@@ -22,5 +22,8 @@
   "styles": [
     "styles/init.css"
   ],
+  "scripts": [
+    "lib/settings-extender.js"
+  ],
   "socket": true
 }
