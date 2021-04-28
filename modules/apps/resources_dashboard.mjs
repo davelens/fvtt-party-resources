@@ -49,7 +49,9 @@ export default class ResourcesDashboard extends Application {
 
     html.on('click', '.new-resource-form-btn', e => {
       new ResourceForm(
-        {},
+        {
+          can_browse: game.user && game.user.can("FILES_BROWSE")
+        },
         {
           id: "add-resource-form",
           title: game.i18n.localize("FvttPartyResources.ResourceForm.AddFormTitle")
