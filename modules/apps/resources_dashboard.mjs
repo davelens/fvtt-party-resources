@@ -117,10 +117,12 @@ export default class ResourcesDashboard extends Application {
   resource_data(id) {
     return {
       identifier: id,
+      can_browse: game.user && game.user.can("FILES_BROWSE"),
       default_value: window.pr.api.get(id),
       name: window.pr.api.get(id.concat('_name')),
       max_value: window.pr.api.get(id.concat('_max')),
       min_value: window.pr.api.get(id.concat('_min')),
+      icon: window.pr.api.get(id.concat('_icon')),
       player_managed: window.pr.api.get(id.concat('_player_managed')),
       notify_chat: window.pr.api.get(id.concat('_notify_chat')),
       notify_chat_message: window.pr.api.get(id.concat('_notify_chat_message')),

@@ -4,6 +4,7 @@
 * Refactored the registration of resources into a SPOT.
 * Fix an issue with newly made resources showing `undefined` in their first
   notification.
+* Added functionality to use an image as a resource label.
 
 
 1.1.5

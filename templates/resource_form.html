@@ -18,6 +18,25 @@
       <p class="notes">{{ localize 'FvttPartyResources.ResourceForm.NameHint' }}</p>
     </div>
 
+    <div class="form-group">
+      <label class="checkbox" for="use_icon">
+        <input type="checkbox" id="use_icon" name="resource[use_icon]" value="true"{{#if use_icon}} checked{{/if}} data-dtype="Boolean">
+        {{ localize 'FvttPartyResources.ResourceForm.UseIcon' }}
+      </label>
+    </div>
+
+    <div class="form-group">
+      <label for="icon">{{ localize 'FvttPartyResources.ResourceForm.IconImage' }}</label>
+      <div class="form-fields">
+        <input type="text" class="filePickerTarget" name="resource[icon]" value="{{ icon }}" data-target="icon" data-type="server" data-dtype="String" />
+        {{#if can_browse }}
+        <button title="Use an image from Foundry Server" class="menu-button file-picker" data-type="imagevideo" data-target="resource[icon]">
+          <i class="fas fa-server"></i>
+        </button>
+        {{/if}}
+      </div>
+    </div>
+
     <h2>{{ localize 'FvttPartyResources.ResourceForm.Headers.Values' }}</h2>
     <div class="form-group">
       <label for="default_value">{{ localize 'FvttPartyResources.ResourceForm.DefaultValue' }}</label>

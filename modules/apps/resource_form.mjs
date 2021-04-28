@@ -76,6 +76,8 @@ export default class ResourceForm extends FormApplication {
     window.pr.api.set(id.concat('_max'), data['resource[max_value]'])
     window.pr.api.set(id.concat('_min'), data['resource[min_value]'])
     window.pr.api.set(id.concat('_player_managed'), data['resource[player_managed]'])
+    window.pr.api.set(id.concat('_use_icon'), data['resource[use_icon]'])
+    window.pr.api.set(id.concat('_icon'), data['resource[icon]'])
   }
 
   sanitize_identifier(string) {

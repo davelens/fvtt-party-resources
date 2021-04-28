@@ -55,6 +55,8 @@ export default class ResourcesApi {
   register_resource(resource) {
     this.register_setting(resource)
     this.register_setting(resource.concat('_name'))
+    this.register_setting(resource.concat('_icon'), { default: '', type: window.Azzu.SettingsTypes.FilePickerImage })
+    this.register_setting(resource.concat('_use_icon'), { default: false })
     this.register_setting(resource.concat('_visible'), { default: true })
     this.register_setting(resource.concat('_notify_chat'), { default: true })
     this.register_setting(resource.concat('_notify_chat_message'), { default: "A resource value has changed." })
@@ -77,6 +79,8 @@ export default class ResourcesApi {
         name: this.get(resource.concat('_name')),
         max_value: this.get(resource.concat('_max')),
         min_value: this.get(resource.concat('_min')),
+        icon: this.get(resource.concat('_icon')),
+        use_icon: this.get(resource.concat('_use_icon')),
         player_managed: this.get(resource.concat('_player_managed')),
         manageable: game.user.isGM || this.get(resource.concat('_player_managed')),
         visible: this.get(resource.concat('_visible')),
