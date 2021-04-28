@@ -70,6 +70,10 @@
   width: 130px;
   word-wrap: break-word; }
 
+#fvtt-party-resources-dashboard .window-content .resources .resource .info .image {
+  max-width: 126px;
+  margin: 0 auto; }
+
 #fvtt-party-resources-dashboard .window-content .resources .resource .info p {
   margin: 0; }
 

@@ -123,6 +123,7 @@ export default class ResourcesDashboard extends Application {
       max_value: window.pr.api.get(id.concat('_max')),
       min_value: window.pr.api.get(id.concat('_min')),
       icon: window.pr.api.get(id.concat('_icon')),
+      use_icon: window.pr.api.get(id.concat('_use_icon')),
       player_managed: window.pr.api.get(id.concat('_player_managed')),
       notify_chat: window.pr.api.get(id.concat('_notify_chat')),
       notify_chat_message: window.pr.api.get(id.concat('_notify_chat_message')),

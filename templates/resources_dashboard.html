@@ -26,9 +26,15 @@
             {{ value }} {{#if max_value}} / {{ max_value }}{{/if}}
           </div>
 
-          <div class="name">
-            <strong>{{ name }}</strong>
-          </div>
+          {{#if use_icon}}
+            <div class="image">
+              <img src="{{ icon }}" alt="{{ name }}" title="{{ name }}" />
+            </div>
+          {{else}}
+            <div class="name">
+              <strong>{{ name }}</strong>
+            </div>
+          {{/if}}
 
           {{#if manageable}}
           <p>
