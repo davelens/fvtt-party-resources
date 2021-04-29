@@ -1,10 +1,19 @@
 1.2.0
 --
+* Added a Chinese language localisation file. Many thanks to user [hmqgg](https://github.com/hmqgg)!
 * Added Azzurite's settings extender as a lib to make use of file uploads.
 * Refactored the registration of resources into a SPOT.
 * Fix an issue with newly made resources showing `undefined` in their first
   notification.
 * Added functionality to use an image as a resource label.
+
+
+1.1.5.1
+--
+* Move the registration of toggle-actors-button-for-players into ModuleSettings.
+This fixes players not seeing the Party Resources button in the Actors Directory
+unless they refresh.
+>>>>>>> master
 
 
 1.1.5
