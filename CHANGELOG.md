@@ -1,3 +1,15 @@
+1.2.0
+--
+* Added a Chinese language localisation file. Many thanks to user [hmqgg](https://github.com/hmqgg)!
+
+
+1.1.5.1
+--
+* Move the registration of toggle-actors-button-for-players into ModuleSettings.
+This fixes players not seeing the Party Resources button in the Actors Directory
+unless they refresh.
+
+
 1.1.5
 --
 * Added functionality to notify players in chat when a resource changes.
