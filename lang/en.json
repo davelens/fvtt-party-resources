@@ -17,7 +17,7 @@
   "FvttPartyResources.ResourceForm.Headers.Notifications": "Notifications",
   "FvttPartyResources.ResourceForm.Headers.Settings": "Settings",
   "FvttPartyResources.ResourceForm.Headers.Values": "Values",
-  "FvttPartyResources.ResourceForm.IconImage": "Icon image",
+  "FvttPartyResources.ResourceForm.IconImage": "Icon image path",
   "FvttPartyResources.ResourceForm.Identifier": "Resource ID",
   "FvttPartyResources.ResourceForm.IdentifierHint": "The identifier that represents this resource in API requests. Should not contain spaces or numbers, and should be lowercase.",
   "FvttPartyResources.ResourceForm.MaxValue": "Maximum value",
