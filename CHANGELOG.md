@@ -13,7 +13,6 @@
 * Move the registration of toggle-actors-button-for-players into ModuleSettings.
 This fixes players not seeing the Party Resources button in the Actors Directory
 unless they refresh.
->>>>>>> master
 
 
 1.1.5
