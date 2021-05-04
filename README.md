@@ -62,7 +62,7 @@ window.pr.api.set('fate', 5)
 ```
 
 To set the value of the `fate` resource to `5`, and notify players with a chat
-message:
+message. Note that this will only work if "Notify players of value changes" is checked in the resource settings:
 ```js
 window.pr.api.set('fate', 5, { notify: true })
 ```
