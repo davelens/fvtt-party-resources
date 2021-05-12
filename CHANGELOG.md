@@ -1,6 +1,8 @@
-1.2.0
+1.1.6
 --
 * Added a Chinese language localisation file. Many thanks to user [hmqgg](https://github.com/hmqgg)!
+* Added a Japanese language localisation file. Many thanks to users
+  [touge](https://github.com/touge) and [BrotherSharper](https://github.com/BrotherSharper)!
 
 
 1.1.5.1
