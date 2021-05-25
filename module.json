@@ -27,8 +27,10 @@
   "styles": [
     "styles/init.css"
   ],
-  "scripts": [
-    "lib/settings-extender.js"
+  "dependencies": [
+    {
+      "name": "settings-extender"
+    }
   ],
   "socket": true
 }

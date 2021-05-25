@@ -1,4 +1,5 @@
 import ResourcesList from "./resources_list.mjs";
+import ExtraTypes from '../../settings-extender/settings-extender.js'
 
 export default class ResourcesApi {
   notify_chat(name, value, new_value) {
@@ -55,7 +56,7 @@ export default class ResourcesApi {
   register_resource(resource) {
     this.register_setting(resource)
     this.register_setting(resource.concat('_name'))
-    this.register_setting(resource.concat('_icon'), { default: '', type: window.Azzu.SettingsTypes.FilePickerImage })
+    this.register_setting(resource.concat('_icon'), { default: '', type: ExtraTypes.FilePickerImage })
     this.register_setting(resource.concat('_use_icon'), { default: false })
     this.register_setting(resource.concat('_visible'), { default: true })
     this.register_setting(resource.concat('_notify_chat'), { default: true })
