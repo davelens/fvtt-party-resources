@@ -62,7 +62,7 @@ export default class ResourcesApi {
     this.register_setting(resource.concat('_notify_chat_message'), { default: "A resource value has changed." })
     this.register_setting(resource.concat('_max'))
     this.register_setting(resource.concat('_min'))
-    this.register_setting(resource.concat('_player_managed'))
+    this.register_setting(resource.concat('_player_managed'), { default: false })
   }
 
   resources() {
