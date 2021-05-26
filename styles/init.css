@@ -66,18 +66,16 @@
 
 #fvtt-party-resources-dashboard .window-content .resources .resource .info .name {
   margin: 0 auto;
-  width: 130px;
   word-wrap: break-word; }
 
 #fvtt-party-resources-dashboard .window-content .resources .resource .info .image {
-  max-width: 126px;
+  max-width: 50%;
   margin: 0 auto;
   position: relative; }
 
 #fvtt-party-resources-dashboard .window-content .resources .resource .info .image img {
   border: none;
-  max-height: 100px;
-  max-width: 126px; }
+  max-height: 100px; }
 
 #fvtt-party-resources-dashboard .window-content .resources .resource .info .image .value {
   color: white;

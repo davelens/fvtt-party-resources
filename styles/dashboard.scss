@@ -78,16 +78,15 @@
 
           .name {
             margin: 0 auto;
-            width: 130px;
             word-wrap: break-word;
           }
 
           .image  {
-            max-width: 126px;
+            max-width: 50%;
             margin: 0 auto;
             position: relative;
 
-            img { border: none; max-height: 100px; max-width: 126px; }
+            img { border: none; max-height: 100px; }
 
             .value {
               color: white;
