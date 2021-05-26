@@ -82,6 +82,7 @@
 #fvtt-party-resources-dashboard .window-content .resources .resource .info .image .value {
   color: white;
   left: 50%;
+  pointer-events: none;
   position: absolute;
   font-size: 1.8rem;
   text-shadow: 2px 0 0 black, -2px 0 0 black, 0 2px 0 black, 0 -2px 0 black, 1px 1px black, -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black;
@@ -102,13 +103,11 @@
 
 #fvtt-party-resources-dashboard .window-content .resources .resource .info p a.change-value.add {
   border-left: 1px solid grey;
-  right: 0;
-  color: green; }
+  right: 0; }
 
 #fvtt-party-resources-dashboard .window-content .resources .resource .info p a.change-value.subtract {
   border-right: 1px solid grey;
-  left: 0;
-  color: red; }
+  left: 0; }
 
 #add-resource-form label.checkbox, #edit-resource-form label.checkbox {
   /* Not sure why this was on 11px tbh. */

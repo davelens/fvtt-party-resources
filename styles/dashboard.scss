@@ -92,6 +92,7 @@
             .value {
               color: white;
               left: 50%;
+              pointer-events: none;
               position: absolute;
               font-size: 1.8rem;
               text-shadow: 2px 0 0 black, -2px 0 0 black, 0 2px 0 black, 0 -2px 0 black, 1px 1px black, -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black;
@@ -116,13 +117,11 @@
                 &.add {
                   border-left: 1px solid grey;
                   right: 0;
-                  color: green;
                 }
 
                 &.subtract {
                   border-right: 1px solid grey;
                   left: 0;
-                  color: red;
                 }
               }
             }
