@@ -13,8 +13,7 @@
   color: #aaa;
   position: absolute;
   top: 7px;
-  left: 50%;
-  transform: translateX(-50%);
+  right: 60px;
   pointer-events: none; }
 
 #fvtt-party-resources-dashboard .window-content > p {
@@ -72,7 +71,22 @@
 
 #fvtt-party-resources-dashboard .window-content .resources .resource .info .image {
   max-width: 126px;
-  margin: 0 auto; }
+  margin: 0 auto;
+  position: relative; }
+
+#fvtt-party-resources-dashboard .window-content .resources .resource .info .image img {
+  border: none;
+  max-height: 100px;
+  max-width: 126px; }
+
+#fvtt-party-resources-dashboard .window-content .resources .resource .info .image .value {
+  color: white;
+  left: 50%;
+  position: absolute;
+  font-size: 1.8rem;
+  text-shadow: 2px 0 0 black, -2px 0 0 black, 0 2px 0 black, 0 -2px 0 black, 1px 1px black, -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black;
+  top: 50%;
+  transform: translate(-50%, -50%); }
 
 #fvtt-party-resources-dashboard .window-content .resources .resource .info p {
   margin: 0; }

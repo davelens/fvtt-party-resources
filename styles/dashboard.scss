@@ -15,8 +15,7 @@
     color: #aaa;
     position: absolute;
     top: 7px;
-    left: 50%;
-    transform: translateX(-50%);
+    right: 60px;
     pointer-events: none;
   }
 
@@ -86,6 +85,19 @@
           .image  {
             max-width: 126px;
             margin: 0 auto;
+            position: relative;
+
+            img { border: none; max-height: 100px; max-width: 126px; }
+
+            .value {
+              color: white;
+              left: 50%;
+              position: absolute;
+              font-size: 1.8rem;
+              text-shadow: 2px 0 0 black, -2px 0 0 black, 0 2px 0 black, 0 -2px 0 black, 1px 1px black, -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black;
+              top: 50%;
+              transform: translate(-50%, -50%);
+            }
           }
 
           p {

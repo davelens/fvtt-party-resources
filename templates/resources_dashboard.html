@@ -22,15 +22,19 @@
           </p>
           {{/if}}
 
-          <div class="value">
-            {{ value }} {{#if max_value}} / {{ max_value }}{{/if}}
-          </div>
-
           {{#if use_icon}}
             <div class="image">
               <img src="{{ icon }}" alt="{{ name }}" title="{{ name }}" />
+
+              <div class="value">
+                {{ value }} {{#if max_value}} / {{ max_value }}{{/if}}
+              </div>
             </div>
           {{else}}
+            <div class="value">
+              {{ value }} {{#if max_value}} / {{ max_value }}{{/if}}
+            </div>
+
             <div class="name">
               <strong>{{ name }}</strong>
             </div>
