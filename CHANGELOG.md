@@ -1,11 +1,16 @@
 1.2.0
 --
 * Added a Chinese language localisation file. Many thanks to user [hmqgg](https://github.com/hmqgg)!
-* Added Azzurite's settings extender as a lib to make use of file uploads.
+* Added a Japanese language localisation file. Many thanks to users
+  [touge](https://github.com/touge) and [BrotherSharper](https://github.com/BrotherSharper)!
+* Added Azzurite's settings extender as a dependency to make use of file
+  uploads.
 * Refactored the registration of resources into a SPOT.
 * Fix an issue with newly made resources showing `undefined` in their first
   notification.
 * Added functionality to use an image as a resource label.
+* Provided a module setting to choose how icon images are displayed: Either icon
+on top with text below it, or floating text on top of the icon image.
 
 
 1.1.5.1
