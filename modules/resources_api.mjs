@@ -81,6 +81,7 @@ export default class ResourcesApi {
         max_value: this.get(resource.concat('_max')),
         min_value: this.get(resource.concat('_min')),
         icon: this.get(resource.concat('_icon')),
+        icon_on_top: this.get('icon_images_orientation') == 'on_top',
         use_icon: this.get(resource.concat('_use_icon')),
         player_managed: this.get(resource.concat('_player_managed')),
         manageable: game.user.isGM || this.get(resource.concat('_player_managed')),

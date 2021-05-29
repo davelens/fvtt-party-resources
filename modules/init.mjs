@@ -21,7 +21,7 @@ Hooks.once('ready', () => {
 })
 
 Hooks.on('renderActorDirectory', (app, html, data) => {
-  if(!game.user.isGM && !ModuleSettings.get('toggle-actors-button-for-players')) return
+  if(!game.user.isGM && !ModuleSettings.get('toggle_actors_button_for_players')) return
 
   html
     .find(".directory-header")

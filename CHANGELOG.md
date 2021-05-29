@@ -15,7 +15,7 @@ on top with text below it, or floating text on top of the icon image.
 
 1.1.5.1
 --
-* Move the registration of toggle-actors-button-for-players into ModuleSettings.
+* Move the registration of toggle_actors_button_for_players into ModuleSettings.
 This fixes players not seeing the Party Resources button in the Actors Directory
 unless they refresh.
 

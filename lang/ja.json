@@ -30,6 +30,10 @@
   "FvttPartyResources.ResourceForm.PlayerManagedRestriction": "このチェックボックスは、設定変更の許可をプレイヤーに明示的に与えることによってのみ有効にできます。",
   "FvttPartyResources.ResourceForm.Reset": "入力リセット",
   "FvttPartyResources.ResourceForm.SaveChanges": "変更を保存",
+  "FvttPartyResources.GMSettingsForm.IconImagesOrientation": "Change the layout of the icon images.",
+  "FvttPartyResources.GMSettingsForm.IconImagesOrientationBelow": "Text below image icon",
+  "FvttPartyResources.GMSettingsForm.IconImagesOrientationHint": "This affects how icon images are displayed in the resource dashboard. You can choose to display text on top of the image icon, or have the text aligned below the image icon.",
+  "FvttPartyResources.GMSettingsForm.IconImagesOrientationOnTop": "Text on top of image icon",
   "FvttPartyResources.GMSettingsForm.ShowActorsButtonForPlayers": "パーティリソースボタンを表示する",
   "FvttPartyResources.GMSettingsForm.ShowActorsButtonForPlayersHint": "このチェックを外すと、アクター一覧上部のパーティリソースボタンがプレイヤーに表示されなくなります。この場合、ボタンを使用できるのはGMのみになります。",
   "FvttPartyResources.Title": "パーティリソース"

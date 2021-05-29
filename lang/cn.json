@@ -36,6 +36,10 @@
   "FvttPartyResources.ResourceForm.Reset": "重置表单",
   "FvttPartyResources.ResourceForm.SaveChanges": "保存更改",
   "FvttPartyResources.ResourceForm.UseIcon": "Use an uploaded icon image instead of a resource name.",
+  "FvttPartyResources.GMSettingsForm.IconImagesOrientation": "Change the layout of the icon images.",
+  "FvttPartyResources.GMSettingsForm.IconImagesOrientationBelow": "Text below image icon",
+  "FvttPartyResources.GMSettingsForm.IconImagesOrientationHint": "This affects how icon images are displayed in the resource dashboard. You can choose to display text on top of the image icon, or have the text aligned below the image icon.",
+  "FvttPartyResources.GMSettingsForm.IconImagesOrientationOnTop": "Text on top of image icon",
   "FvttPartyResources.GMSettingsForm.ShowActorsButtonForPlayers": "显示小队资源按钮",
   "FvttPartyResources.GMSettingsForm.ShowActorsButtonForPlayersHint": "此项关闭时，玩家将不再可以在角色栏顶端看见小队资源的按钮。仅 GM 可以看见并使用。",
   "FvttPartyResources.Title": "小队资源"

@@ -21,11 +21,24 @@ export default class ModuleSettings {
       { scope: "client", config: false, type: Boolean, default: false }
     )
 
-    this.add('toggle-actors-button-for-players', {
+    this.add('toggle_actors_button_for_players', {
       name: game.i18n.localize('FvttPartyResources.GMSettingsForm.ShowActorsButtonForPlayers'),
       hint: game.i18n.localize('FvttPartyResources.GMSettingsForm.ShowActorsButtonForPlayersHint'),
       default: true,
       type: Boolean,
+      onChange: value => ActorDirectory.collection.render('actors')
+    });
+
+    this.add('icon_images_orientation', {
+      name: game.i18n.localize('FvttPartyResources.GMSettingsForm.IconImagesOrientation'),
+      hint: game.i18n.localize('FvttPartyResources.GMSettingsForm.IconImagesOrientationHint'),
+      default: 'on_top',
+      type: String,
+      isSelect: true,
+      choices: {
+        on_top: game.i18n.localize('FvttPartyResources.GMSettingsForm.IconImagesOrientationOnTop'),
+        below: game.i18n.localize('FvttPartyResources.GMSettingsForm.IconImagesOrientationBelow')
+      },
       onChange: value => ActorDirectory.collection.render('actors')
     });
   }

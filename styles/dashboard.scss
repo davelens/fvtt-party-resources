@@ -90,13 +90,24 @@
 
             .value {
               color: white;
-              left: 50%;
               pointer-events: none;
-              position: absolute;
               font-size: 1.8rem;
               text-shadow: 2px 0 0 black, -2px 0 0 black, 0 2px 0 black, 0 -2px 0 black, 1px 1px black, -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black;
-              top: 50%;
-              transform: translate(-50%, -50%);
+            }
+
+            &.text-below {
+              img {
+                width: 50px;
+              }
+            }
+
+            &.text-on-top {
+              .value {
+                left: 50%;
+                position: absolute;
+                top: 50%;
+                transform: translate(-50%, -50%);
+              }
             }
           }
 

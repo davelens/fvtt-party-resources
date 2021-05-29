@@ -23,7 +23,7 @@
           {{/if}}
 
           {{#if use_icon}}
-            <div class="image">
+          <div class="image{{#if icon_on_top}} text-on-top{{else}} text-below{{/if}}">
               <img src="{{ icon }}" alt="{{ name }}" title="{{ name }}" />
 
               <div class="value">

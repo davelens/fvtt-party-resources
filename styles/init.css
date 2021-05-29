@@ -79,11 +79,16 @@
 
 #fvtt-party-resources-dashboard .window-content .resources .resource .info .image .value {
   color: white;
-  left: 50%;
   pointer-events: none;
-  position: absolute;
   font-size: 1.8rem;
-  text-shadow: 2px 0 0 black, -2px 0 0 black, 0 2px 0 black, 0 -2px 0 black, 1px 1px black, -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black;
+  text-shadow: 2px 0 0 black, -2px 0 0 black, 0 2px 0 black, 0 -2px 0 black, 1px 1px black, -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black; }
+
+#fvtt-party-resources-dashboard .window-content .resources .resource .info .image.text-below img {
+  width: 50px; }
+
+#fvtt-party-resources-dashboard .window-content .resources .resource .info .image.text-on-top .value {
+  left: 50%;
+  position: absolute;
   top: 50%;
   transform: translate(-50%, -50%); }
 
