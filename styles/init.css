@@ -86,6 +86,9 @@
 #fvtt-party-resources-dashboard .window-content .resources .resource .info .image.text-below img {
   width: 50px; }
 
+#fvtt-party-resources-dashboard .window-content .resources .resource .info .image.text-below .value {
+  font-size: 1.4rem; }
+
 #fvtt-party-resources-dashboard .window-content .resources .resource .info .image.text-on-top .value {
   left: 50%;
   position: absolute;

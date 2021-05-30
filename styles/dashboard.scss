@@ -86,7 +86,10 @@
             margin: 0 auto;
             position: relative;
 
-            img { border: none; max-height: 100px; }
+            img {
+              border: none;
+              max-height: 100px;
+            }
 
             .value {
               color: white;
@@ -98,6 +101,10 @@
             &.text-below {
               img {
                 width: 50px;
+              }
+
+              .value {
+                font-size: 1.4rem;
               }
             }
 

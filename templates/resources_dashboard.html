@@ -23,11 +23,11 @@
           {{/if}}
 
           {{#if use_icon}}
-          <div class="image{{#if icon_on_top}} text-on-top{{else}} text-below{{/if}}">
+            <div class="image{{#if icon_on_top}} text-on-top{{else}} text-below{{/if}}">
               <img src="{{ icon }}" alt="{{ name }}" title="{{ name }}" />
 
               <div class="value">
-                {{ value }} {{#if max_value}} / {{ max_value }}{{/if}}
+                {{ value }}{{#if max_value}}/{{ max_value }}{{/if}}
               </div>
             </div>
           {{else}}
