@@ -1,13 +1,15 @@
 1.2.0
 --
-* Added Azzurite's settings extender as a dependency to make use of file
-  uploads.
-* Refactored the registration of resources into a SPOT.
-* Fix an issue with newly made resources showing `undefined` in their first
-  notification.
 * Added functionality to use an image as a resource label.
 * Provided a module setting to choose how icon images are displayed: Either icon
 on top with text below it, or floating text on top of the icon image.
+* Added Azzurite's settings extender as a dependency to make use of file
+  uploads.
+* Refactored the registration of resources into a single point of truth.
+* Fixed an issue with newly made resources showing `undefined` in their first
+  notification.
+* Added some headers to the resource form to make it more readable.
+
 
 1.1.6
 --
