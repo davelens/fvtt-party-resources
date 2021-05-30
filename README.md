@@ -15,6 +15,7 @@ scoped on worlds.
 * Optionally notify players through chat when a resource value changes.
 * Optionally limit resources to a given maximum
 * Optionally hand over resource management to players
+* Optionally use icon images as resource labels
 * Change resource values in script macros through a public-facing API
 
 ## Examples
