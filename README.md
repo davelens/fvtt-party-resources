@@ -30,7 +30,7 @@ scoped on worlds.
 ![Image showing what the players see when opening the resources dashboard](https://davelens.be/screenshots/party-resources-players.jpg?t=1607638881)
 
 Here's a basic example of what icon images would look like:
-![Image showing what the players see when icon images are configured](https://davelens.be/screenshots/party-resources-players.jpg?t=1607638881)
+![Image showing what the players see when icon images are configured](https://davelens.be/screenshots/party-resources-players-icon-images.jpg?t=1607638881)
 
 ## Installation
 1. Install Party Resources in FoundryVTT using the manifest URL:
