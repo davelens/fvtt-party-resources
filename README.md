@@ -29,7 +29,7 @@ scoped on worlds.
 ### What the players see
 ![Image showing what the players see when opening the resources dashboard](https://davelens.be/screenshots/party-resources-players.jpg?t=1607638881)
 
-Here's a basic example of what icon images would look like:
+Here's a basic example of some icon images for gold, piles of wood, and rations:
 ![Image showing what the players see when icon images are configured](https://davelens.be/screenshots/party-resources-players-icon-images.jpg?t=1607638881)
 
 ## Installation
