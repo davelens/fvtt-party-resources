@@ -39,7 +39,7 @@ export default class ModuleSettings {
         on_top: game.i18n.localize('FvttPartyResources.GMSettingsForm.IconImagesOrientationOnTop'),
         below: game.i18n.localize('FvttPartyResources.GMSettingsForm.IconImagesOrientationBelow')
       },
-      onChange: value => ActorDirectory.collection.render('actors')
+      onChange: value => window.pr.dashboard.redraw()
     });
   }
 }
