@@ -13,8 +13,7 @@
   color: #aaa;
   position: absolute;
   top: 7px;
-  left: 50%;
-  transform: translateX(-50%);
+  right: 60px;
   pointer-events: none; }
 
 #fvtt-party-resources-dashboard .window-content > p {
@@ -67,8 +66,34 @@
 
 #fvtt-party-resources-dashboard .window-content .resources .resource .info .name {
   margin: 0 auto;
-  width: 130px;
   word-wrap: break-word; }
+
+#fvtt-party-resources-dashboard .window-content .resources .resource .info .image {
+  max-width: 50%;
+  margin: 0 auto;
+  position: relative; }
+
+#fvtt-party-resources-dashboard .window-content .resources .resource .info .image img {
+  border: none;
+  max-height: 100px; }
+
+#fvtt-party-resources-dashboard .window-content .resources .resource .info .image .value {
+  color: white;
+  pointer-events: none;
+  font-size: 1.8rem;
+  text-shadow: 2px 0 0 black, -2px 0 0 black, 0 2px 0 black, 0 -2px 0 black, 1px 1px black, -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black; }
+
+#fvtt-party-resources-dashboard .window-content .resources .resource .info .image.text-below img {
+  width: 50px; }
+
+#fvtt-party-resources-dashboard .window-content .resources .resource .info .image.text-below .value {
+  font-size: 1.4rem; }
+
+#fvtt-party-resources-dashboard .window-content .resources .resource .info .image.text-on-top .value {
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%); }
 
 #fvtt-party-resources-dashboard .window-content .resources .resource .info p {
   margin: 0; }
@@ -84,13 +109,11 @@
 
 #fvtt-party-resources-dashboard .window-content .resources .resource .info p a.change-value.add {
   border-left: 1px solid grey;
-  right: 0;
-  color: green; }
+  right: 0; }
 
 #fvtt-party-resources-dashboard .window-content .resources .resource .info p a.change-value.subtract {
   border-right: 1px solid grey;
-  left: 0;
-  color: red; }
+  left: 0; }
 
 #add-resource-form label.checkbox, #edit-resource-form label.checkbox {
   /* Not sure why this was on 11px tbh. */
