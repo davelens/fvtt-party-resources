@@ -8,7 +8,7 @@
   "download": "https://github.com/davelens/fvtt-party-resources/archive/1.2.0.zip",
   "version": "1.2.0",
   "minimumCoreVersion": "0.7.0",
-  "compatibleCoreVersion":"0.7.9",
+  "compatibleCoreVersion":"0.8.5",
   "languages": [
     {
       "lang": "en",
