@@ -15,6 +15,7 @@ scoped on worlds.
 * Optionally notify players through chat when a resource value changes.
 * Optionally limit resources to a given maximum
 * Optionally hand over resource management to players
+* Optionally use icon images as resource labels
 * Change resource values in script macros through a public-facing API
 
 ## Examples
@@ -27,6 +28,9 @@ scoped on worlds.
 
 ### What the players see
 ![Image showing what the players see when opening the resources dashboard](https://davelens.be/screenshots/party-resources-players.jpg?t=1607638881)
+
+Here's a basic example of some icon images for gold, piles of wood, and rations:
+![Image showing what the players see when icon images are configured](https://davelens.be/screenshots/party-resources-players-icon-images.jpg?t=1607638881)
 
 ## Installation
 1. Install Party Resources in FoundryVTT using the manifest URL:
