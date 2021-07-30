@@ -1,3 +1,26 @@
+1.2.4
+--
+* Added missing JA translations due to recent additions to the module. Thanks 
+again, @BrotherSharper !
+
+
+1.2.3
+--
+* Bump to accommodate FoundryVTT 0.8.8 stable release channel after testing it out.
+
+
+1.2.2
+--
+* Added missing CN translations due to recent additions to the module. Thanks 
+again, @hmqgg !
+
+
+1.2.1
+--
+* Bump to accommodate FoundryVTT 0.8.6 stable release channel after testing it 
+out.
+
+
 1.2.0
 --
 * Added functionality to use an image as a resource label.
