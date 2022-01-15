@@ -1,3 +1,13 @@
+1.2.5
+--
+* Changed the compatibleCoreVersion setting to Foundry v9.
+
+I want to use this space for anyone keeping up with the changes of this module
+to state that the module is NOT abandoned. Covid-19 is having an affect on both 
+my personal and professional life, so my time spent in and around D&D is 
+limited. It is what it is, but I hope I can dedicate more time to D&D in 2022.
+
+
 1.2.4
 --
 * Added missing JA translations due to recent additions to the module. Thanks 
