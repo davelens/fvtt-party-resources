@@ -42,5 +42,7 @@
   "FvttPartyResources.GMSettingsForm.IconImagesOrientationOnTop": "テキストをアイコンに重ねて表示する",
   "FvttPartyResources.GMSettingsForm.ShowActorsButtonForPlayers": "パーティリソースボタンを表示する",
   "FvttPartyResources.GMSettingsForm.ShowActorsButtonForPlayersHint": "このチェックを外すと、アクター一覧上部のパーティリソースボタンがプレイヤーに表示されなくなります。この場合、ボタンを使用できるのはGMのみになります。",
+  "FvttPartyResources.GMSettingsForm.ShowStatusBar": "Show the status bar.",
+  "FvttPartyResources.GMSettingsForm.ShowStatusBarHint": "This shows a videogame-esque status bar at the top of the screen. It shows the current value of each resource.",
   "FvttPartyResources.Title": "パーティリソース"
 }
