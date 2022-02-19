@@ -1,0 +1,31 @@
+#fvtt-party-resources-status-bar {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 6px 10px;
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    &.clearfix:after {
+      clear: both;
+      content: ".";
+      display: block;
+      height: 0;
+      visibility: hidden;
+    }
+
+    li {
+      color: white;
+      display: table-cell;
+      float: left;
+      font-size: 1rem;
+      margin-right: 20px;
+
+      img {
+        margin-right: 4px;
+        vertical-align: middle;
+      }
+    }
+  }
+}

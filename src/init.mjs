@@ -3,6 +3,7 @@ import ResourcesApi from "./resources_api.mjs";
 import DashboardDirections from "./dashboard_directions.mjs";
 import ResourceNotifications from "./resource_notifications.mjs"
 import ResourcesDashboard from "./apps/resources_dashboard.mjs"
+import ResourcesStatusBar from "./resources_status_bar.mjs";
 
 Hooks.once('init', () => {
   window.pr = {
@@ -19,6 +20,8 @@ Hooks.once('init', () => {
 Hooks.once('ready', () => {
   if(game.user.isGM && !window.pr.api.get('first-time-startup-notification-shown'))
     first_time_startup_notification()
+
+  ResourcesStatusBar.render()
 })
 
 Hooks.on('renderActorDirectory', async (app, html, data) => {
@@ -30,7 +33,7 @@ Hooks.on('renderActorDirectory', async (app, html, data) => {
   )
 
   html
-    .find(".directory-header")
+    .find('.directory-header')
     .prepend(button)
     .promise()
     .done(() => {
@@ -58,6 +61,7 @@ function first_time_startup_notification() {
 
 function templates() {
   return [
-    'modules/fvtt-party-resources/src/views/dashboard_button.html'
+    'modules/fvtt-party-resources/src/views/dashboard_button.html',
+    'modules/fvtt-party-resources/src/views/status_bar.html'
   ]
 }
