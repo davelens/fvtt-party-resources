@@ -31,10 +31,6 @@ scoped on worlds.
 ### What the players see in the status bar
 ![Image showing what the players see in the status bar](https://user-images.githubusercontent.com/221527/154817026-a84c4290-c2b4-4d92-9e12-1474fd627635.jpeg)
 
-
-Here's a basic example of some icon images for gold, piles of wood, and rations:
-![Image showing what the players see when icon images are configured](https://davelens.be/screenshots/party-resources-players-icon-images.jpg?t=1607638881)
-
 ## Installation
 1. Install Party Resources in FoundryVTT using the manifest URL:
 ```
