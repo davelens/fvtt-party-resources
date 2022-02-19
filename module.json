@@ -30,7 +30,7 @@
     "./src/init.mjs"
   ],
   "styles": [
-    "./styles/init.css"
+    "./styles/css/init.css"
   ],
   "dependencies": [
     {
