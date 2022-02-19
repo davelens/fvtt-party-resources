@@ -1,14 +1,16 @@
 {{#if status_bar }}
-  <section id="fvtt-party-resources-status-bar">
+  {{#if resources }}
+    <section id="fvtt-party-resources-status-bar">
 
-    <ul class="clearfix">
-      {{#each resources as |r|}}
-      <li class="flexrow">
-        <img src="{{ r.icon }}" alt="{{ r.name }}" width="32" height="32">
-        {{ r.name }} ({{ r.value }})
-      </li>
-      {{/each}}
-    </ul>
+      <ul class="clearfix">
+        {{#each resources as |r|}}
+        <li class="flexrow">
+          <img src="{{ r.icon }}" alt="{{ r.name }}" width="32" height="32">
+          {{ r.name }} ({{ r.value }})
+        </li>
+        {{/each}}
+      </ul>
 
-  </section>
+    </section>
+  {{/if}}
 {{/if}}

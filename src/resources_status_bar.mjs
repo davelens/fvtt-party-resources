@@ -15,8 +15,11 @@ export default class ResourcesStatusBar {
     const template = 'modules/fvtt-party-resources/src/views/status_bar.html'
     const status_bar = await renderTemplate(template, this.getData())
 
-    if(ModuleSettings.get('status_bar_location') == 'on_top')
+    $('#fvtt-party-resources-status-bar').remove()
+
+    if(ModuleSettings.get('status_bar_location') == 'on_top') {
       $('header#ui-top').prepend(status_bar)
+    }
 
     if(ModuleSettings.get('status_bar_location') == 'at_bottom')
       $('footer#ui-bottom').append(status_bar)
