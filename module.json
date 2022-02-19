@@ -27,10 +27,10 @@
     }
   ],
   "esmodules": [
-    "modules/init.mjs"
+    "./src/init.mjs"
   ],
   "styles": [
-    "styles/init.css"
+    "./styles/init.css"
   ],
   "dependencies": [
     {
