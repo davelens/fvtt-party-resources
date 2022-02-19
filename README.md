@@ -12,6 +12,7 @@ scoped on worlds.
   * Hold `CTRL` (Windows) or `CMD` (MacOS) when clicking to jump by +/- 10
   * Hold `SHIFT` when clicking to jump by +/- 100
 * Live updates for players when values change
+* Sports a videogame-esque status bar to easily keep track of resources.
 * Track DM resources by hiding certain resources for players
 * Optionally notify players through chat when a resource value changes.
 * Optionally limit resources to a given maximum
