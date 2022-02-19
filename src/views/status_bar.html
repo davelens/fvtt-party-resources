@@ -1,15 +1,13 @@
 <section id="fvtt-party-resources-status-bar">
 
   <ul class="clearfix">
+    {{#each skills as |s|}}
     <li class="flexrow">
-      <img src="systems/dnd5e/icons/items/inventory/bar-gold.jpg" alt="Gold bars" width="32" height="32">
-      Gold bars (18)
+      <img src="{{ s.icon }}" alt="{{ s.name }}" width="32" height="32">
+      {{ s.name }} ({{ s.value }})
     </li>
+    {{/each}}
 
-    <li class="flexrow">
-      <img src="systems/dnd5e/icons/items/inventory/bar-silver.jpg" alt="Silver bars" width="32" height="32">
-      Silver bars (9)
-    </li>
   </ul>
 
 </section>
