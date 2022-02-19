@@ -1,1 +1,1 @@
-./node_modules/node-sass/bin/node-sass styles/ -x --watch --recursive --source-map=styles/maps --output=styles/
+./node_modules/node-sass/bin/node-sass -x -r -w styles/scss --source-map=styles/maps --output=styles/css

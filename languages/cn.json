@@ -42,5 +42,7 @@
   "FvttPartyResources.GMSettingsForm.IconImagesOrientationOnTop": "图标图片上方文本",
   "FvttPartyResources.GMSettingsForm.ShowActorsButtonForPlayers": "显示小队资源按钮",
   "FvttPartyResources.GMSettingsForm.ShowActorsButtonForPlayersHint": "此项关闭时，玩家将不再可以在角色栏顶端看见小队资源的按钮。仅 GM 可以看见并使用。",
+  "FvttPartyResources.GMSettingsForm.ShowStatusBar": "Show the status bar.",
+  "FvttPartyResources.GMSettingsForm.ShowStatusBarHint": "This shows a videogame-esque status bar at the top of the screen. It shows the current value of each resource.",
   "FvttPartyResources.Title": "小队资源"
 }

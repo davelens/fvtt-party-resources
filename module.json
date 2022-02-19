@@ -4,7 +4,7 @@
   "description": "Create and track custom party resources.",
   "author": "Dave Lens",
   "url": "https://github.com/davelens/fvtt-party-resources",
-  "manifest": "https://raw.githubusercontent.com/davelens/fvtt-party-resources/master/module.json",
+  "manifest": "https://github.com/davelens/fvtt-party-resources/releases/latest/download/module.json",
   "download": "https://github.com/davelens/fvtt-party-resources/archive/1.2.5.zip",
   "version": "1.2.5",
   "minimumCoreVersion": "0.7.0",
@@ -13,24 +13,24 @@
     {
       "lang": "en",
       "name": "English",
-      "path": "lang/en.json"
+      "path": "languages/en.json"
     },
     {
       "lang": "cn",
       "name": "中文",
-      "path": "lang/cn.json"
+      "path": "languages/cn.json"
     },
     {
       "lang": "ja",
       "name": "日本語",
-      "path": "lang/ja.json"
+      "path": "languages/ja.json"
     }
   ],
   "esmodules": [
-    "modules/init.mjs"
+    "./src/init.mjs"
   ],
   "styles": [
-    "styles/init.css"
+    "./styles/css/init.css"
   ],
   "dependencies": [
     {

@@ -37,7 +37,7 @@ export default class ResourceForm extends FormApplication {
       id: "fvtt-party-resources-form",
       classes: ["fvtt-party-resources"],
       template: "modules/fvtt-party-resources/templates/resource_form.html",
-      width: 400,
+      width: 600,
       minimizable: false,
       closeOnSubmit: true
     })

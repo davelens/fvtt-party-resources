@@ -29,6 +29,14 @@ export default class ModuleSettings {
       onChange: value => ActorDirectory.collection.render('actors')
     });
 
+    this.add('toggle_status_bar', {
+      name: game.i18n.localize('FvttPartyResources.GMSettingsForm.ShowStatusBar'),
+      hint: game.i18n.localize('FvttPartyResources.GMSettingsForm.ShowStatusBarHint'),
+      default: true,
+      type: Boolean,
+      onChange: value => window.pr.status_bar.redraw()
+    });
+
     this.add('icon_images_orientation', {
       name: game.i18n.localize('FvttPartyResources.GMSettingsForm.IconImagesOrientation'),
       hint: game.i18n.localize('FvttPartyResources.GMSettingsForm.IconImagesOrientationHint'),

@@ -1,14 +1,6 @@
 <form autocomplete="off"{{#if identifier}} data-identifier="{{ identifier }}"{{/if}}>
 
   <section class="resource">
-    <div class="form-group">
-      <label for="identifier">{{ localize 'FvttPartyResources.ResourceForm.Identifier' }}</label>
-      <div class="form-fields">
-        <input type="text" id="identifier" name="resource[identifier]" value="{{ identifier }}" data-dtype="String" required="true"{{#if identifier}} disabled{{/if}}>
-      </div>
-      <p class="notes">{{ localize 'FvttPartyResources.ResourceForm.IdentifierHint' }}</p>
-    </div>
-
     <h2>{{ localize 'FvttPartyResources.ResourceForm.Headers.Label' }}</h2>
     <div class="form-group">
       <label for="name">{{ localize 'FvttPartyResources.ResourceForm.Name' }}</label>
@@ -16,6 +8,14 @@
         <input type="text" id="name" name="resource[name]" value="{{ name }}" data-dtype="String" required="true">
       </div>
       <p class="notes">{{ localize 'FvttPartyResources.ResourceForm.NameHint' }}</p>
+    </div>
+
+    <div class="form-group">
+      <label for="identifier">{{ localize 'FvttPartyResources.ResourceForm.Identifier' }}</label>
+      <div class="form-fields">
+        <input type="text" id="identifier" name="resource[identifier]" value="{{ identifier }}" data-dtype="String" required="true"{{#if identifier}} disabled{{/if}}>
+      </div>
+      <p class="notes">{{ localize 'FvttPartyResources.ResourceForm.IdentifierHint' }}</p>
     </div>
 
     <div class="form-group">
