@@ -10,7 +10,8 @@ Hooks.once('init', () => {
     version: game.modules.get('fvtt-party-resources').data.version,
     dashboard: new ResourcesDashboard(),
     api: new ResourcesApi(),
-    notifications: new ResourceNotifications()
+    notifications: new ResourceNotifications(),
+    status_bar: ResourcesStatusBar
   }
 
   loadTemplates(templates())

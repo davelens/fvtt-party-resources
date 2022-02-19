@@ -1,10 +1,10 @@
 <section id="fvtt-party-resources-status-bar">
 
   <ul class="clearfix">
-    {{#each skills as |s|}}
+    {{#each resources as |r|}}
     <li class="flexrow">
-      <img src="{{ s.icon }}" alt="{{ s.name }}" width="32" height="32">
-      {{ s.name }} ({{ s.value }})
+      <img src="{{ r.icon }}" alt="{{ r.name }}" width="32" height="32">
+      {{ r.name }} ({{ r.value }})
     </li>
     {{/each}}
 
