@@ -13,17 +13,17 @@
     {
       "lang": "en",
       "name": "English",
-      "path": "lang/en.json"
+      "path": "languages/en.json"
     },
     {
       "lang": "cn",
       "name": "中文",
-      "path": "lang/cn.json"
+      "path": "languages/cn.json"
     },
     {
       "lang": "ja",
       "name": "日本語",
-      "path": "lang/ja.json"
+      "path": "languages/ja.json"
     }
   ],
   "esmodules": [
