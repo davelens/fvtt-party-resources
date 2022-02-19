@@ -8,7 +8,7 @@ export default class ResourcesDashboard extends Application {
     return mergeObject(super.defaultOptions, {
       id: "fvtt-party-resources-dashboard",
       classes: ["fvtt-party-resources"],
-      template: "modules/fvtt-party-resources/templates/resources_dashboard.html",
+      template: "modules/fvtt-party-resources/src/views/resources_dashboard.html",
       minimizable: true,
       resizable: true,
       title: game.i18n.localize("FvttPartyResources.Title")
