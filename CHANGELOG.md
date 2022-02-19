@@ -1,3 +1,24 @@
+1.2.7
+--
+* Added a videogame-esque status bar to keep track of resources at a glance.
+* Added a setting to control rendering the status bar at the top or the bottom
+of the game canvas.
+
+
+1.2.6a (Hotfix release)
+--
+* Fixed an issue with the new automated GitHub workflow not selecting `src/` to 
+be included in the module.zip file. Oops.
+
+
+1.2.6
+--
+* Added a GitHub workflow to automate module.json and module.zip creation. Done
+so I can monitor how many downloads this module receives. The workflow was 
+taken from the League of Foundry Developers' module template.
+* Restructured some folder names within the module for personal convenience.
+
+
 1.2.5
 --
 * Changed the compatibleCoreVersion setting to Foundry v9.
