@@ -12,6 +12,7 @@ Hooks.once('init', () => {
     notifications: new ResourceNotifications()
   }
 
+  loadTemplates(templates())
   ModuleSettings.register()
 })
 
@@ -20,12 +21,17 @@ Hooks.once('ready', () => {
     first_time_startup_notification()
 })
 
-Hooks.on('renderActorDirectory', (app, html, data) => {
-  if(!game.user.isGM && !ModuleSettings.get('toggle_actors_button_for_players')) return
+Hooks.on('renderActorDirectory', async (app, html, data) => {
+  if(!game.user.isGM && !ModuleSettings.get('toggle_actors_button_for_players'))
+    return
+
+  let button = await renderTemplate(
+    'modules/fvtt-party-resources/src/views/dashboard_button.html'
+  )
 
   html
     .find(".directory-header")
-    .prepend(`<div class="action-buttons flexrow"><button id="btn-dashboard"><i class="fas fa-calculator"> </i> ${game.i18n.localize('FvttPartyResources.Title')}</div>`)
+    .prepend(button)
     .promise()
     .done(() => {
       $('#btn-dashboard').on('click', e => window.pr.dashboard.redraw(true))
@@ -48,4 +54,10 @@ function first_time_startup_notification() {
 
   window.pr.notifications.render()
   window.pr.api.set('first-time-startup-notification-shown', true)
+}
+
+function templates() {
+  return [
+    'modules/fvtt-party-resources/src/views/dashboard_button.html'
+  ]
 }
