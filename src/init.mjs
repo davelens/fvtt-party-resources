@@ -3,29 +3,39 @@ import ResourcesApi from "./resources_api.mjs";
 import DashboardDirections from "./dashboard_directions.mjs";
 import ResourceNotifications from "./resource_notifications.mjs"
 import ResourcesDashboard from "./apps/resources_dashboard.mjs"
+import ResourcesStatusBar from "./resources_status_bar.mjs";
 
 Hooks.once('init', () => {
   window.pr = {
     version: game.modules.get('fvtt-party-resources').data.version,
     dashboard: new ResourcesDashboard(),
     api: new ResourcesApi(),
-    notifications: new ResourceNotifications()
+    notifications: new ResourceNotifications(),
+    status_bar: ResourcesStatusBar
   }
 
+  loadTemplates(templates())
   ModuleSettings.register()
 })
 
 Hooks.once('ready', () => {
   if(game.user.isGM && !window.pr.api.get('first-time-startup-notification-shown'))
     first_time_startup_notification()
+
+  ResourcesStatusBar.render()
 })
 
-Hooks.on('renderActorDirectory', (app, html, data) => {
-  if(!game.user.isGM && !ModuleSettings.get('toggle_actors_button_for_players')) return
+Hooks.on('renderActorDirectory', async (app, html, data) => {
+  if(!game.user.isGM && !ModuleSettings.get('toggle_actors_button_for_players'))
+    return
+
+  let button = await renderTemplate(
+    'modules/fvtt-party-resources/src/views/dashboard_button.html'
+  )
 
   html
-    .find(".directory-header")
-    .prepend(`<div class="action-buttons flexrow"><button id="btn-dashboard"><i class="fas fa-calculator"> </i> ${game.i18n.localize('FvttPartyResources.Title')}</div>`)
+    .find('.directory-header')
+    .prepend(button)
     .promise()
     .done(() => {
       $('#btn-dashboard').on('click', e => window.pr.dashboard.redraw(true))
@@ -48,4 +58,11 @@ function first_time_startup_notification() {
 
   window.pr.notifications.render()
   window.pr.api.set('first-time-startup-notification-shown', true)
+}
+
+function templates() {
+  return [
+    'modules/fvtt-party-resources/src/views/dashboard_button.html',
+    'modules/fvtt-party-resources/src/views/status_bar.html'
+  ]
 }

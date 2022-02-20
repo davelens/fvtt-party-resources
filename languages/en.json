@@ -44,5 +44,9 @@
   "FvttPartyResources.GMSettingsForm.ShowActorsButtonForPlayersHint": "When this is left unchecked, players will no longer see the Party Resources button at the top of the Actors Directory. Only the GM will be able to see and use it.",
   "FvttPartyResources.GMSettingsForm.ShowStatusBar": "Show the status bar.",
   "FvttPartyResources.GMSettingsForm.ShowStatusBarHint": "This shows a videogame-esque status bar at the top of the screen. It shows the current value of each resource.",
+  "FvttPartyResources.GMSettingsForm.StatusBarLocation": "Change location of the status bar",
+  "FvttPartyResources.GMSettingsForm.StatusBarLocationHint": "Determines where the status bar gets drawn onto the game canvas.",
+  "FvttPartyResources.GMSettingsForm.StatusBarLocationAtBottom": "At the bottom",
+  "FvttPartyResources.GMSettingsForm.StatusBarLocationOnTop": "On top",
   "FvttPartyResources.Title": "Party Resources"
 }

@@ -43,7 +43,10 @@ export default class ResourcesApi {
     let properties = {
       scope: "world",
       config: false,
-      onChange: value => window.pr.dashboard.redraw()
+      onChange: value => {
+        window.pr.dashboard.redraw()
+        window.pr.status_bar.render()
+      }
     }
 
     game.settings.register(

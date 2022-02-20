@@ -29,14 +29,6 @@ export default class ModuleSettings {
       onChange: value => ActorDirectory.collection.render('actors')
     });
 
-    this.add('toggle_status_bar', {
-      name: game.i18n.localize('FvttPartyResources.GMSettingsForm.ShowStatusBar'),
-      hint: game.i18n.localize('FvttPartyResources.GMSettingsForm.ShowStatusBarHint'),
-      default: true,
-      type: Boolean,
-      onChange: value => window.pr.status_bar.redraw()
-    });
-
     this.add('icon_images_orientation', {
       name: game.i18n.localize('FvttPartyResources.GMSettingsForm.IconImagesOrientation'),
       hint: game.i18n.localize('FvttPartyResources.GMSettingsForm.IconImagesOrientationHint'),
@@ -49,5 +41,27 @@ export default class ModuleSettings {
       },
       onChange: value => window.pr.dashboard.redraw()
     });
+
+    this.add('toggle_status_bar', {
+      name: game.i18n.localize('FvttPartyResources.GMSettingsForm.ShowStatusBar'),
+      hint: game.i18n.localize('FvttPartyResources.GMSettingsForm.ShowStatusBarHint'),
+      default: true,
+      type: Boolean,
+      onChange: value => window.pr.status_bar.render()
+    });
+
+    this.add('status_bar_location', {
+      name: game.i18n.localize('FvttPartyResources.GMSettingsForm.StatusBarLocation'),
+      hint: game.i18n.localize('FvttPartyResources.GMSettingsForm.StatusBarLocationHint'),
+      default: 'on_top',
+      type: String,
+      isSelect: true,
+      choices: {
+        on_top: game.i18n.localize('FvttPartyResources.GMSettingsForm.StatusBarLocationOnTop'),
+        at_bottom: game.i18n.localize('FvttPartyResources.GMSettingsForm.StatusBarLocationAtBottom')
+      },
+      onChange: value => window.pr.status_bar.render()
+    });
+
   }
 }

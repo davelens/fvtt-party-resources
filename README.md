@@ -7,11 +7,12 @@ Party Resources is a module that allows you to store party-wide numeric values,
 scoped on worlds.
 
 ## Features
-* Add/Edit/Delete custom resources
+* Add/Edit/Delete custom resources, with optional icon images
 * Increment/decrement resource values
   * Hold `CTRL` (Windows) or `CMD` (MacOS) when clicking to jump by +/- 10
   * Hold `SHIFT` when clicking to jump by +/- 100
 * Live updates for players when values change
+* Sports a videogame-esque status bar to easily keep track of resources.
 * Track DM resources by hiding certain resources for players
 * Optionally notify players through chat when a resource value changes.
 * Optionally limit resources to a given maximum
@@ -24,14 +25,11 @@ scoped on worlds.
 * Tracking custom quantified "meta" resources like sanity, desperation, or fame levels
 * Tracking DM-specific mnemonics like poison counters, population totals, or player deaths 😈
 
-### What the DM sees
-![Image showing what the DM sees when opening the resources dashboard](https://davelens.be/screenshots/party-resources-dm.jpg?t=1607638881)
+### What the DM sees in the dashboard
+![Image showing what the DM sees when opening the resources dashboard](https://user-images.githubusercontent.com/221527/154817180-5dcb0c95-845f-4ef3-a8e8-9b734b2feda7.jpeg)
 
-### What the players see
-![Image showing what the players see when opening the resources dashboard](https://davelens.be/screenshots/party-resources-players.jpg?t=1607638881)
-
-Here's a basic example of some icon images for gold, piles of wood, and rations:
-![Image showing what the players see when icon images are configured](https://davelens.be/screenshots/party-resources-players-icon-images.jpg?t=1607638881)
+### What the players see in the status bar
+![Image showing what the players see in the status bar](https://user-images.githubusercontent.com/221527/154817026-a84c4290-c2b4-4d92-9e12-1474fd627635.jpeg)
 
 ## Installation
 1. Install Party Resources in FoundryVTT using the manifest URL:
@@ -41,6 +39,10 @@ https://raw.githubusercontent.com/davelens/fvtt-party-resources/master/module.js
 2. Enable the `Party Resources` module in the active game world.
 
 ## FAQ
+### I don't see the status bar?
+
+You need to enable it in the module's settings.
+
 ### Where can I access the resource dashboard?
 
 By default, any permission level can access it through the button at the top of the Actor directory. However, a DM has the option to hide this button.
@@ -53,6 +55,15 @@ No, the intent for this module was to have global numeric values everyone could 
 
 Because resources are an amalgam of settings scoped on `world`, to make them persist in the world for all players. Foundry requires explicit permission to allow players to adjust the values linked to these settings with a scope of `world`. Not doing so will result in error popups stating a player is not allowed to edit settings.
 
+### How can I refresh the status bar using a macro?
+```js
+window.pr.status_bar.render()
+```
+
+### How can I open the dashboard using a macro?
+```js
+window.pr.dashbard.redraw(true)
+```
 ### How do I change resource values in a script macro?
 As an example, say you wanted to change a resource called `Fate Counters` that you gave a resource ID of `fate` when you created it.
 
