@@ -1,7 +1,8 @@
 # FoundryVTT - Party Resources
 
 ![Latest release](https://img.shields.io/github/v/release/davelens/fvtt-party-resources?style=for-the-badge)
-![Total downloads](https://img.shields.io/github/downloads/davelens/fvtt-party-resources/total?style=for-the-badge&color=blue)
+![GitHub all releases](https://img.shields.io/github/downloads/davelens/fvtt-party-resources/total?color=blue&style=for-the-badge)
+![GitHub release (latest by date)](https://img.shields.io/github/downloads/davelens/fvtt-party-resources/1.2.7/total?color=blue&style=for-the-badge)
 
 Party Resources is a module that allows you to store party-wide numeric values,
 scoped on worlds.
