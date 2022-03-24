@@ -70,7 +70,6 @@ export default class ResourceForm extends FormApplication {
     window.pr.api.register_resource(id)
     window.pr.api.set(id, data['resource[default_value]'], { notify: true })
     window.pr.api.set(id.concat('_name'), data['resource[name]'])
-    window.pr.api.set(id.concat('_visible'), data['resource[visible]'])
     window.pr.api.set(id.concat('_notify_chat'), data['resource[notify_chat]'])
     window.pr.api.set(id.concat('_notify_chat_message'), data['resource[notify_chat_message]'])
     window.pr.api.set(id.concat('_max'), data['resource[max_value]'])
