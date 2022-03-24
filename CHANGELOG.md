@@ -1,3 +1,8 @@
+1.2.8
+--
+* Added FR translation. Thank you, @sladecraven !
+
+
 1.2.7
 --
 * Added a videogame-esque status bar to keep track of resources at a glance.
