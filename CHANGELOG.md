@@ -1,6 +1,10 @@
 1.2.8
 --
 * Added FR translation. Thank you, @sladecraven !
+* Fixed an issue with resource visibility resetting when updating a resource
+through the resource form.
+* Extracted the notification message markup in preparation for notification box
+changes in a later update.
 
 
 1.2.7
