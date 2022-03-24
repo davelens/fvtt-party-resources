@@ -1,12 +1,11 @@
-<!-- TODO: Clean up ResourcesApi#notify_chat to use this partial -->
 <div class="fvtt-party-resources-chat-notification">
-  ${this.get(name.concat('_notify_chat_message'))}
+  {{ name }}
   <table>
     <tr>
-      <td>${resource}</td>
+      <td>{{ resource }}</td>
       <td>
-        <span class="${color}">${new_value}</span>
-        <span class="small">(${jump})</span>
+        <span class="{{ color }}">{{ new_value }}</span>
+        <span class="small">({{ jump }})</span>
       </td>
     </tr>
   </table>

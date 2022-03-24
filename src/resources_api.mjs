@@ -2,7 +2,7 @@ import ResourcesList from "./resources_list.mjs";
 import ExtraTypes from '../../settings-extender/settings-extender.js'
 
 export default class ResourcesApi {
-  notify_chat(name, value, new_value) {
+  async notify_chat(name, value, new_value) {
     if(!this.get(name.concat('_notify_chat')) || new_value == value) return;
     const color = new_value >= value ? 'green' : 'red'
     const resource = this.get(name.concat('_name'))
@@ -11,9 +11,16 @@ export default class ResourcesApi {
     let jump = new String(new_value-value)
     if(jump > 0) jump = '+'.concat(jump)
 
-    let message = `<div class="fvtt-party-resources-chat-notification">${this.get(name.concat('_notify_chat_message'))} <table><tr><td>${resource}</td><td><span class="${color}">${new_value}</span> <span class="small">(${jump})</span></td></tr></table></div>`
-    ChatMessage.create({content: message})
+    const template = 'modules/fvtt-party-resources/src/views/notification.html'
+    const notification_html = await renderTemplate(template, {
+      message: this.get(name.concat('_notify_chat_message')),
+      resource: resource,
+      color: color,
+      new_value: new_value,
+      jump: jump
+    })
 
+    ChatMessage.create({content: notification_html})
     window.pr.dashboard.redraw()
   }
 
