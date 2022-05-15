@@ -65,7 +65,7 @@ window.pr.status_bar.render()
 
 ### How can I open the dashboard using a macro?
 ```js
-window.pr.dashbard.redraw(true)
+window.pr.dashboard.redraw(true)
 ```
 ### How do I change resource values in a script macro?
 As an example, say you wanted to change a resource called `Fate Counters` that you gave a resource ID of `fate` when you created it.
