@@ -80,6 +80,16 @@ To set the value of the `fate` resource to `5`:
 window.pr.api.set('fate', 5)
 ```
 
+To increment the value of the `fate` resource by `2`:
+```js
+window.pr.api.increment('fate', 2)
+```
+
+To decrement the value of the `fate` resource by `1`:
+```js
+window.pr.api.decrement('fate', 1)
+```
+
 To set the value of the `fate` resource to `5`, and notify players with a chat
 message. Note that this will only work if "Notify players of value changes" is checked in the resource settings:
 ```js
