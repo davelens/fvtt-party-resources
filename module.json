@@ -5,8 +5,8 @@
   "author": "Dave Lens",
   "url": "https://github.com/davelens/fvtt-party-resources",
   "manifest": "https://github.com/davelens/fvtt-party-resources/releases/latest/download/module.json",
-  "download": "https://github.com/davelens/fvtt-party-resources/releases/download/1.2.8/module.zip",
-  "version": "1.2.8",
+  "download": "https://github.com/davelens/fvtt-party-resources/releases/download/1.2.9/module.zip",
+  "version": "1.2.9",
   "minimumCoreVersion": "0.7.0",
   "compatibleCoreVersion":"9",
   "languages": [

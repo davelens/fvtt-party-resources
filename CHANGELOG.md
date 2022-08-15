@@ -1,3 +1,8 @@
+1.2.9
+--
+* Fixed an issue with the message body not showing up in notifications.
+
+
 1.2.8
 --
 * Added FR translation. Thank you, @sladecraven !
