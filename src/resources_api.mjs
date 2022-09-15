@@ -113,6 +113,8 @@ export default class ResourcesApi {
       this.notify_chat(name, old_value, value)
     }
 
-    game.settings.set('fvtt-party-resources', name, value)
+    // Since Foundry v10 these should come with default values. Game settings
+    // can no longer have a value of undefined (should be null instead).
+    game.settings.set('fvtt-party-resources', name, (value || null))
   }
 }
