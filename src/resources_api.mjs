@@ -34,7 +34,25 @@ export default class ResourcesApi {
   }
 
   get(name) {
-    return game.settings.get('fvtt-party-resources', name)
+    // This try/catch should make sure users can still access the dashboard
+    // when any validation errors trigger upon setting retrieval due to
+    // Foundry v10's DataModel changes.
+    try {
+      return game.settings.get('fvtt-party-resources', name)
+    } catch(error) {
+      if(!Object.getOwnPropertyNames(error.errors).equals(['Setting.value'])) return
+
+      if(name.includes('_name'))
+        return 'RENAME ME'
+
+      if(name.includes('_min'))
+        return -100
+
+      if(name.includes('_max'))
+        return 100
+
+      return 0
+    }
   }
 
   increment(name, jump) {
@@ -48,7 +66,7 @@ export default class ResourcesApi {
 
   register_setting(name, options) {
     let properties = {
-      scope: "world",
+      scope: 'world',
       config: false,
       onChange: value => {
         window.pr.dashboard.redraw()
@@ -113,8 +131,6 @@ export default class ResourcesApi {
       this.notify_chat(name, old_value, value)
     }
 
-    // Since Foundry v10 these should come with default values. Game settings
-    // can no longer have a value of undefined (should be null instead).
-    game.settings.set('fvtt-party-resources', name, (value || null))
+    game.settings.set('fvtt-party-resources', name, value)
   }
 }
