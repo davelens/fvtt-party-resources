@@ -64,16 +64,16 @@ export default class ResourcesApi {
   }
 
   register_resource(resource) {
-    this.register_setting(resource)
-    this.register_setting(resource.concat('_name'))
+    this.register_setting(resource, { type: Number, default: 0 })
+    this.register_setting(resource.concat('_name'), { type: String })
     this.register_setting(resource.concat('_icon'), { type: ExtraTypes.FilePickerImage, default: '' })
-    this.register_setting(resource.concat('_use_icon'), { default: false })
-    this.register_setting(resource.concat('_visible'), { default: true })
-    this.register_setting(resource.concat('_notify_chat'), { default: true })
-    this.register_setting(resource.concat('_notify_chat_message'), { default: "A resource value has changed." })
-    this.register_setting(resource.concat('_max'))
-    this.register_setting(resource.concat('_min'))
-    this.register_setting(resource.concat('_player_managed'), { default: false })
+    this.register_setting(resource.concat('_use_icon'), { Type: Boolean, default: false })
+    this.register_setting(resource.concat('_visible'), { Type: Boolean, default: true })
+    this.register_setting(resource.concat('_notify_chat'), { Type: Boolean, default: true })
+    this.register_setting(resource.concat('_notify_chat_message'), { Type: String, default: "A resource value has changed." })
+    this.register_setting(resource.concat('_max'), { Type: Number, default: 100 })
+    this.register_setting(resource.concat('_min'), { Type: Number, default: -100 })
+    this.register_setting(resource.concat('_player_managed'), { type: Boolean, default: false })
   }
 
   resources() {
