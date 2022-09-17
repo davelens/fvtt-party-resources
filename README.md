@@ -6,8 +6,7 @@
 [![Donate](https://img.shields.io/static/v1?label=Tip&message=PayPal&color=green&style=for-the-badge)](https://www.paypal.com/donate/?business=S4YPUE3P8ZK52&no_recurring=0&item_name=I+maintain+Party+Resources+in+my+%28limited%29+free+time.+Donations+are+not+necessary%2C+but+very+welcome+and+encouraging!&currency_code=EUR)
 [![Donate](https://img.shields.io/static/v1?label=Tip&message=Ko-Fi&color=green&style=for-the-badge)](https://www.ko-fi.com/davelens)
 
-Party Resources is a module that allows you to store party-wide numeric values,
-scoped on worlds.
+Party Resources is a module that allows you to manage party-wide numeric values that persist between sessions.
 
 ## Features
 * Add/Edit/Delete custom resources, with optional icon images
