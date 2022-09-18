@@ -128,7 +128,8 @@ export default class ResourcesDashboard extends Application {
       use_icon: window.pr.api.get(id.concat('_use_icon')),
       player_managed: window.pr.api.get(id.concat('_player_managed')),
       notify_chat: window.pr.api.get(id.concat('_notify_chat')),
-      notify_chat_message: window.pr.api.get(id.concat('_notify_chat_message')),
+      notify_chat_increment_message: window.pr.api.get(id.concat('_notify_chat_increment_message')),
+      notify_chat_decrement_message: window.pr.api.get(id.concat('_notify_chat_decrement_message')),
       allowed_to_modify_settings: game.permissions.SETTINGS_MODIFY.includes(1),
       visible: window.pr.api.get(id.concat('_visible'))
     }

@@ -11,9 +11,12 @@ export default class ResourcesApi {
     let jump = new String(new_value-value)
     if(jump > 0) jump = '+'.concat(jump)
 
+    let message = this.get(name.concat('_notify_chat_increment_message'))
+    if(new_value < value) message = this.get(name.concat('_notify_chat_decrement_message'))
+
     const template = 'modules/fvtt-party-resources/src/views/notification.html'
     const notification_html = await renderTemplate(template, {
-      message: this.get(name.concat('_notify_chat_message')),
+      message: message,
       resource: resource,
       color: color,
       new_value: new_value,
@@ -88,7 +91,8 @@ export default class ResourcesApi {
     this.register_setting(resource.concat('_use_icon'), { Type: Boolean, default: false })
     this.register_setting(resource.concat('_visible'), { Type: Boolean, default: true })
     this.register_setting(resource.concat('_notify_chat'), { Type: Boolean, default: true })
-    this.register_setting(resource.concat('_notify_chat_message'), { Type: String, default: "A resource value has changed." })
+    this.register_setting(resource.concat('_notify_chat_increment_message'), { Type: String, default: "A resource value has increased." })
+    this.register_setting(resource.concat('_notify_chat_decrement_message'), { Type: String, default: "A resource value has decreased." })
     this.register_setting(resource.concat('_max'), { Type: Number, default: 100 })
     this.register_setting(resource.concat('_min'), { Type: Number, default: -100 })
     this.register_setting(resource.concat('_player_managed'), { type: Boolean, default: false })
@@ -115,7 +119,8 @@ export default class ResourcesApi {
         manageable: game.user.isGM || this.get(resource.concat('_player_managed')),
         visible: this.get(resource.concat('_visible')),
         notify_chat: this.get(resource.concat('_notify_chat')),
-        notify_chat_message: this.get(resource.concat('_notify_chat_message')),
+        notify_chat_increment_message: this.get(resource.concat('_notify_chat_increment_message')),
+        notify_chat_decrement_message: this.get(resource.concat('_notify_chat_decrement_message')),
         visible_for_players: game.user.isGM || this.get(resource.concat('_visible')),
         is_gm: game.user.isGM,
         allowed_to_modify_settings: game.permissions.SETTINGS_MODIFY.includes(1)
