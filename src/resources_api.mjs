@@ -43,7 +43,7 @@ export default class ResourcesApi {
     try {
       return game.settings.get('fvtt-party-resources', name)
     } catch(error) {
-      if(!Object.getOwnPropertyNames(error.errors).equals(['Setting.value'])) return
+      if(error.errors && !Object.getOwnPropertyNames(error.errors).equals(['Setting.value'])) return
 
       if(name.includes('_name'))
         return 'RENAME ME'
