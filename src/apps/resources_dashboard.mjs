@@ -74,7 +74,7 @@ export default class ResourcesDashboard extends Application {
       ).render(true)
     })
 
-    DraggableResources.init()
+    DraggableResources.init(this)
   }
 
   increment_jump(event) {

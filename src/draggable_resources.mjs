@@ -1,5 +1,8 @@
 export default class DraggableResources {
-  static init() {
+  app= null
+
+  static init(app) {
+    this.app = app
     const dragDrop = this.controller()
     dragDrop.bind($('.resources')[0])
   }
@@ -15,11 +18,18 @@ export default class DraggableResources {
     })
   }
 
-  static drag() {
-    console.log('drag')
+  static drag(e) {
+    let src = $(e.target).data('id')
+
+    if(src == undefined) {
+      src = $(e.toElement).parents('div.resource').data('id')
+    }
+
+    console.log(src);
   }
 
-  static drop() {
-    console.log('drop')
+  static drop(e) {
+    let target = $(e.target).parents('.resource')
+    console.log(target.data('id'))
   }
 }

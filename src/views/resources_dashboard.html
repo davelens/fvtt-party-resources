@@ -12,7 +12,7 @@
   <section class="resources">
     {{#each resources}}
       {{#if visible_for_players }}
-      <div class="resource">
+      <div class="resource" data-id="{{ id }}">
         <div class="info">
           {{#if manageable}}
           <p>
