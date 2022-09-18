@@ -1,6 +1,7 @@
 import ResourceForm from "./resource_form.mjs";
 import ResourcesList from "./../resources_list.mjs";
 import DashboardDirections from "./../dashboard_directions.mjs";
+import DraggableResources from "./../draggable_resources.mjs";
 import CursorTooltip from "./../cursor_tooltip.mjs";
 
 export default class ResourcesDashboard extends Application {
@@ -15,6 +16,7 @@ export default class ResourcesDashboard extends Application {
     })
   }
 
+  // Probably a good idea to extract some methods here for readability.
   activateListeners(html) {
     super.activateListeners(html)
 
@@ -72,16 +74,7 @@ export default class ResourcesDashboard extends Application {
       ).render(true)
     })
 
-    const dragDrop = new DragDrop({
-      dragSelector: '.resource',
-      dropSelector: '.resource',
-      callbacks: {
-        dragstart: () => { console.log('start') },
-        drop: () => { console.log('drop') }
-      }
-    })
-
-    dragDrop.bind($('.resources')[0]);
+    DraggableResources.init()
   }
 
   increment_jump(event) {
