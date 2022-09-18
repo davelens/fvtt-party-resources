@@ -71,6 +71,17 @@ export default class ResourcesDashboard extends Application {
         }
       ).render(true)
     })
+
+    const dragDrop = new DragDrop({
+      dragSelector: '.resource',
+      dropSelector: '.resource',
+      callbacks: {
+        dragstart: () => { console.log('start') },
+        drop: () => { console.log('drop') }
+      }
+    })
+
+    dragDrop.bind($('.resources')[0]);
   }
 
   increment_jump(event) {
