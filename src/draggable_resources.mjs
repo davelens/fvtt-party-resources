@@ -19,17 +19,17 @@ export default class DraggableResources {
   }
 
   static drag(e) {
-    let src = $(e.target).data('id')
+    let source_id = $(e.target).data('id')
 
-    if(src == undefined) {
-      src = $(e.toElement).parents('div.resource').data('id')
+    if(source_id == undefined) {
+      source_id = $(e.toElement).parents('div.resource').data('id')
     }
 
-    console.log(src);
+    console.log(source_id);
   }
 
   static drop(e) {
-    let target = $(e.target).parents('.resource')
-    console.log(target.data('id'))
+    let target_id = $(e.target).parents('.resource').data('id')
+    console.log(target_id)
   }
 }
