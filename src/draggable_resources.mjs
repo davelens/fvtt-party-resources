@@ -1,5 +1,7 @@
 export default class DraggableResources {
-  app= null
+  app = null
+  current_source_id = null
+  current_target_id = null
 
   static init(app) {
     this.app = app
@@ -25,11 +27,11 @@ export default class DraggableResources {
       source_id = $(e.toElement).parents('div.resource').data('id')
     }
 
-    console.log(source_id);
+    DraggableResources.current_source_id = source_id
   }
 
   static drop(e) {
     let target_id = $(e.target).parents('.resource').data('id')
-    console.log(target_id)
+    DraggableResources.current_target_id = target_id
   }
 }
