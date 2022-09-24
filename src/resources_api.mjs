@@ -96,18 +96,23 @@ export default class ResourcesApi {
     this.register_setting(resource.concat('_max'), { Type: Number, default: 100 })
     this.register_setting(resource.concat('_min'), { Type: Number, default: -100 })
     this.register_setting(resource.concat('_player_managed'), { type: Boolean, default: false })
+    this.register_setting(resource.concat('_position'), { type: Number, default: 1 })
   }
 
   resources() {
     let results = []
+    let data = ResourcesList.all().sort((a, b) => {
+      this.register_resource(a)
+      this.register_resource(b)
+      return this.get(a.concat('_position')) - this.get(b.concat('_position'))
+    })
 
-    ResourcesList.all().forEach((resource, index) => {
+    data.forEach((resource, index) => {
       if(resource == '') return ResourcesList.remove(resource)
-
-      this.register_resource(resource)
 
       results.push({
         id: resource,
+        position: this.get(resource.concat('_position')),
         value: this.get(resource),
         name: this.get(resource.concat('_name')),
         max_value: this.get(resource.concat('_max')),

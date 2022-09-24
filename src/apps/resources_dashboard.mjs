@@ -123,6 +123,7 @@ export default class ResourcesDashboard extends Application {
   resource_data(id) {
     return {
       identifier: id,
+      position: window.pr.api.get(id.concat('_position')),
       can_browse: game.user && game.user.can("FILES_BROWSE"),
       default_value: window.pr.api.get(id),
       name: window.pr.api.get(id.concat('_name')),
