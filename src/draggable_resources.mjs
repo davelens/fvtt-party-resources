@@ -39,11 +39,15 @@ export default class DraggableResources {
     $('.resources').removeClass('droppable')
     DraggableResources.source().removeClass('source')
 
-    // TODO: recalculate positions instead of doing the thing below.
-    // Adding new resources will fuck with this because their default value
-    // will be "1", so you'll end up with two "2" references.
-    window.pr.api.set(`${DraggableResources.current_source_id}_position`, DraggableResources.target().data('position'))
-    window.pr.api.set(`${DraggableResources.current_target_id}_position`, DraggableResources.source().data('position'))
+    window.pr.api.set(
+      `${DraggableResources.current_source_id}_position`,
+      DraggableResources.target().data('position')
+    )
+    window.pr.api.set(
+      `${DraggableResources.current_target_id}_position`,
+      DraggableResources.source().data('position')
+    )
+    window.pr.api.update_positions()
   }
 
   static source() {

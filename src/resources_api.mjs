@@ -96,7 +96,7 @@ export default class ResourcesApi {
     this.register_setting(resource.concat('_max'), { Type: Number, default: 100 })
     this.register_setting(resource.concat('_min'), { Type: Number, default: -100 })
     this.register_setting(resource.concat('_player_managed'), { type: Boolean, default: false })
-    this.register_setting(resource.concat('_position'), { type: Number, default: 1 })
+    this.register_setting(resource.concat('_position'), { type: Number, default: ResourcesList.all().length + 1 })
   }
 
   resources() {
@@ -143,4 +143,16 @@ export default class ResourcesApi {
 
     game.settings.set('fvtt-party-resources', name, value)
   }
+
+  update_positions() {
+    // Adding new resources means their default value will be "1", so you'll
+    // end up with two "2" references if you just do the above two set()
+    // instructions. window.pr.api.resources() comes pre-sorted according
+    // to their position attribute, so looping and updating the value should
+    // be sufficient.
+    this.resources().resources.forEach((resource, index) => {
+      this.set(`${resource.id}_position`, index+1)
+    })
+  }
+
 }

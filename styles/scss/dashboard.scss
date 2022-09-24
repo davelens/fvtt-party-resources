@@ -26,8 +26,12 @@
       justify-content: center;
     }
 
-    .new-resource-form-btn {
-      max-height: 2rem;
+    .new-resource-form-btn-container {
+      min-height: 32px;
+
+      .new-resource-form-btn {
+        min-height: 2rem;
+      }
     }
 
     .resources {
@@ -68,6 +72,7 @@
 
         .info {
           border: 1px solid grey;
+          cursor: move;
           margin: 0;
           padding: 8px 0;
           position: relative;
