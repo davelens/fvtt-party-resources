@@ -188,3 +188,10 @@
       transform: translateY(-50%); }
       #fvtt-party-resources-notifications .resource-notification i.close:hover {
         text-shadow: 0 0 8px red; }
+
+.resources.droppable .resource {
+  background-color: #f9eac2; }
+  .resources.droppable .resource.source {
+    opacity: 0.3; }
+
+/*# sourceMappingURL=../maps/init.css.map */

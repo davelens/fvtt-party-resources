@@ -1,0 +1,9 @@
+{
+	"version": 3,
+	"file": "../css/draggable_resources.css",
+	"sources": [
+		"../scss/draggable_resources.scss"
+	],
+	"names": [],
+	"mappings": "AAAA,AACE,UADQ,AAAA,UAAU,CAClB,SAAS,CAAC;EACR,gBAAgB,EAAE,OAAO,GAK1B;EAPH,AAII,UAJM,AAAA,UAAU,CAClB,SAAS,AAGN,OAAO,CAAC;IACP,OAAO,EAAE,GAAG,GACb"
+}

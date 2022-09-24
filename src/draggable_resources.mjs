@@ -22,16 +22,29 @@ export default class DraggableResources {
 
   static drag(e) {
     let source_id = $(e.target).data('id')
-
-    if(source_id == undefined) {
+    if(source_id == undefined)
       source_id = $(e.toElement).parents('div.resource').data('id')
-    }
 
     DraggableResources.current_source_id = source_id
+
+    $('.resources').addClass('droppable')
+    $('.resource:not(.source)').on('mouseover', )
+    DraggableResources.source().addClass('source')
   }
 
   static drop(e) {
     let target_id = $(e.target).parents('.resource').data('id')
     DraggableResources.current_target_id = target_id
+
+    $('.resources').removeClass('droppable')
+    DraggableResources.source().removeClass('source')
+  }
+
+  static source() {
+    return $(`[data-id="${DraggableResources.current_source_id}"]`)
+  }
+
+  static target() {
+    return $(`[data-id="${DraggableResources.current_target_id}"]`)
   }
 }
