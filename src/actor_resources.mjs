@@ -13,7 +13,9 @@ export default class ActorResources {
   }
 
   static convert_dnd5e_currencies() {
-    return this.player_characters()
+    const player_characters = this.player_characters()
+    if(player_characters.length == 0) return 0
+    return player_characters
       .map((item) => { return this.convert_to_dnd5e_gold(item.system.currency) })
       .reduce((a,b) => { return a + b })
   }
