@@ -1,4 +1,4 @@
-1.4.0a - Bugfix release
+1.4.1 - Bugfix release
 --
 * Made sure drag/drop works when dragging icon images in the dashboard, as well.
 
