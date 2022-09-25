@@ -86,7 +86,7 @@ export default class ResourcesApi {
 
   register_resource(resource) {
     this.register_setting(resource, { type: Number, default: 0 })
-    this.register_setting(resource.concat('_name'), { type: String })
+    this.register_setting(resource.concat('_name'), { type: String, default: '' })
     this.register_setting(resource.concat('_icon'), { type: ExtraTypes.FilePickerImage, default: '' })
     this.register_setting(resource.concat('_use_icon'), { Type: Boolean, default: false })
     this.register_setting(resource.concat('_visible'), { Type: Boolean, default: true })
@@ -110,10 +110,12 @@ export default class ResourcesApi {
     data.forEach((resource, index) => {
       if(resource == '') return ResourcesList.remove(resource)
 
+      this.register_resource(resource)
+
       results.push({
         id: resource,
-        position: this.get(resource.concat('_position')),
         value: this.get(resource),
+        position: this.get(resource.concat('_position')),
         name: this.get(resource.concat('_name')),
         max_value: this.get(resource.concat('_max')),
         min_value: this.get(resource.concat('_min')),
