@@ -1,4 +1,5 @@
 import ResourcesList from "./resources_list.mjs";
+import ActorResources from "./actor_resources.mjs";
 import ExtraTypes from '../../settings-extender/settings-extender.js'
 
 export default class ResourcesApi {
@@ -114,7 +115,7 @@ export default class ResourcesApi {
 
       results.push({
         id: resource,
-        value: this.get(resource),
+        value: (ActorResources.reserved_ids.includes(resource) ? ActorResources.count(resource) : this.get(resource)),
         position: this.get(resource.concat('_position')),
         name: this.get(resource.concat('_name')),
         max_value: this.get(resource.concat('_max')),
