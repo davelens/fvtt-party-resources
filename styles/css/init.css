@@ -17,8 +17,10 @@
     display: flex;
     flex: initial;
     justify-content: center; }
-  #fvtt-party-resources-dashboard .window-content .new-resource-form-btn {
-    max-height: 2rem; }
+  #fvtt-party-resources-dashboard .window-content .new-resource-form-btn-container {
+    min-height: 32px; }
+    #fvtt-party-resources-dashboard .window-content .new-resource-form-btn-container .new-resource-form-btn {
+      min-height: 2rem; }
   #fvtt-party-resources-dashboard .window-content .resources {
     display: flex;
     flex: initial;
@@ -45,6 +47,7 @@
             border-right: 1px solid grey; }
       #fvtt-party-resources-dashboard .window-content .resources .resource .info {
         border: 1px solid grey;
+        cursor: move;
         margin: 0;
         padding: 8px 0;
         position: relative; }
@@ -188,3 +191,10 @@
       transform: translateY(-50%); }
       #fvtt-party-resources-notifications .resource-notification i.close:hover {
         text-shadow: 0 0 8px red; }
+
+.resources.droppable .resource {
+  background-color: #f9eac2; }
+  .resources.droppable .resource.source {
+    opacity: 0.3; }
+
+/*# sourceMappingURL=../maps/init.css.map */

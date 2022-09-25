@@ -8,6 +8,7 @@ export default class ResourcesList {
     if(list.includes(name)) return
     list.push(name)
     window.pr.api.set('resource_list', list)
+    window.pr.api.update_positions()
   }
 
   static remove(name) {
@@ -15,5 +16,6 @@ export default class ResourcesList {
     if(!list.includes(name)) return
     list.splice(list.indexOf(name), 1)
     window.pr.api.set('resource_list', list)
+    window.pr.api.update_positions()
   }
 }
