@@ -1,3 +1,8 @@
+1.4.0a - Bugfix release
+--
+* Made sure drag/drop works when dragging icon images in the dashboard, as well.
+
+
 1.4.0 
 --
 * Added a way to sort your resources in the dashboard using drag/drop (#50).
