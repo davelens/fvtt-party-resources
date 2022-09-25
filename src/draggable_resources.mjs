@@ -6,7 +6,9 @@ export default class DraggableResources {
   static init(app) {
     this.app = app
     const dragDrop = this.controller()
-    if($('.resources').length >= 1) dragDrop.bind($('.resources')[0])
+
+    if($('.resources').length >= 1 && $('.resource').length >= 2)
+      dragDrop.bind($('.resources')[0])
   }
 
   static controller() {
