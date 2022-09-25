@@ -25,6 +25,12 @@ Hooks.once('ready', () => {
   ResourcesStatusBar.render()
 })
 
+// Because currency totals need to be updated once an actor leaves the game.
+Hooks.on('deleteActor', async () => {
+  window.pr.dashboard.redraw()
+  window.pr.status_bar.render()
+})
+
 Hooks.on('updateActor', async (doc, change, options, userId) => {
   // So it's important to remember that this is a system-agnostic module, and
   // currency may be present in dnd5e, but not in other game systems.
