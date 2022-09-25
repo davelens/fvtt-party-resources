@@ -1,3 +1,30 @@
+1.4.0 
+--
+* Added a way to sort your resources in the dashboard using drag/drop (#50).
+* Split up the resource notification message into separate ones for 
+increments / decrements (#32).
+* Fixed an issue with the Add a new resource-button collapsing in on itself 
+when resizing the window (since Foundry 10).
+* Fixed another lingering issue with a resource's default values not setting 
+a blank string for *_name resources.
+
+
+1.3.1
+--
+* Resources now have strict types and default values set when they get
+registered in game.settings.
+* Fixed an issue (#48) that caused resources with blank (ie. undefined) values 
+to throw [Setting.value]: may not be undefined errors and block the dashboard 
+from opening. You should now see placeholders (which you can safely edit) for 
+all values that bugged out.
+
+
+1.3.0a
+--
+* Added the "compatibility" section in module.json to get rid of the warnings in
+Foundry's module install.
+
+
 1.2.9
 --
 * Fixed an issue with the message body not showing up in notifications.
