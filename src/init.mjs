@@ -25,6 +25,17 @@ Hooks.once('ready', () => {
   ResourcesStatusBar.render()
 })
 
+Hooks.on('updateActor', async (doc, change, options, userId) => {
+  // So it's important to remember that this is a system-agnostic module, and
+  // currency may be present in dnd5e, but not in other game systems.
+  // Regardless, this can be extended with support for currency-related changes
+  // from other systems.
+  if(change?.system?.currency) {
+    window.pr.dashboard.redraw()
+    window.pr.status_bar.render()
+  }
+})
+
 Hooks.on('renderActorDirectory', async (app, html, data) => {
   if(!game.user.isGM && !ModuleSettings.get('toggle_actors_button_for_players'))
     return
