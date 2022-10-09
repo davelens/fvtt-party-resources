@@ -8,7 +8,7 @@
   "download": "https://github.com/davelens/fvtt-party-resources/releases/download/1.4.1/module.zip",
   "version": "1.4.1",
   "minimumCoreVersion": "9",
-  "compatibleCoreVersion":"10",
+  "compatibleCoreVersion": "10",
   "compatibility": {
     "minimum": "9",
     "verified": "10",
@@ -34,6 +34,11 @@
       "lang": "ja",
       "name": "日本語",
       "path": "languages/ja.json"
+    },
+    {
+      "lang": "nl",
+      "name": "Nederlands",
+      "path": "languages/nl.json"
     }
   ],
   "esmodules": [
