@@ -41,6 +41,9 @@ https://raw.githubusercontent.com/davelens/fvtt-party-resources/master/module.js
 ```
 2. Enable the `Party Resources` module in the active game world.
 
+## Translations
+If your desired translation is missing, you can help out through the [Weblate](https://weblate.foundryvtt-hub.com/engage/party-resources/) page for Party Resources! In return you will receive my eternal gratitude, and quite possibly various riches in an eventual afterlife.
+
 ## FAQ
 ### I don't see the status bar?
 
