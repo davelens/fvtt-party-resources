@@ -2,7 +2,11 @@
   "name": "fvtt-party-resources",
   "title": "Party Resources",
   "description": "Create and track custom party resources.",
-  "author": "Dave Lens",
+  "authors": [
+    {
+        "name": "Dave Lens"
+    }
+],
   "url": "https://github.com/davelens/fvtt-party-resources",
   "manifest": "https://github.com/davelens/fvtt-party-resources/releases/latest/download/module.json",
   "download": "https://github.com/davelens/fvtt-party-resources/releases/download/1.4.2/module.zip",
@@ -47,10 +51,13 @@
   "styles": [
     "./styles/css/init.css"
   ],
-  "dependencies": [
-    {
-      "name": "settings-extender"
-    }
-  ],
+  "relationships": {
+    "requires": [
+        {
+            "id": "settings-extender",
+            "type": "module"
+        }
+    ]
+},
   "socket": true
 }
