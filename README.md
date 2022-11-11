@@ -107,7 +107,7 @@ No, I don't have a Patreon going and don't get paid to write or maintain modules
 
 ### I have a different question about your module. Can I ping you on Discord?
 
-Sure: `Pretzl#3613` - I'm in the official FoundryVTT Discord.
+Sure: `Pretzl#0001` - I'm in the official FoundryVTT Discord.
 
 ## License
 This work is licensed under the MIT license, as well as Foundry Virtual Tabletop EULA - Limited License Agreement for module development from May 29, 2020.
