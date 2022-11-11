@@ -3,6 +3,7 @@ import ResourcesList from "./../resources_list.mjs";
 import DashboardDirections from "./../dashboard_directions.mjs";
 import DraggableResources from "./../draggable_resources.mjs";
 import CursorTooltip from "./../cursor_tooltip.mjs";
+import ActorDnd5eResources from "./../actor_dnd5e_resources.mjs";
 
 export default class ResourcesDashboard extends Application {
   static get defaultOptions() {
@@ -123,6 +124,7 @@ export default class ResourcesDashboard extends Application {
   resource_data(id) {
     return {
       identifier: id,
+      dnd5e_resource: ActorDnd5eResources.included(id),
       position: window.pr.api.get(id.concat('_position')),
       can_browse: game.user && game.user.can("FILES_BROWSE"),
       default_value: window.pr.api.get(id),

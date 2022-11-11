@@ -68,6 +68,10 @@ export default class ResourcesApi {
     this.set(name, new_value, { notify: true })
   }
 
+  is_aggregate_resource(id) {
+    return game.system.id == 'dnd5e' && ActorDnd5eResources.included(id)
+  }
+
   register_setting(name, options) {
     let properties = {
       scope: 'world',
@@ -112,7 +116,7 @@ export default class ResourcesApi {
     data.forEach((resource, index) => {
       if(resource == '') return ResourcesList.remove(resource)
 
-      if(game.system.id == 'dnd5e' && ActorDnd5eResources.reserved_ids.includes(resource)) {
+      if(this.is_aggregate_resource(resource)) {
         value = ActorDnd5eResources.count(resource)
       } else {
         value = this.get(resource)
@@ -137,6 +141,7 @@ export default class ResourcesApi {
         notify_chat_increment_message: this.get(resource.concat('_notify_chat_increment_message')),
         notify_chat_decrement_message: this.get(resource.concat('_notify_chat_decrement_message')),
         visible_for_players: game.user.isGM || this.get(resource.concat('_visible')),
+        is_regular_resource: !this.is_aggregate_resource(resource),
         is_gm: game.user.isGM,
         allowed_to_modify_settings: game.permissions.SETTINGS_MODIFY.includes(1)
       })

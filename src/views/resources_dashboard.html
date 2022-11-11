@@ -16,9 +16,11 @@
         <div class="info">
           {{#if manageable}}
           <p>
+            {{#if is_regular_resource}}
             <a class="change-value subtract" href="#" data-setting="{{ id }}" title="{{ localize 'FvttPartyResources.Dashboard.SubtractButtonTitle' }}">
               <i class="fas fa-minus"></i>
             </a>
+            {{/if}}
           </p>
           {{/if}}
 
@@ -42,9 +44,11 @@
 
           {{#if manageable}}
           <p>
+            {{#if is_regular_resource}}
             <a class="change-value add" href="#" data-setting="{{ id }}" title="{{ localize 'FvttPartyResources.Dashboard.AddButtonTitle' }}">
               <i class="fas fa-plus"></i>
             </a>
+            {{/if}}
           </p>
           {{/if}}
         </div>
