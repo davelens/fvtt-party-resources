@@ -35,7 +35,6 @@ export default class ResourceForm extends FormApplication {
       let identifier_input = $('#identifier')
       let selection = event.currentTarget.value
       identifier_input.val(selection)
-      identifier_input.attr('readonly', selection != "")
     })
   }
 
