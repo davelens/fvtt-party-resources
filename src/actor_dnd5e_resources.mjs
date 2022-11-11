@@ -1,8 +1,12 @@
 export default class ActorDnd5eResources {
-  static reserved_ids = [
-    'dnd_fifth_gold_standard',
-    'dnd_fifth_rations'
-  ]
+  static reserved_ids = {
+    'dnd_fifth_gold_standard': {
+      icon: 'icons/commodities/currency/coins-plain-stack-gold-yellow.webp'
+    },
+    'dnd_fifth_rations': {
+      icon: 'icons/consumables/meat/hock-leg-pink-brown.webp'
+    }
+  }
 
   static count(type) {
     switch(type) {
@@ -48,6 +52,10 @@ export default class ActorDnd5eResources {
     return rations.reduce((a,b) => {
       return (a?.system?.quantity || 0) + (b?.system?.quantity || 0)
     })
+  }
+
+  static included(id) {
+    return Object.keys(this.reserved_ids).includes(id)
   }
 
   static player_characters() {

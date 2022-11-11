@@ -1,4 +1,5 @@
 import ResourcesList from "./../resources_list.mjs";
+import ActorDnd5eResources from "./../actor_dnd5e_resources.mjs";
 
 export default class ResourceForm extends FormApplication {
   activateListeners(html) {
@@ -35,6 +36,8 @@ export default class ResourceForm extends FormApplication {
       let identifier_input = $('#identifier')
       let selection = event.currentTarget.value
       identifier_input.val(selection)
+      $('#use_icon').prop('checked', true)
+      $('[name="resource[icon]"]').val(ActorDnd5eResources.reserved_ids[selection].icon)
     })
   }
 
