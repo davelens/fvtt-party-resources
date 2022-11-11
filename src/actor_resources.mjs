@@ -37,6 +37,6 @@ export default class ActorResources {
   }
 
   static player_characters() {
-    return game.actors.filter((item) => { return item.type == 'character' })
+    return game.actors.filter((actor) => { return actor.type == 'character' })
   }
 }
