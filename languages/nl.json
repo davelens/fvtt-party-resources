@@ -9,6 +9,8 @@
   "FvttPartyResources.ResourceForm.DefaultValueHint": "De resource zijn beginwaarde.",
   "FvttPartyResources.ResourceForm.Dnd5eResource": "D&D 5e resource uitlezen",
   "FvttPartyResources.ResourceForm.Dnd5eResourceHint": "Hiermee kan je de optelsom van de gekozen D&D 5e resource over alle spelers heen tracken.",
+  "FvttPartyResources.ResourceForm.Dnd5eResources.Gold": "Goud",
+  "FvttPartyResources.ResourceForm.Dnd5eResources.Rations": "Rantsoenen",
   "FvttPartyResources.ResourceForm.EditFormTitle": "Resource aanpassen",
   "FvttPartyResources.ResourceForm.Headers.Label": "Label",
   "FvttPartyResources.ResourceForm.Headers.Notifications": "Meldingen",

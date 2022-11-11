@@ -14,6 +14,8 @@
   "FvttPartyResources.ResourceForm.DefaultValueHint": "The resource's initial value.",
   "FvttPartyResources.ResourceForm.Dnd5eResource": "Track D&D 5e resource",
   "FvttPartyResources.ResourceForm.Dnd5eResourceHint": "Selecting a value here will sum the total of all values of the selected D&D 5e resource across all player characters.",
+  "FvttPartyResources.ResourceForm.Dnd5eResources.Gold": "Gold",
+  "FvttPartyResources.ResourceForm.Dnd5eResources.Rations": "Rations",
   "FvttPartyResources.ResourceForm.EditFormTitle": "Edit resource",
   "FvttPartyResources.ResourceForm.Headers.Label": "Label",
   "FvttPartyResources.ResourceForm.Headers.Notifications": "Notifications",
