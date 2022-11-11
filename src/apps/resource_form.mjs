@@ -28,6 +28,15 @@ export default class ResourceForm extends FormApplication {
         setTimeout(() => { this.render(true) }, 250)
       }
     })
+
+    // Selecting a 5e specific resource will prefil the identifier input
+    // with a specific value.
+    html.on('change', '#dnd5e_name', event => {
+      let identifier_input = $('#identifier')
+      let selection = event.currentTarget.value
+      identifier_input.val(selection)
+      identifier_input.attr('readonly', selection != "")
+    })
   }
 
   /**
