@@ -30,9 +30,9 @@ export default class ActorResources {
     let total = 0.0
     total += currency_object.cp / 100.0
     total += currency_object.sp / 10.0
+    total += currency_object.ep / 2.0
     total += currency_object.gp
-    total += currency_object.ep * 2.0
-    total += currency_object.pp * 20.0
+    total += currency_object.pp * 10.0
     return total
   }
 
