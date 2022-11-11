@@ -1,3 +1,9 @@
+1.4.2 - Dutch translation!
+--
+* Configured the repository for incoming Weblate PR's
+* Added the dutch translation through Weblate.
+
+
 1.4.1 - Bugfix release
 --
 * Made sure drag/drop works when dragging icon images in the dashboard, as well.
