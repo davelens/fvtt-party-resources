@@ -10,6 +10,7 @@
       <p class="notes">{{ localize 'FvttPartyResources.ResourceForm.NameHint' }}</p>
     </div>
 
+    {{#if enable_dnd5e_input }}
     <div class="form-group">
       <label for="dnd5e_name">{{ localize 'FvttPartyResources.ResourceForm.Dnd5eResource' }}</label>
       <div class="form-fields">
@@ -20,6 +21,7 @@
       </div>
       <p class="notes">{{ localize 'FvttPartyResources.ResourceForm.Dnd5eResourceHint' }}</p>
     </div>
+    {{/if}}
 
     <div class="form-group">
       <label for="identifier">{{ localize 'FvttPartyResources.ResourceForm.Identifier' }}</label>

@@ -58,6 +58,7 @@ export default class ResourceForm extends FormApplication {
   getData(object) {
     let defaults = {
       id_disabled: false,
+      enable_dnd5e_input: this.id == 'add-resource-form' && game.system.id == 'dnd5e',
       allowed_to_modify_settings: game.permissions.SETTINGS_MODIFY.includes(1)
     }
     return mergeObject(defaults, this.object)
