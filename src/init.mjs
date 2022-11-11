@@ -31,16 +31,15 @@ Hooks.on('deleteActor', async () => {
   window.pr.status_bar.render()
 })
 
-Hooks.on('updateActor', async (doc, change, options, userId) => {
-  // So it's important to remember that this is a system-agnostic module, and
-  // currency may be present in dnd5e, but not in other game systems.
-  // Regardless, this can be extended with support for currency-related changes
-  // from other systems.
-  if(change?.system?.currency) {
-    window.pr.dashboard.redraw()
-    window.pr.status_bar.render()
-  }
-})
+
+// So it's important to remember that this is a system-agnostic module, and
+// currency may be present in dnd5e, but not in other game systems.
+// Regardless, this can be extended with support for currency-related changes
+// from other systems.
+Hooks.on('createItem', item_change_listener)
+Hooks.on('updateItem', item_change_listener)
+Hooks.on('deleteItem', item_change_listener)
+Hooks.on('updateActor', actor_change_listener)
 
 Hooks.on('renderActorDirectory', async (app, html, data) => {
   if(!game.user.isGM && !ModuleSettings.get('toggle_actors_button_for_players'))
@@ -82,4 +81,23 @@ function templates() {
     'modules/fvtt-party-resources/src/views/dashboard_button.html',
     'modules/fvtt-party-resources/src/views/status_bar.html'
   ]
+}
+
+async function item_change_listener(item, change, options, userId) {
+  if(item.type == 'consumable' && item.name == 'Rations')
+    render_resources()
+}
+
+async function actor_change_listener(actor, change, options, userId) {
+  // So it's important to remember that this is a system-agnostic module, and
+  // currency may be present in dnd5e, but not in other game systems.
+  // Regardless, this can be extended with support for currency-related changes
+  // from other systems.
+  if(change?.system?.currency)
+    render_resources()
+}
+
+function render_resources() {
+  window.pr.dashboard.redraw()
+  window.pr.status_bar.render()
 }

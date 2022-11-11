@@ -1,12 +1,16 @@
-export default class ActorResources {
+export default class ActorDnd5eResources {
   static reserved_ids = [
-    'dnd_fifth_gold_standard'
+    'dnd_fifth_gold_standard',
+    'dnd_fifth_rations'
   ]
 
   static count(type) {
     switch(type) {
       case 'dnd_fifth_gold_standard':
         return this.convert_dnd5e_currencies().toFixed(2)
+      case 'dnd_fifth_rations':
+        const rations = this.count_rations()
+        return rations < 0 ? 0 : rations
       default:
         return
     }
@@ -36,7 +40,25 @@ export default class ActorResources {
     return total
   }
 
+  static count_rations() {
+    const rations = this.rations()
+    if(rations.length == 0) return 0
+    if(rations.length == 1) return rations[0].system.quantity
+
+    return rations.reduce((a,b) => {
+      return (a?.system?.quantity || 0) + (b?.system?.quantity || 0)
+    })
+  }
+
   static player_characters() {
     return game.actors.filter((actor) => { return actor.type == 'character' })
+  }
+
+  static rations() {
+    return this.player_characters().map(actor => {
+      return actor.collections.items.filter(item => {
+        return item.name == 'Rations'
+      })
+    }).flat(2)
   }
 }

@@ -1,5 +1,5 @@
 import ResourcesList from "./resources_list.mjs";
-import ActorResources from "./actor_resources.mjs";
+import ActorDnd5eResources from "./actor_dnd5e_resources.mjs";
 import ExtraTypes from '../../settings-extender/settings-extender.js'
 
 export default class ResourcesApi {
@@ -102,6 +102,7 @@ export default class ResourcesApi {
 
   resources() {
     let results = []
+    let value;
     let data = ResourcesList.all().sort((a, b) => {
       this.register_resource(a)
       this.register_resource(b)
@@ -111,11 +112,17 @@ export default class ResourcesApi {
     data.forEach((resource, index) => {
       if(resource == '') return ResourcesList.remove(resource)
 
+      if(game.system.id == 'dnd5e' && ActorDnd5eResources.reserved_ids.includes(resource)) {
+        value = ActorDnd5eResources.count(resource)
+      } else {
+        value = this.get(resource)
+      }
+
       this.register_resource(resource)
 
       results.push({
         id: resource,
-        value: (ActorResources.reserved_ids.includes(resource) ? ActorResources.count(resource) : this.get(resource)),
+        value: value,
         position: this.get(resource.concat('_position')),
         name: this.get(resource.concat('_name')),
         max_value: this.get(resource.concat('_max')),
