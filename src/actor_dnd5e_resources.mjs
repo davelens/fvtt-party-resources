@@ -1,26 +1,7 @@
 export default class ActorDnd5eResources {
-  static reserved_ids = {
-    'dnd_fifth_gold_standard': {
-      icon: 'icons/commodities/currency/coins-plain-stack-gold-yellow.webp'
-    },
-    'dnd_fifth_rations': {
-      icon: 'icons/consumables/meat/hock-leg-pink-brown.webp'
-    }
-  }
-
-  static count(type) {
-    switch(type) {
-      case 'dnd_fifth_gold_standard':
-        return this.convert_dnd5e_currencies().toFixed(2)
-      case 'dnd_fifth_rations':
-        const rations = this.count_rations()
-        return rations < 0 ? 0 : rations
-      //case 'dnd_fifth_item':
-        // game.packs.get('dnd5e.items').index.forEach(item => { console.log(item) })
-        // TODO:
-      default:
-        return
-    }
+  static icons = {
+    'dnd_fifth_gold': 'icons/commodities/currency/coins-plain-stack-gold-yellow.webp',
+    'dnd_fifth_item': null
   }
 
   static convert_dnd5e_currencies() {
@@ -47,28 +28,43 @@ export default class ActorDnd5eResources {
     return total
   }
 
-  static count_rations() {
-    const rations = this.rations()
-    if(rations.length == 0) return 0
-    if(rations.length == 1) return rations[0].system.quantity
-
-    return rations.reduce((a,b) => {
-      return (a?.system?.quantity || 0) + (b?.system?.quantity || 0)
-    })
+  static count(type, item_name) {
+    switch(type) {
+      case 'dnd_fifth_gold':
+        return this.convert_dnd5e_currencies().toFixed(2)
+      case 'dnd_fifth_item':
+        // TODO: Might be an idea to access the dnd5e item pack through a
+        // dropdown?
+        //
+        //   game.packs.get('dnd5e.items').index.forEach(item => {
+        //     console.log(item)
+        //   })
+        //
+        return this.count_player_items(item_name)
+      default:
+        return
+    }
   }
 
-  static included(id) {
-    return Object.keys(this.reserved_ids).includes(id)
+  static count_player_items(name) {
+    const items = this.player_items(name)
+
+    if(items.length == 0) return 0
+    if(items.length == 1) return (items[0].system?.quantity || 1)
+
+    return items.reduce((a,b) => {
+      return (a?.system?.quantity || 0) + (b?.system?.quantity || 0)
+    })
   }
 
   static player_characters() {
     return game.actors.filter((actor) => { return actor.type == 'character' })
   }
 
-  static rations() {
+  static player_items(name) {
     return this.player_characters().map(actor => {
       return actor.collections.items.filter(item => {
-        return item.name == 'Rations'
+        return item.name == name
       })
     }).flat(2)
   }

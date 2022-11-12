@@ -68,8 +68,8 @@ export default class ResourcesApi {
     this.set(name, new_value, { notify: true })
   }
 
-  is_aggregate_resource(id) {
-    return game.system.id == 'dnd5e' && ActorDnd5eResources.included(id)
+  is_system_specific_resource(id) {
+    return this.get(id.concat('_system_type')) != ""
   }
 
   register_setting(name, options) {
@@ -102,6 +102,10 @@ export default class ResourcesApi {
     this.register_setting(resource.concat('_min'), { Type: Number, default: -100 })
     this.register_setting(resource.concat('_player_managed'), { type: Boolean, default: false })
     this.register_setting(resource.concat('_position'), { type: Number, default: ResourcesList.all().length + 1 })
+    // We need this one to store specific item resource names into when filtering
+    // for system-specific resources.
+    this.register_setting(resource.concat('_system_type'), { type: String, default: '' })
+    this.register_setting(resource.concat('_system_name'), { type: String, default: '' })
   }
 
   resources() {
@@ -116,13 +120,16 @@ export default class ResourcesApi {
     data.forEach((resource, index) => {
       if(resource == '') return ResourcesList.remove(resource)
 
-      if(this.is_aggregate_resource(resource)) {
-        value = ActorDnd5eResources.count(resource)
+      this.register_resource(resource)
+
+      if(this.is_system_specific_resource(resource)) {
+        value = ActorDnd5eResources.count(
+          window.pr.api.get(resource.concat('_system_type')),
+          window.pr.api.get(resource.concat('_system_name'))
+        )
       } else {
         value = this.get(resource)
       }
-
-      this.register_resource(resource)
 
       results.push({
         id: resource,
@@ -141,9 +148,11 @@ export default class ResourcesApi {
         notify_chat_increment_message: this.get(resource.concat('_notify_chat_increment_message')),
         notify_chat_decrement_message: this.get(resource.concat('_notify_chat_decrement_message')),
         visible_for_players: game.user.isGM || this.get(resource.concat('_visible')),
-        is_regular_resource: !this.is_aggregate_resource(resource),
+        is_regular_resource: !this.is_system_specific_resource(resource),
         is_gm: game.user.isGM,
-        allowed_to_modify_settings: game.permissions.SETTINGS_MODIFY.includes(1)
+        allowed_to_modify_settings: game.permissions.SETTINGS_MODIFY.includes(1),
+        system_type: this.get(resource.concat('_system_type')),
+        system_name: this.get(resource.concat('_system_name'))
       })
     })
 

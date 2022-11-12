@@ -31,25 +31,29 @@ export default class ResourceForm extends FormApplication {
     })
 
     html.on('keyup', '#name, #identifier', event => {
-      let value = $(event.currentTarget).val()
       if(this.id == 'edit-resource-form') return
 
-      // This makes sure the identifier field does not differ from the
-      // selection made in the dnd5e_name dropdown.
-      if($('#dnd5e_name').val() != '')
-        value = $('#dnd5e_name').val()
-
+      let value = $(event.currentTarget).val()
       $('#identifier').val(this.sanitize_identifier(value))
     })
 
     // Selecting a 5e specific resource will prefil the identifier input
     // with a specific value.
-    html.on('change', '#dnd5e_name', event => {
+    html.on('change', '#system_type', event => {
       let identifier_input = $('#identifier')
       let selection = event.currentTarget.value
-      identifier_input.val(selection)
-      $('#use_icon').prop('checked', true)
-      $('[name="resource[icon]"]').val(ActorDnd5eResources.reserved_ids[selection].icon)
+
+      if(selection.includes('_item')) {
+        $('#system_name').parents('div.form-group').removeClass('hidden')
+      } else {
+        $('#system_name').parents('div.form-group').addClass('hidden')
+      }
+
+      // TODO: Make class call dynamic.
+      if(ActorDnd5eResources.icons[selection]) {
+        $('#use_icon').prop('checked', true)
+        $('[name="resource[icon]"]').val(ActorDnd5eResources.icons[selection])
+      }
     })
   }
 
@@ -72,7 +76,7 @@ export default class ResourceForm extends FormApplication {
   getData(object) {
     let defaults = {
       id_disabled: false,
-      enable_dnd5e_input: this.id == 'add-resource-form' && game.system.id == 'dnd5e',
+      dnd5e: game.system.id == 'dnd5e',
       allowed_to_modify_settings: game.permissions.SETTINGS_MODIFY.includes(1)
     }
     return mergeObject(defaults, this.object)
@@ -105,6 +109,13 @@ export default class ResourceForm extends FormApplication {
     window.pr.api.set(id.concat('_player_managed'), data['resource[player_managed]'])
     window.pr.api.set(id.concat('_use_icon'), data['resource[use_icon]'])
     window.pr.api.set(id.concat('_icon'), data['resource[icon]'])
+
+    // TODO: Find out how to make the system_type dropdown select the right option
+    // when accessing the edit form, and remove this conditional afterwards.
+    if(this.id == 'add-resource-form') {
+      window.pr.api.set(id.concat('_system_type'), data['resource[system_type]'])
+      window.pr.api.set(id.concat('_system_name'), data['resource[system_name]'])
+    }
   }
 
   sanitize_identifier(string) {

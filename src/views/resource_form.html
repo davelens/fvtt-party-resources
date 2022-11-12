@@ -10,19 +10,27 @@
       <p class="notes">{{ localize 'FvttPartyResources.ResourceForm.NameHint' }}</p>
     </div>
 
-    {{#if enable_dnd5e_input }}
     <div class="form-group">
-      <label for="dnd5e_name">{{ localize 'FvttPartyResources.ResourceForm.Dnd5eResource' }}</label>
+      <label for="system_type">{{ localize 'FvttPartyResources.ResourceForm.Dnd5eResource' }}</label>
       <div class="form-fields">
-        <select id="dnd5e_name" name="resource[dnd5e_name]">
+        <select id="system_type" name="resource[system_type]">
           <option value=""></option>
-          <option value="dnd_fifth_gold_standard">{{ localize 'FvttPartyResources.ResourceForm.Dnd5eResources.Gold' }}</option>
-          <option value="dnd_fifth_rations">{{ localize 'FvttPartyResources.ResourceForm.Dnd5eResources.Rations' }}</option>
+          {{#if dnd5e }}
+          <option value="dnd_fifth_gold">{{ localize 'FvttPartyResources.ResourceForm.Dnd5eResources.Gold' }}</option>
+          <option value="dnd_fifth_item">{{ localize 'FvttPartyResources.ResourceForm.Dnd5eResources.Item' }}</option>
+          {{/if}}
         </select>
       </div>
       <p class="notes">{{ localize 'FvttPartyResources.ResourceForm.Dnd5eResourceHint' }}</p>
     </div>
-    {{/if}}
+
+    <div class="form-group hidden">
+      <label for="system_name">{{ localize 'FvttPartyResources.ResourceForm.Dnd5eResources.ItemName' }}</label>
+      <div class="form-fields">
+        <input type="text" id="system_name" name="resource[system_name]" value="{{ system_name }}" data-dtype="String">
+      </div>
+      <p class="notes">{{ localize 'FvttPartyResources.ResourceForm.Dnd5eResources.ItemNameHint' }}</p>
+    </div>
 
     <div class="form-group">
       <label for="identifier">{{ localize 'FvttPartyResources.ResourceForm.Identifier' }}</label>

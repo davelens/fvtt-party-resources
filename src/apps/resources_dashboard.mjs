@@ -124,7 +124,6 @@ export default class ResourcesDashboard extends Application {
   resource_data(id) {
     return {
       identifier: id,
-      dnd5e_resource: ActorDnd5eResources.included(id),
       position: window.pr.api.get(id.concat('_position')),
       can_browse: game.user && game.user.can("FILES_BROWSE"),
       default_value: window.pr.api.get(id),
@@ -138,7 +137,9 @@ export default class ResourcesDashboard extends Application {
       notify_chat_increment_message: window.pr.api.get(id.concat('_notify_chat_increment_message')),
       notify_chat_decrement_message: window.pr.api.get(id.concat('_notify_chat_decrement_message')),
       allowed_to_modify_settings: game.permissions.SETTINGS_MODIFY.includes(1),
-      visible: window.pr.api.get(id.concat('_visible'))
+      visible: window.pr.api.get(id.concat('_visible')),
+      system_type: window.pr.api.get(id.concat('_system_type')),
+      system_name: window.pr.api.get(id.concat('_system_name'))
     }
   }
 

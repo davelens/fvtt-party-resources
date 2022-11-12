@@ -25,21 +25,13 @@ Hooks.once('ready', () => {
   ResourcesStatusBar.render()
 })
 
-// Because currency totals need to be updated once an actor leaves the game.
-Hooks.on('deleteActor', async () => {
-  window.pr.dashboard.redraw()
-  window.pr.status_bar.render()
-})
-
-
-// So it's important to remember that this is a system-agnostic module, and
-// currency may be present in dnd5e, but not in other game systems.
-// Regardless, this can be extended with support for currency-related changes
-// from other systems.
-Hooks.on('createItem', item_change_listener)
-Hooks.on('updateItem', item_change_listener)
-Hooks.on('deleteItem', item_change_listener)
-Hooks.on('updateActor', actor_change_listener)
+// Because system-specific totals need to be updated as currency or item totals
+// get modified.
+Hooks.on('createItem', render_resources)
+Hooks.on('updateItem', render_resources)
+Hooks.on('deleteItem', render_resources)
+Hooks.on('updateActor', render_resources)
+Hooks.on('deleteActor', render_resources)
 
 Hooks.on('renderActorDirectory', async (app, html, data) => {
   if(!game.user.isGM && !ModuleSettings.get('toggle_actors_button_for_players'))
@@ -81,20 +73,6 @@ function templates() {
     'modules/fvtt-party-resources/src/views/dashboard_button.html',
     'modules/fvtt-party-resources/src/views/status_bar.html'
   ]
-}
-
-async function item_change_listener(item, change, options, userId) {
-  if(item.type == 'consumable' && item.name == 'Rations')
-    render_resources()
-}
-
-async function actor_change_listener(actor, change, options, userId) {
-  // So it's important to remember that this is a system-agnostic module, and
-  // currency may be present in dnd5e, but not in other game systems.
-  // Regardless, this can be extended with support for currency-related changes
-  // from other systems.
-  if(change?.system?.currency)
-    render_resources()
 }
 
 function render_resources() {
