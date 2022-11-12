@@ -31,10 +31,15 @@ export default class ResourceForm extends FormApplication {
     })
 
     html.on('keyup', '#name, #identifier', event => {
-      let origin = $(event.currentTarget)
+      let value = $(event.currentTarget).val()
       if(this.id == 'edit-resource-form') return
-      let value = this.sanitize_identifier(origin.val())
-      $('#identifier').val(value)
+
+      // This makes sure the identifier field does not differ from the
+      // selection made in the dnd5e_name dropdown.
+      if($('#dnd5e_name').val() != '')
+        value = $('#dnd5e_name').val()
+
+      $('#identifier').val(this.sanitize_identifier(value))
     })
 
     // Selecting a 5e specific resource will prefil the identifier input
