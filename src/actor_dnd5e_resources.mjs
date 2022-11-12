@@ -15,6 +15,9 @@ export default class ActorDnd5eResources {
       case 'dnd_fifth_rations':
         const rations = this.count_rations()
         return rations < 0 ? 0 : rations
+      //case 'dnd_fifth_item':
+        // game.packs.get('dnd5e.items').index.forEach(item => { console.log(item) })
+        // TODO:
       default:
         return
     }
