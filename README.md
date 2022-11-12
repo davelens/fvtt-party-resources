@@ -14,10 +14,11 @@ Party Resources is a module that allows you to manage party-wide, numeric values
   * Hold `CTRL` (Windows) or `CMD` (MacOS) when clicking to jump by +/- 10
   * Hold `SHIFT` when clicking to jump by +/- 100
 * Live updates for players when values change
-* Sports a videogame-esque status bar to easily keep track of resources.
-* Sort your resources using drag/drop in the dashboard.
+* Sports a videogame-esque status bar to easily keep track of resources
+* Sort your resources using drag/drop in the dashboard
 * Track DM resources by hiding certain resources for players
-* Optionally notify players through chat when a resource value changes.
+* Track system-specific currency or items (only dnd5e for now)
+* Optionally notify players through chat when a resource value changes
 * Optionally limit resources to a given maximum
 * Optionally hand over resource management to players
 * Optionally use icon images as resource labels
