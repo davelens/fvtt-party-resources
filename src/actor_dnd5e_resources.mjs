@@ -28,12 +28,12 @@ export default class ActorDnd5eResources {
       .reduce((a,b) => { return a + b })
   }
 
-  //Coin            CP        SP      EP      GP      PP
-  //Copper (cp)     1         10      50      100     1,000
-  //Silver (sp)     1/10      1       5       10      100
-  //Electrum (ep)   1/50      1/5     1       2       20
-  //Gold (gp)       1/100     1/10    1/2     1       10
-  //Platinum (pp)   1/1,000   1/100   1/20    1/10    1
+  // Coin            CP        SP      EP      GP      PP
+  // Copper (cp)     1         10      50      100     1,000
+  // Silver (sp)     1/10      1       5       10      100
+  // Electrum (ep)   1/50      1/5     1       2       20
+  // Gold (gp)       1/100     1/10    1/2     1       10
+  // Platinum (pp)   1/1,000   1/100   1/20    1/10    1
   static convert_to_dnd5e_gold(currency_object) {
     let total = 0.0
     total += currency_object.cp / 100.0
