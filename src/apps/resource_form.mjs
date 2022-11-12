@@ -30,6 +30,13 @@ export default class ResourceForm extends FormApplication {
       }
     })
 
+    html.on('keyup', '#name, #identifier', event => {
+      let origin = $(event.currentTarget)
+      if(this.id == 'edit-resource-form') return
+      let value = this.sanitize_identifier(origin.val())
+      $('#identifier').val(value)
+    })
+
     // Selecting a 5e specific resource will prefil the identifier input
     // with a specific value.
     html.on('change', '#dnd5e_name', event => {
@@ -98,7 +105,7 @@ export default class ResourceForm extends FormApplication {
   sanitize_identifier(string) {
     return string
       .toLowerCase()
-      .replace(/[0-9]+/, '')
-      .replace(' ', '')
+      .replace(/[0-9]+/g, '')
+      .replace(/[^\w ]|\s+/g, '-')
   }
 }
