@@ -2,6 +2,7 @@
   background-color: rgba(0, 0, 0, 0.5);
   padding: 6px 10px;
   pointer-events: auto;
+  cursor: pointer;
 
   ul {
     list-style: none;
@@ -23,9 +24,24 @@
       font-size: 1rem;
       margin-right: 20px;
 
+      &:hover {
+        background:rgba(100, 100, 100, 0.5);
+      }
+
+      $resource_line_height: 32px;
+
+      span {
+        min-height: $resource_line_height;
+        line-height: $resource_line_height;
+        padding: 0 5px;
+        pointer-events: none;
+      }
+
       img {
-        margin-right: 4px;
-        vertical-align: middle;
+        vertical-align: top;
+        pointer-events: none;
+        height: $resource_line_height;
+        width: $resource_line_height;
       }
     }
   }
