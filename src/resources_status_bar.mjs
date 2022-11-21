@@ -33,7 +33,7 @@ export default class ResourcesStatusBar {
     })
 
     $('.fvtt-party-resources-resource').on('click', event => {
-      if (!event.ctrlKey && !event.metaKey) {
+      if (!game.user.isGM || (!event.ctrlKey && !event.metaKey)) {
         return
       }
 
