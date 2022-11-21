@@ -1,0 +1,9 @@
+.resources.droppable {
+  .resource {
+    background-color: #f9eac2;
+
+    &.source {
+      opacity: 0.3;
+    }
+  }
+}

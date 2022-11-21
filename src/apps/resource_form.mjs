@@ -5,7 +5,10 @@ export default class ResourceForm extends FormApplication {
     super.activateListeners(html)
 
     html.on('change', '#notify_chat', event => {
-      $('#notify_chat_message')
+      $('#notify_chat_increment_message')
+        .prop('disabled', !$(event.target).prop('checked'))
+
+      $('#notify_chat_decrement_message')
         .prop('disabled', !$(event.target).prop('checked'))
     })
 
@@ -71,7 +74,8 @@ export default class ResourceForm extends FormApplication {
     window.pr.api.set(id, data['resource[default_value]'], { notify: true })
     window.pr.api.set(id.concat('_name'), data['resource[name]'])
     window.pr.api.set(id.concat('_notify_chat'), data['resource[notify_chat]'])
-    window.pr.api.set(id.concat('_notify_chat_message'), data['resource[notify_chat_message]'])
+    window.pr.api.set(id.concat('_notify_chat_increment_message'), data['resource[notify_chat_increment_message]'])
+    window.pr.api.set(id.concat('_notify_chat_decrement_message'), data['resource[notify_chat_decrement_message]'])
     window.pr.api.set(id.concat('_max'), data['resource[max_value]'])
     window.pr.api.set(id.concat('_min'), data['resource[min_value]'])
     window.pr.api.set(id.concat('_player_managed'), data['resource[player_managed]'])

@@ -1,6 +1,7 @@
 import ResourceForm from "./resource_form.mjs";
 import ResourcesList from "./../resources_list.mjs";
 import DashboardDirections from "./../dashboard_directions.mjs";
+import DraggableResources from "./../draggable_resources.mjs";
 import CursorTooltip from "./../cursor_tooltip.mjs";
 
 export default class ResourcesDashboard extends Application {
@@ -15,6 +16,7 @@ export default class ResourcesDashboard extends Application {
     })
   }
 
+  // Probably a good idea to extract some methods here for readability.
   activateListeners(html) {
     super.activateListeners(html)
 
@@ -71,6 +73,8 @@ export default class ResourcesDashboard extends Application {
         }
       ).render(true)
     })
+
+    DraggableResources.init(this)
   }
 
   increment_jump(event) {
@@ -119,6 +123,7 @@ export default class ResourcesDashboard extends Application {
   resource_data(id) {
     return {
       identifier: id,
+      position: window.pr.api.get(id.concat('_position')),
       can_browse: game.user && game.user.can("FILES_BROWSE"),
       default_value: window.pr.api.get(id),
       name: window.pr.api.get(id.concat('_name')),
@@ -128,7 +133,8 @@ export default class ResourcesDashboard extends Application {
       use_icon: window.pr.api.get(id.concat('_use_icon')),
       player_managed: window.pr.api.get(id.concat('_player_managed')),
       notify_chat: window.pr.api.get(id.concat('_notify_chat')),
-      notify_chat_message: window.pr.api.get(id.concat('_notify_chat_message')),
+      notify_chat_increment_message: window.pr.api.get(id.concat('_notify_chat_increment_message')),
+      notify_chat_decrement_message: window.pr.api.get(id.concat('_notify_chat_decrement_message')),
       allowed_to_modify_settings: game.permissions.SETTINGS_MODIFY.includes(1),
       visible: window.pr.api.get(id.concat('_visible'))
     }

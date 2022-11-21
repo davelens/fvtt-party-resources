@@ -1,4 +1,8 @@
 {
+  "scripts": {
+    "build": "node-sass --output styles/css --source-map styles/maps styles/scss/init.scss",
+    "build:watch": "yarn build --watch"
+  },
   "dependencies": {
     "node-sass": "^7.0.0"
   }

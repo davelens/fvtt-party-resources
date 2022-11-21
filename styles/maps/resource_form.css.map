@@ -1,9 +1,0 @@
-{
-	"version": 3,
-	"file": "../resource_form.css",
-	"sources": [
-		"../resource_form.css"
-	],
-	"names": [],
-	"mappings": "AAAA,AAAA,kBAAkB,CAAC,KAAK,AAAA,SAAS,EAAE,mBAAmB,CAAC,KAAK,AAAA,SAAS,CAAC;EACpE,wCAAwC;EACxC,SAAS,EAAE,eAAe;EAC1B,aAAa,EAAE,GAAG,GAAG"
-}

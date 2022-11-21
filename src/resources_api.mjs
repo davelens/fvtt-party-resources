@@ -11,9 +11,12 @@ export default class ResourcesApi {
     let jump = new String(new_value-value)
     if(jump > 0) jump = '+'.concat(jump)
 
+    let message = this.get(name.concat('_notify_chat_increment_message'))
+    if(new_value < value) message = this.get(name.concat('_notify_chat_decrement_message'))
+
     const template = 'modules/fvtt-party-resources/src/views/notification.html'
     const notification_html = await renderTemplate(template, {
-      message: this.get(name.concat('_notify_chat_message')),
+      message: message,
       resource: resource,
       color: color,
       new_value: new_value,
@@ -34,7 +37,25 @@ export default class ResourcesApi {
   }
 
   get(name) {
-    return game.settings.get('fvtt-party-resources', name)
+    // This try/catch should make sure users can still access the dashboard
+    // when any validation errors trigger upon setting retrieval due to
+    // Foundry v10's DataModel changes.
+    try {
+      return game.settings.get('fvtt-party-resources', name)
+    } catch(error) {
+      if(error.errors && !Object.getOwnPropertyNames(error.errors).equals(['Setting.value'])) return
+
+      if(name.includes('_name'))
+        return 'RENAME ME'
+
+      if(name.includes('_min'))
+        return -100
+
+      if(name.includes('_max'))
+        return 100
+
+      return 0
+    }
   }
 
   increment(name, jump) {
@@ -48,7 +69,7 @@ export default class ResourcesApi {
 
   register_setting(name, options) {
     let properties = {
-      scope: "world",
+      scope: 'world',
       config: false,
       onChange: value => {
         window.pr.dashboard.redraw()
@@ -64,22 +85,29 @@ export default class ResourcesApi {
   }
 
   register_resource(resource) {
-    this.register_setting(resource)
-    this.register_setting(resource.concat('_name'))
+    this.register_setting(resource, { type: Number, default: 0 })
+    this.register_setting(resource.concat('_name'), { type: String, default: '' })
     this.register_setting(resource.concat('_icon'), { type: ExtraTypes.FilePickerImage, default: '' })
-    this.register_setting(resource.concat('_use_icon'), { default: false })
-    this.register_setting(resource.concat('_visible'), { default: true })
-    this.register_setting(resource.concat('_notify_chat'), { default: true })
-    this.register_setting(resource.concat('_notify_chat_message'), { default: "A resource value has changed." })
-    this.register_setting(resource.concat('_max'))
-    this.register_setting(resource.concat('_min'))
-    this.register_setting(resource.concat('_player_managed'), { default: false })
+    this.register_setting(resource.concat('_use_icon'), { Type: Boolean, default: false })
+    this.register_setting(resource.concat('_visible'), { Type: Boolean, default: true })
+    this.register_setting(resource.concat('_notify_chat'), { Type: Boolean, default: true })
+    this.register_setting(resource.concat('_notify_chat_increment_message'), { Type: String, default: "A resource value has increased." })
+    this.register_setting(resource.concat('_notify_chat_decrement_message'), { Type: String, default: "A resource value has decreased." })
+    this.register_setting(resource.concat('_max'), { Type: Number, default: 100 })
+    this.register_setting(resource.concat('_min'), { Type: Number, default: -100 })
+    this.register_setting(resource.concat('_player_managed'), { type: Boolean, default: false })
+    this.register_setting(resource.concat('_position'), { type: Number, default: ResourcesList.all().length + 1 })
   }
 
   resources() {
     let results = []
+    let data = ResourcesList.all().sort((a, b) => {
+      this.register_resource(a)
+      this.register_resource(b)
+      return this.get(a.concat('_position')) - this.get(b.concat('_position'))
+    })
 
-    ResourcesList.all().forEach((resource, index) => {
+    data.forEach((resource, index) => {
       if(resource == '') return ResourcesList.remove(resource)
 
       this.register_resource(resource)
@@ -87,6 +115,7 @@ export default class ResourcesApi {
       results.push({
         id: resource,
         value: this.get(resource),
+        position: this.get(resource.concat('_position')),
         name: this.get(resource.concat('_name')),
         max_value: this.get(resource.concat('_max')),
         min_value: this.get(resource.concat('_min')),
@@ -97,7 +126,8 @@ export default class ResourcesApi {
         manageable: game.user.isGM || this.get(resource.concat('_player_managed')),
         visible: this.get(resource.concat('_visible')),
         notify_chat: this.get(resource.concat('_notify_chat')),
-        notify_chat_message: this.get(resource.concat('_notify_chat_message')),
+        notify_chat_increment_message: this.get(resource.concat('_notify_chat_increment_message')),
+        notify_chat_decrement_message: this.get(resource.concat('_notify_chat_decrement_message')),
         visible_for_players: game.user.isGM || this.get(resource.concat('_visible')),
         is_gm: game.user.isGM,
         allowed_to_modify_settings: game.permissions.SETTINGS_MODIFY.includes(1)
@@ -115,4 +145,16 @@ export default class ResourcesApi {
 
     game.settings.set('fvtt-party-resources', name, value)
   }
+
+  update_positions() {
+    // Adding new resources means their default value will be "1", so you'll
+    // end up with two "2" references if you just do the above two set()
+    // instructions. window.pr.api.resources() comes pre-sorted according
+    // to their position attribute, so looping and updating the value should
+    // be sufficient.
+    this.resources().resources.forEach((resource, index) => {
+      this.set(`${resource.id}_position`, index+1)
+    })
+  }
+
 }

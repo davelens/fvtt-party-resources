@@ -3,3 +3,5 @@
 styles/.sass-cache/
 node_modules/
 bin/pull
+.yarn.lock
+.package-lock.json

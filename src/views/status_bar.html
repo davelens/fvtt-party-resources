@@ -5,12 +5,14 @@
       <ul class="clearfix">
         {{#each resources as |r|}}
           {{#if visible_for_players }}
-            <li class="flexrow">
+            <li class="flexrow fvtt-party-resources-resource" data-id="{{r.id}}">
               {{#if r.use_icon}}
-                <img src="{{ r.icon }}" alt="{{ r.name }}" title="{{ r.name }}" width="32" height="32">
+                <img src="{{ r.icon }}" alt="{{ r.name }}" title="{{ r.name }}">
               {{/if}}
 
-              {{ r.name }} ({{ value }}{{#if max_value}}/{{ max_value }}{{/if}})
+              <span>
+                {{ r.name }} ({{ value }}{{#if max_value}}/{{ max_value }}{{/if}})
+              </span>
             </li>
           {{/if}}
         {{/each}}

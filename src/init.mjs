@@ -7,7 +7,7 @@ import ResourcesStatusBar from "./resources_status_bar.mjs";
 
 Hooks.once('init', () => {
   window.pr = {
-    version: game.modules.get('fvtt-party-resources').data.version,
+    version: game.modules.get('fvtt-party-resources').version,
     dashboard: new ResourcesDashboard(),
     api: new ResourcesApi(),
     notifications: new ResourceNotifications(),

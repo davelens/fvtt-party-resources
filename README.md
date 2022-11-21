@@ -2,10 +2,11 @@
 
 ![Latest release](https://img.shields.io/github/v/release/davelens/fvtt-party-resources?style=for-the-badge)
 ![GitHub all releases](https://img.shields.io/github/downloads/davelens/fvtt-party-resources/total?color=blue&style=for-the-badge)
-![GitHub release (by tag)](https://img.shields.io/github/downloads/davelens/fvtt-party-resources/1.2.8/total?color=blue&style=for-the-badge)
+![GitHub release (by tag)](https://img.shields.io/github/downloads/davelens/fvtt-party-resources/1.4.2/total?color=blue&style=for-the-badge&refreshplx=1)
+[![Donate](https://img.shields.io/static/v1?label=Tip&message=PayPal&color=green&style=for-the-badge)](https://www.paypal.com/donate/?business=S4YPUE3P8ZK52&no_recurring=0&item_name=I+maintain+Party+Resources+in+my+%28limited%29+free+time.+Donations+are+not+necessary%2C+but+very+welcome+and+encouraging!&currency_code=EUR)
+[![Donate](https://img.shields.io/static/v1?label=Tip&message=Ko-Fi&color=green&style=for-the-badge)](https://www.ko-fi.com/davelens)
 
-Party Resources is a module that allows you to store party-wide numeric values,
-scoped on worlds.
+Party Resources is a module that allows you to manage party-wide, numeric values that persist between sessions.
 
 ## Features
 * Add/Edit/Delete custom resources, with optional icon images
@@ -13,9 +14,11 @@ scoped on worlds.
   * Hold `CTRL` (Windows) or `CMD` (MacOS) when clicking to jump by +/- 10
   * Hold `SHIFT` when clicking to jump by +/- 100
 * Live updates for players when values change
-* Sports a videogame-esque status bar to easily keep track of resources.
+* Sports a videogame-esque status bar to easily keep track of resources
+* Sort your resources using drag/drop in the dashboard
 * Track DM resources by hiding certain resources for players
-* Optionally notify players through chat when a resource value changes.
+* Track system-specific currency or items (only dnd5e for now)
+* Optionally notify players through chat when a resource value changes
 * Optionally limit resources to a given maximum
 * Optionally hand over resource management to players
 * Optionally use icon images as resource labels
@@ -38,6 +41,9 @@ scoped on worlds.
 https://raw.githubusercontent.com/davelens/fvtt-party-resources/master/module.json
 ```
 2. Enable the `Party Resources` module in the active game world.
+
+## Translations
+If your desired translation is missing, you can help out through the [Weblate](https://weblate.foundryvtt-hub.com/engage/party-resources/) page for Party Resources! In return you will receive my eternal gratitude, and quite possibly various riches in an eventual afterlife.
 
 ## FAQ
 ### I don't see the status bar?
@@ -63,7 +69,7 @@ window.pr.status_bar.render()
 
 ### How can I open the dashboard using a macro?
 ```js
-window.pr.dashbard.redraw(true)
+window.pr.dashboard.redraw(true)
 ```
 ### How do I change resource values in a script macro?
 As an example, say you wanted to change a resource called `Fate Counters` that you gave a resource ID of `fate` when you created it.
@@ -76,6 +82,16 @@ window.pr.api.get('fate')
 To set the value of the `fate` resource to `5`:
 ```js
 window.pr.api.set('fate', 5)
+```
+
+To increment the value of the `fate` resource by `2`:
+```js
+window.pr.api.increment('fate', 2)
+```
+
+To decrement the value of the `fate` resource by `1`:
+```js
+window.pr.api.decrement('fate', 1)
 ```
 
 To set the value of the `fate` resource to `5`, and notify players with a chat
@@ -92,7 +108,7 @@ No, I don't have a Patreon going and don't get paid to write or maintain modules
 
 ### I have a different question about your module. Can I ping you on Discord?
 
-Sure: `Pretzl#3613` - I'm in the official FoundryVTT Discord.
+Sure: `Pretzl#0001` - I'm in the official FoundryVTT Discord.
 
 ## License
 This work is licensed under the MIT license, as well as Foundry Virtual Tabletop EULA - Limited License Agreement for module development from May 29, 2020.

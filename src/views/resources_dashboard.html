@@ -1,7 +1,7 @@
 <small class="version">v{{ version }}</small>
 
 {{#if is_gm}}
-  <p>
+  <p class="new-resource-form-btn-container">
     <button class="new-resource-form-btn">
       <i class="fas fa-plus"></i> {{ localize 'FvttPartyResources.ResourceForm.AddFormTitle' }}
     </button>
@@ -12,7 +12,7 @@
   <section class="resources">
     {{#each resources}}
       {{#if visible_for_players }}
-      <div class="resource">
+      <div class="resource" data-id="{{ id }}" data-position="{{ position }}">
         <div class="info">
           {{#if manageable}}
           <p>
