@@ -1,4 +1,9 @@
-1.4.3a
+1.4.4
+--
+Prevent players from accessing the edit resource button.
+
+
+1.4.3
 --
 Many thanks to user @jagoe for the following additions:
 
