@@ -32,14 +32,13 @@ export default class ResourcesStatusBar {
       window.pr.dashboard.render(true, {focus: true})
     })
 
-    $('.fvtt-party-resources-resource').click(event => {
-      if (!event.ctrlKey) {
+    $('.fvtt-party-resources-resource').on('click', event => {
+      if (!event.ctrlKey && !event.metaKey) {
         return
       }
 
       event.stopPropagation()
 
-      console.log(event.target)
       const id = $(event.target).data('id')
 
       if (!id) {
