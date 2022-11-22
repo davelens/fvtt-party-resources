@@ -47,14 +47,15 @@ export default class ActorDnd5eResources {
   }
 
   static count_player_items(names) {
+    names = names.split(';').map((a) => { return a.trim() })
     const items = this.player_items(names)
 
     if(items.length == 0) return 0
     if(items.length == 1) return (items[0].system?.quantity || 1)
 
-    return items.reduce((a,b) => {
-      return (a?.system?.quantity || 0) + (b?.system?.quantity || 0)
-    })
+    return items
+      .map(i => { return i?.system?.quantity || 0 })
+      .reduce((a,b) => { return a + b })
   }
 
   static player_characters() {
@@ -64,10 +65,7 @@ export default class ActorDnd5eResources {
   static player_items(names) {
     return this.player_characters().map(actor => {
       return actor.collections.items.filter(item => {
-        return names
-          .split(';')
-          .map((a) => { return a.trim() })
-          .includes(item.name)
+        return names.includes(item.name)
       })
     }).flat(2)
   }
