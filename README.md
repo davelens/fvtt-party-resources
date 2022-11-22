@@ -30,6 +30,9 @@ Party Resources is a module that allows you to manage party-wide, numeric values
 * Tracking the quantity of ingame resources like building materials, ingredients, or army sizes
 * Tracking custom quantified "meta" resources like sanity, desperation, or fame levels
 * Tracking DM-specific mnemonics like poison counters, population totals, or player deaths 😈
+* D&D 5e: Tracking all your party's D&D 5e platinum, eternum, silver, and gold into one amount (in gold)
+* D&D 5e: Tracking all rations in players' inventory into one amount (for those Tomb of Annihilation sessions amirite?)
+* D&D 5e: Tracking all normal and greater healing potions in players' inventory into one amount
 
 ### What the DM sees in the dashboard
 ![Image showing what the DM sees when opening the resources dashboard](https://user-images.githubusercontent.com/221527/154817180-5dcb0c95-845f-4ef3-a8e8-9b734b2feda7.jpeg)
