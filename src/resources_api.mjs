@@ -25,7 +25,6 @@ export default class ResourcesApi {
     })
 
     ChatMessage.create({content: notification_html})
-    window.pr.dashboard.redraw()
   }
 
   decrement(name, jump) {
