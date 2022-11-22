@@ -37,6 +37,9 @@ Party Resources is a module that allows you to manage party-wide, numeric values
 ### What the players see in the status bar
 ![Image showing what the players see in the status bar](https://user-images.githubusercontent.com/221527/154817026-a84c4290-c2b4-4d92-9e12-1474fd627635.jpeg)
 
+### How D&D 5e gold or specific items can look like when tracked
+![Image showing how D&D 5e resources look like in the status bar](https://user-images.githubusercontent.com/221527/203189855-8c44fd1f-a5fb-4628-82a8-6d471173e413.jpg)
+
 ## Installation
 1. Install Party Resources in FoundryVTT using the manifest URL:
 ```
