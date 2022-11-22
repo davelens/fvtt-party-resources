@@ -5,6 +5,14 @@ export default class ResourceForm extends FormApplication {
   activateListeners(html) {
     super.activateListeners(html)
 
+    if(this.id == 'edit-resource-form') {
+      if(this.object.system_type.includes('_item')) {
+        $('#system_name').parents('div.form-group').removeClass('hidden')
+      } else {
+        $('#system_name').parents('div.form-group').addClass('hidden')
+      }
+    }
+
     html.on('change', '#notify_chat', event => {
       $('#notify_chat_increment_message')
         .prop('disabled', !$(event.target).prop('checked'))
@@ -43,6 +51,13 @@ export default class ResourceForm extends FormApplication {
       let identifier_input = $('#identifier')
       let selection = event.currentTarget.value
 
+      if(this.id == 'edit-resource-form') {
+        if(this.object.system_type) {
+          document.getElementById('system_type').value = this.object.system_type
+          return
+        }
+      }
+
       if(selection.includes('_item')) {
         $('#system_name').parents('div.form-group').removeClass('hidden')
       } else {
@@ -77,6 +92,10 @@ export default class ResourceForm extends FormApplication {
     let defaults = {
       id_disabled: false,
       dnd5e: game.system.id == 'dnd5e',
+      // I'm not convinced this is the most optimal way to handle the selected
+      // state of dropdowns, but I can't see the obvious, better solution here.
+      dnd_fifth_item: this.object.system_type == 'dnd_fifth_item',
+      dnd_fifth_gold: this.object.system_type == 'dnd_fifth_gold',
       allowed_to_modify_settings: game.permissions.SETTINGS_MODIFY.includes(1)
     }
     return mergeObject(defaults, this.object)
@@ -109,12 +128,12 @@ export default class ResourceForm extends FormApplication {
     window.pr.api.set(id.concat('_player_managed'), data['resource[player_managed]'])
     window.pr.api.set(id.concat('_use_icon'), data['resource[use_icon]'])
     window.pr.api.set(id.concat('_icon'), data['resource[icon]'])
+    window.pr.api.set(id.concat('_system_name'), data['resource[system_name]'])
 
     // TODO: Find out how to make the system_type dropdown select the right option
     // when accessing the edit form, and remove this conditional afterwards.
     if(this.id == 'add-resource-form') {
       window.pr.api.set(id.concat('_system_type'), data['resource[system_type]'])
-      window.pr.api.set(id.concat('_system_name'), data['resource[system_name]'])
     }
   }
 

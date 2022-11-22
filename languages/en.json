@@ -13,7 +13,7 @@
   "FvttPartyResources.ResourceForm.DefaultValue": "Default value",
   "FvttPartyResources.ResourceForm.DefaultValueHint": "The resource's initial value.",
   "FvttPartyResources.ResourceForm.Dnd5eResource": "Track D&D 5e resource",
-  "FvttPartyResources.ResourceForm.Dnd5eResourceHint": "Selecting a value here will sum the total of all values of the selected D&D 5e resource across all player characters.",
+  "FvttPartyResources.ResourceForm.Dnd5eResourceHint": "Selecting a value here will sum the total of all values of the selected D&D 5e resource across all player characters. Note that you can't change this type once the resource has been saved.",
   "FvttPartyResources.ResourceForm.Dnd5eResources.Gold": "Gold",
   "FvttPartyResources.ResourceForm.Dnd5eResources.Item": "Specific item (Rations, Potion of Healing,...)",
   "FvttPartyResources.ResourceForm.Dnd5eResources.ItemName": "Item name",

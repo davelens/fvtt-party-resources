@@ -8,7 +8,7 @@
   "FvttPartyResources.ResourceForm.DefaultValue": "Standaardwaarde",
   "FvttPartyResources.ResourceForm.DefaultValueHint": "De resource zijn beginwaarde.",
   "FvttPartyResources.ResourceForm.Dnd5eResource": "D&D 5e resource uitlezen",
-  "FvttPartyResources.ResourceForm.Dnd5eResourceHint": "Hiermee kan je de optelsom van de gekozen D&D 5e resource over alle spelers heen tracken.",
+  "FvttPartyResources.ResourceForm.Dnd5eResourceHint": "Hiermee kan je de optelsom van de gekozen D&D 5e resource over alle spelers heen tracken. Let op: Je kan dit type niet aanpassen eens de resource is aangemaakt.",
   "FvttPartyResources.ResourceForm.Dnd5eResources.Gold": "Goud",
   "FvttPartyResources.ResourceForm.Dnd5eResources.Item": "Voorwerp",
   "FvttPartyResources.ResourceForm.Dnd5eResources.ItemName": "Naam v/h voorwerp",

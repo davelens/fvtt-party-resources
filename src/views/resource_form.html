@@ -16,8 +16,8 @@
         <select id="system_type" name="resource[system_type]">
           <option value=""></option>
           {{#if dnd5e }}
-          <option value="dnd_fifth_gold">{{ localize 'FvttPartyResources.ResourceForm.Dnd5eResources.Gold' }}</option>
-          <option value="dnd_fifth_item">{{ localize 'FvttPartyResources.ResourceForm.Dnd5eResources.Item' }}</option>
+          <option value="dnd_fifth_gold"{{#if dnd_fifth_gold}} selected="selected"{{/if}}>{{ localize 'FvttPartyResources.ResourceForm.Dnd5eResources.Gold' }}</option>
+          <option value="dnd_fifth_item"{{#if dnd_fifth_item}} selected="selected"{{/if}}>{{ localize 'FvttPartyResources.ResourceForm.Dnd5eResources.Item' }}</option>
           {{/if}}
         </select>
       </div>
