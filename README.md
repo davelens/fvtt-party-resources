@@ -19,7 +19,7 @@ Party Resources is a module that allows you to manage party-wide, numeric values
   * Hold `CTRL` (Win) or `CMD` (macos) and click a resource to open its edit form
 * Sort your resources using drag/drop in the dashboard
 * Track DM resources by hiding certain resources for players
-* Track system-specific currency or items (only dnd5e for now)
+* D&D 5e: Track gold, or the number of a specific item across players' inventory
 * Optionally notify players through chat when a resource value changes
 * Optionally limit resources to a given maximum
 * Optionally hand over resource management to players
