@@ -28,7 +28,7 @@ export default class ActorDnd5eResources {
     return total
   }
 
-  static count(type, item_name) {
+  static count(type, item_names) {
     switch(type) {
       case 'dnd_fifth_gold':
         return this.convert_dnd5e_currencies().toFixed(2)
@@ -40,14 +40,14 @@ export default class ActorDnd5eResources {
         //     console.log(item)
         //   })
         //
-        return this.count_player_items(item_name)
+        return this.count_player_items(item_names)
       default:
         return
     }
   }
 
-  static count_player_items(name) {
-    const items = this.player_items(name)
+  static count_player_items(names) {
+    const items = this.player_items(names)
 
     if(items.length == 0) return 0
     if(items.length == 1) return (items[0].system?.quantity || 1)
@@ -61,10 +61,13 @@ export default class ActorDnd5eResources {
     return game.actors.filter((actor) => { return actor.type == 'character' })
   }
 
-  static player_items(name) {
+  static player_items(names) {
     return this.player_characters().map(actor => {
       return actor.collections.items.filter(item => {
-        return item.name == name
+        return names
+          .split(';')
+          .map((a) => { return a.trim() })
+          .includes(item.name)
       })
     }).flat(2)
   }

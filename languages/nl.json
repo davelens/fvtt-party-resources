@@ -12,7 +12,7 @@
   "FvttPartyResources.ResourceForm.Dnd5eResources.Gold": "Goud",
   "FvttPartyResources.ResourceForm.Dnd5eResources.Item": "Voorwerp",
   "FvttPartyResources.ResourceForm.Dnd5eResources.ItemName": "Naam v/h voorwerp",
-  "FvttPartyResources.ResourceForm.Dnd5eResources.ItemNameHint": "De naam v/h voorwerp zoals het in de spelers hun inventory staat.",
+  "FvttPartyResources.ResourceForm.Dnd5eResources.ItemNameHint": "De naam v/h voorwerp zoals het in de spelers hun inventory staat. Scheid meerdere namen met een puntkomma (;).",
   "FvttPartyResources.ResourceForm.EditFormTitle": "Resource aanpassen",
   "FvttPartyResources.ResourceForm.Headers.Label": "Label",
   "FvttPartyResources.ResourceForm.Headers.Notifications": "Meldingen",
