@@ -1,3 +1,13 @@
+1.5.0
+--
+* Added functionality that sanitizes a resource's identifier when typing its 
+name.
+* Added functionality to allow for system-specific currency and/or item
+tracking.
+* A bunch of refactoring to allow for easier extending of system-specific
+trackers.
+
+
 1.4.4
 --
 Prevent players from accessing the edit resource button.
