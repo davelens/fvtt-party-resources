@@ -95,7 +95,7 @@ export default class ResourcesApi {
     this.register_setting(resource.concat('_icon'), { type: ExtraTypes.FilePickerImage, default: '' })
     this.register_setting(resource.concat('_use_icon'), { Type: Boolean, default: false })
     this.register_setting(resource.concat('_visible'), { Type: Boolean, default: true })
-    this.register_setting(resource.concat('_notify_chat'), { Type: Boolean, default: true })
+    this.register_setting(resource.concat('_notify_chat'), { Type: Boolean, default: false })
     this.register_setting(resource.concat('_notify_chat_increment_message'), { Type: String, default: "A resource value has increased." })
     this.register_setting(resource.concat('_notify_chat_decrement_message'), { Type: String, default: "A resource value has decreased." })
     this.register_setting(resource.concat('_max'), { Type: Number, default: 100 })

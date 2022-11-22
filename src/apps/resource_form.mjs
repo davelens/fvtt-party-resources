@@ -118,7 +118,7 @@ export default class ResourceForm extends FormApplication {
     ResourcesList.add(id)
 
     window.pr.api.register_resource(id)
-    window.pr.api.set(id, data['resource[default_value]'], { notify: true })
+    window.pr.api.set(id, data['resource[default_value]'], { notify: false })
     window.pr.api.set(id.concat('_name'), data['resource[name]'])
     window.pr.api.set(id.concat('_notify_chat'), data['resource[notify_chat]'])
     window.pr.api.set(id.concat('_notify_chat_increment_message'), data['resource[notify_chat_increment_message]'])
