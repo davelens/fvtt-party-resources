@@ -1,3 +1,16 @@
+1.4.4
+--
+Prevent players from accessing the edit resource button.
+
+
+1.4.3
+--
+Many thanks to user @jagoe for the following additions:
+
+* Clicking the status bar will open up the dashboard
+* `CTRL` (Win) or `CMD` (macos) + clicking a resource opens its edit form
+
+
 1.4.2 - Dutch translation!
 --
 * Configured the repository for incoming Weblate PR's

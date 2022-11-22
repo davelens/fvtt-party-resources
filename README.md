@@ -2,7 +2,7 @@
 
 ![Latest release](https://img.shields.io/github/v/release/davelens/fvtt-party-resources?style=for-the-badge)
 ![GitHub all releases](https://img.shields.io/github/downloads/davelens/fvtt-party-resources/total?color=blue&style=for-the-badge)
-![GitHub release (by tag)](https://img.shields.io/github/downloads/davelens/fvtt-party-resources/1.4.2/total?color=blue&style=for-the-badge&refreshplx=1)
+![GitHub release (by tag)](https://img.shields.io/github/downloads/davelens/fvtt-party-resources/1.4.4/total?color=blue&style=for-the-badge&refreshplx=2)
 [![Donate](https://img.shields.io/static/v1?label=Tip&message=PayPal&color=green&style=for-the-badge)](https://www.paypal.com/donate/?business=S4YPUE3P8ZK52&no_recurring=0&item_name=I+maintain+Party+Resources+in+my+%28limited%29+free+time.+Donations+are+not+necessary%2C+but+very+welcome+and+encouraging!&currency_code=EUR)
 [![Donate](https://img.shields.io/static/v1?label=Tip&message=Ko-Fi&color=green&style=for-the-badge)](https://www.ko-fi.com/davelens)
 
@@ -11,13 +11,16 @@ Party Resources is a module that allows you to manage party-wide, numeric values
 ## Features
 * Add/Edit/Delete custom resources, with optional icon images
 * Increment/decrement resource values
-  * Hold `CTRL` (Windows) or `CMD` (MacOS) when clicking to jump by +/- 10
+  * Hold `CTRL` (Win) or `CMD` (macos) when clicking to jump by +/- 10
   * Hold `SHIFT` when clicking to jump by +/- 100
 * Live updates for players when values change
-* Sports a videogame-esque status bar to easily keep track of resources.
-* Sort your resources using drag/drop in the dashboard.
+* Sports a videogame-esque status bar to easily keep track of resources
+  * Clicking the status bar opens up the dashboard
+  * Hold `CTRL` (Win) or `CMD` (macos) and click a resource to open its edit form
+* Sort your resources using drag/drop in the dashboard
 * Track DM resources by hiding certain resources for players
-* Optionally notify players through chat when a resource value changes.
+* Track system-specific currency or items (only dnd5e for now)
+* Optionally notify players through chat when a resource value changes
 * Optionally limit resources to a given maximum
 * Optionally hand over resource management to players
 * Optionally use icon images as resource labels
