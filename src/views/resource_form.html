@@ -11,6 +11,28 @@
     </div>
 
     <div class="form-group">
+      <label for="system_type">{{ localize 'FvttPartyResources.ResourceForm.Dnd5eResource' }}</label>
+      <div class="form-fields">
+        <select id="system_type" name="resource[system_type]">
+          <option value=""></option>
+          {{#if dnd5e }}
+          <option value="dnd_fifth_gold">{{ localize 'FvttPartyResources.ResourceForm.Dnd5eResources.Gold' }}</option>
+          <option value="dnd_fifth_item">{{ localize 'FvttPartyResources.ResourceForm.Dnd5eResources.Item' }}</option>
+          {{/if}}
+        </select>
+      </div>
+      <p class="notes">{{ localize 'FvttPartyResources.ResourceForm.Dnd5eResourceHint' }}</p>
+    </div>
+
+    <div class="form-group hidden">
+      <label for="system_name">{{ localize 'FvttPartyResources.ResourceForm.Dnd5eResources.ItemName' }}</label>
+      <div class="form-fields">
+        <input type="text" id="system_name" name="resource[system_name]" value="{{ system_name }}" data-dtype="String">
+      </div>
+      <p class="notes">{{ localize 'FvttPartyResources.ResourceForm.Dnd5eResources.ItemNameHint' }}</p>
+    </div>
+
+    <div class="form-group">
       <label for="identifier">{{ localize 'FvttPartyResources.ResourceForm.Identifier' }}</label>
       <div class="form-fields">
         <input type="text" id="identifier" name="resource[identifier]" value="{{ identifier }}" data-dtype="String" required="true"{{#if identifier}} disabled{{/if}}>
@@ -41,7 +63,7 @@
     <div class="form-group">
       <label for="default_value">{{ localize 'FvttPartyResources.ResourceForm.DefaultValue' }}</label>
       <div class="form-fields">
-        <input type="number" id="default_value" name="resource[default_value]" value="{{ default_value }}" data-dtype="Number" required="true">
+        <input type="number" id="default_value" name="resource[default_value]" value="{{ default_value }}" data-dtype="Number">
       </div>
       <p class="notes">{{ localize 'FvttPartyResources.ResourceForm.DefaultValueHint' }}</p>
     </div>

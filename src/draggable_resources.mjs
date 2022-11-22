@@ -54,10 +54,10 @@ export default class DraggableResources {
   }
 
   static source() {
-    return $(`[data-id="${DraggableResources.current_source_id}"]`)
+    return $(`#fvtt-party-resources-dashboard [data-id="${DraggableResources.current_source_id}"]`)
   }
 
   static target() {
-    return $(`[data-id="${DraggableResources.current_target_id}"]`)
+    return $(`#fvtt-party-resources-dashboard [data-id="${DraggableResources.current_target_id}"]`)
   }
 }

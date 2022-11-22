@@ -1,4 +1,5 @@
 import ResourcesList from "./resources_list.mjs";
+import ActorDnd5eResources from "./actor_dnd5e_resources.mjs";
 import ExtraTypes from '../../settings-extender/settings-extender.js'
 
 export default class ResourcesApi {
@@ -23,8 +24,7 @@ export default class ResourcesApi {
       jump: jump
     })
 
-    ChatMessage.create({content: notification_html})
-    window.pr.dashboard.redraw()
+    return ChatMessage.create({content: notification_html})
   }
 
   decrement(name, jump) {
@@ -67,6 +67,10 @@ export default class ResourcesApi {
     this.set(name, new_value, { notify: true })
   }
 
+  is_system_specific_resource(id) {
+    return this.get(id.concat('_system_type')) != ""
+  }
+
   register_setting(name, options) {
     let properties = {
       scope: 'world',
@@ -90,13 +94,17 @@ export default class ResourcesApi {
     this.register_setting(resource.concat('_icon'), { type: ExtraTypes.FilePickerImage, default: '' })
     this.register_setting(resource.concat('_use_icon'), { Type: Boolean, default: false })
     this.register_setting(resource.concat('_visible'), { Type: Boolean, default: true })
-    this.register_setting(resource.concat('_notify_chat'), { Type: Boolean, default: true })
+    this.register_setting(resource.concat('_notify_chat'), { Type: Boolean, default: false })
     this.register_setting(resource.concat('_notify_chat_increment_message'), { Type: String, default: "A resource value has increased." })
     this.register_setting(resource.concat('_notify_chat_decrement_message'), { Type: String, default: "A resource value has decreased." })
     this.register_setting(resource.concat('_max'), { Type: Number, default: 100 })
     this.register_setting(resource.concat('_min'), { Type: Number, default: -100 })
     this.register_setting(resource.concat('_player_managed'), { type: Boolean, default: false })
     this.register_setting(resource.concat('_position'), { type: Number, default: ResourcesList.all().length + 1 })
+    // We need this one to store specific item resource names into when filtering
+    // for system-specific resources.
+    this.register_setting(resource.concat('_system_type'), { type: String, default: '' })
+    this.register_setting(resource.concat('_system_name'), { type: String, default: '' })
   }
 
   resources() {
@@ -111,6 +119,16 @@ export default class ResourcesApi {
       if(resource == '') return ResourcesList.remove(resource)
 
       this.register_resource(resource)
+
+      if(this.is_system_specific_resource(resource)) {
+        const old_value = this.get(resource)
+        const new_value = ActorDnd5eResources.count(
+          this.get(resource.concat('_system_type')),
+          this.get(resource.concat('_system_name'))
+        )
+
+        this.set(resource, new_value, { notify: old_value != new_value })
+      }
 
       results.push({
         id: resource,
@@ -129,8 +147,11 @@ export default class ResourcesApi {
         notify_chat_increment_message: this.get(resource.concat('_notify_chat_increment_message')),
         notify_chat_decrement_message: this.get(resource.concat('_notify_chat_decrement_message')),
         visible_for_players: game.user.isGM || this.get(resource.concat('_visible')),
+        is_regular_resource: !this.is_system_specific_resource(resource),
         is_gm: game.user.isGM,
-        allowed_to_modify_settings: game.permissions.SETTINGS_MODIFY.includes(1)
+        allowed_to_modify_settings: game.permissions.SETTINGS_MODIFY.includes(1),
+        system_type: this.get(resource.concat('_system_type')),
+        system_name: this.get(resource.concat('_system_name'))
       })
     })
 
@@ -147,11 +168,8 @@ export default class ResourcesApi {
   }
 
   update_positions() {
-    // Adding new resources means their default value will be "1", so you'll
-    // end up with two "2" references if you just do the above two set()
-    // instructions. window.pr.api.resources() comes pre-sorted according
-    // to their position attribute, so looping and updating the value should
-    // be sufficient.
+    // this.resources() comes pre-sorted according to their position attribute,
+    // so looping and updating the value should be sufficient.
     this.resources().resources.forEach((resource, index) => {
       this.set(`${resource.id}_position`, index+1)
     })

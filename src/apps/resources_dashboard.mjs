@@ -3,6 +3,7 @@ import ResourcesList from "./../resources_list.mjs";
 import DashboardDirections from "./../dashboard_directions.mjs";
 import DraggableResources from "./../draggable_resources.mjs";
 import CursorTooltip from "./../cursor_tooltip.mjs";
+import ActorDnd5eResources from "./../actor_dnd5e_resources.mjs";
 
 export default class ResourcesDashboard extends Application {
   static get defaultOptions() {
@@ -136,7 +137,9 @@ export default class ResourcesDashboard extends Application {
       notify_chat_increment_message: window.pr.api.get(id.concat('_notify_chat_increment_message')),
       notify_chat_decrement_message: window.pr.api.get(id.concat('_notify_chat_decrement_message')),
       allowed_to_modify_settings: game.permissions.SETTINGS_MODIFY.includes(1),
-      visible: window.pr.api.get(id.concat('_visible'))
+      visible: window.pr.api.get(id.concat('_visible')),
+      system_type: window.pr.api.get(id.concat('_system_type')),
+      system_name: window.pr.api.get(id.concat('_system_name'))
     }
   }
 

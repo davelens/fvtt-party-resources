@@ -16,7 +16,7 @@ export default class ResourcesStatusBar {
     const data = this.getData()
 
     const template = 'modules/fvtt-party-resources/src/views/status_bar.html'
-    const status_bar = await renderTemplate(template, this.getData())
+    const status_bar = await renderTemplate(template, data)
 
     $('#fvtt-party-resources-status-bar').remove()
 

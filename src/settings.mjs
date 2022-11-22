@@ -1,4 +1,5 @@
 export default class ModuleSettings {
+
   static add(key, data = {}) {
     const defaults = {
       scope: 'world',
@@ -62,6 +63,8 @@ export default class ModuleSettings {
       },
       onChange: value => window.pr.status_bar.render()
     });
+
+    // TODO: status_bar_size
 
   }
 }

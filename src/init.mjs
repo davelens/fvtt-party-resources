@@ -25,6 +25,14 @@ Hooks.once('ready', () => {
   ResourcesStatusBar.render()
 })
 
+// Because system-specific totals need to be updated as currency or item totals
+// get modified.
+Hooks.on('createItem', render_resources)
+Hooks.on('updateItem', render_resources)
+Hooks.on('deleteItem', render_resources)
+Hooks.on('updateActor', render_resources)
+Hooks.on('deleteActor', render_resources)
+
 Hooks.on('renderActorDirectory', async (app, html, data) => {
   if(!game.user.isGM && !ModuleSettings.get('toggle_actors_button_for_players'))
     return
@@ -65,4 +73,9 @@ function templates() {
     'modules/fvtt-party-resources/src/views/dashboard_button.html',
     'modules/fvtt-party-resources/src/views/status_bar.html'
   ]
+}
+
+function render_resources() {
+  window.pr.dashboard.redraw()
+  window.pr.status_bar.render()
 }
