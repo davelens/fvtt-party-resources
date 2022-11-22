@@ -24,7 +24,7 @@ export default class ResourcesApi {
       jump: jump
     })
 
-    ChatMessage.create({content: notification_html})
+    return ChatMessage.create({content: notification_html})
   }
 
   decrement(name, jump) {
