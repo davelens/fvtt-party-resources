@@ -169,11 +169,8 @@ export default class ResourcesApi {
   }
 
   update_positions() {
-    // Adding new resources means their default value will be "1", so you'll
-    // end up with two "2" references if you just do the above two set()
-    // instructions. window.pr.api.resources() comes pre-sorted according
-    // to their position attribute, so looping and updating the value should
-    // be sufficient.
+    // this.resources() comes pre-sorted according to their position attribute,
+    // so looping and updating the value should be sufficient.
     this.resources().resources.forEach((resource, index) => {
       this.set(`${resource.id}_position`, index+1)
     })
