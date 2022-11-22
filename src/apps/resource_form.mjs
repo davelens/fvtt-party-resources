@@ -5,7 +5,11 @@ export default class ResourceForm extends FormApplication {
   activateListeners(html) {
     super.activateListeners(html)
 
+    // Handle the selected state of the type dropdown, and make sure the
+    // corresponding name input is shown.
     if(this.id == 'edit-resource-form') {
+      document.getElementById('system_type').value = this.object.system_type
+
       if(this.object.system_type.includes('_item')) {
         $('#system_name').parents('div.form-group').removeClass('hidden')
       } else {
@@ -92,10 +96,6 @@ export default class ResourceForm extends FormApplication {
     let defaults = {
       id_disabled: false,
       dnd5e: game.system.id == 'dnd5e',
-      // I'm not convinced this is the most optimal way to handle the selected
-      // state of dropdowns, but I can't see the obvious, better solution here.
-      dnd_fifth_item: this.object.system_type == 'dnd_fifth_item',
-      dnd_fifth_gold: this.object.system_type == 'dnd_fifth_gold',
       allowed_to_modify_settings: game.permissions.SETTINGS_MODIFY.includes(1)
     }
     return mergeObject(defaults, this.object)
