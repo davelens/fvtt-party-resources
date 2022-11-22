@@ -19,7 +19,7 @@ Party Resources is a module that allows you to manage party-wide, numeric values
   * Hold `CTRL` (Win) or `CMD` (macos) and click a resource to open its edit form
 * Sort your resources using drag/drop in the dashboard
 * Track DM resources by hiding certain resources for players
-* D&D 5e: Track gold, or the number of a specific item across players' inventory
+* D&D 5e: Track gold, or items across players' inventory
 * Optionally notify players through chat when a resource value changes
 * Optionally limit resources to a given maximum
 * Optionally hand over resource management to players
@@ -66,6 +66,10 @@ No, the intent for this module was to have global numeric values everyone could 
 ### Why do I need to explicitly allow players to modify configuration settings so they can manage resources?
 
 Because resources are an amalgam of settings scoped on `world`, to make them persist in the world for all players. Foundry requires explicit permission to allow players to adjust the values linked to these settings with a scope of `world`. Not doing so will result in error popups stating a player is not allowed to edit settings.
+
+### How do you track multiple, specific items into one resource?
+You need to separate the name of the items with a semicolon, like so:
+![Screenshot of the "edit resource" form, with an example of multiple items separated by a semicolon](https://user-images.githubusercontent.com/221527/203414879-2abde694-4af3-4ccd-a4a1-0b1be89e7d11.jpg)
 
 ### How can I refresh the status bar using a macro?
 ```js
