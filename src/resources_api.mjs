@@ -110,7 +110,6 @@ export default class ResourcesApi {
 
   resources() {
     let results = []
-    let value;
     let data = ResourcesList.all().sort((a, b) => {
       this.register_resource(a)
       this.register_resource(b)
@@ -123,17 +122,18 @@ export default class ResourcesApi {
       this.register_resource(resource)
 
       if(this.is_system_specific_resource(resource)) {
-        value = ActorDnd5eResources.count(
-          window.pr.api.get(resource.concat('_system_type')),
-          window.pr.api.get(resource.concat('_system_name'))
+        const old_value = this.get(resource)
+        const new_value = ActorDnd5eResources.count(
+          this.get(resource.concat('_system_type')),
+          this.get(resource.concat('_system_name'))
         )
-      } else {
-        value = this.get(resource)
+
+        this.set(resource, new_value, { notify: old_value != new_value })
       }
 
       results.push({
         id: resource,
-        value: value,
+        value: this.get(resource),
         position: this.get(resource.concat('_position')),
         name: this.get(resource.concat('_name')),
         max_value: this.get(resource.concat('_max')),
