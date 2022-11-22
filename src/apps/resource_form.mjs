@@ -130,8 +130,6 @@ export default class ResourceForm extends FormApplication {
     window.pr.api.set(id.concat('_icon'), data['resource[icon]'])
     window.pr.api.set(id.concat('_system_name'), data['resource[system_name]'])
 
-    // TODO: Find out how to make the system_type dropdown select the right option
-    // when accessing the edit form, and remove this conditional afterwards.
     if(this.id == 'add-resource-form') {
       window.pr.api.set(id.concat('_system_type'), data['resource[system_type]'])
     }
