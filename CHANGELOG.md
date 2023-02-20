@@ -1,3 +1,10 @@
+1.5.1
+--
+* Added the French translation, thanks to @Elfenduil !
+* Added the Polish translation, thanks to @gbursson !
+* Updated the Chinese translation, thanks to @TravelingK !
+
+
 1.5.0
 --
 * Added functionality that sanitizes a resource's identifier when typing its 
