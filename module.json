@@ -58,6 +58,11 @@
       "lang": "pl",
       "name": "polski",
       "path": "languages/pl.json"
+    },
+    {
+      "lang": "ru",
+      "name": "Русский",
+      "path": "languages/ru.json"
     }
   ],
   "esmodules": [
