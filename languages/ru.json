@@ -1,1 +1,10 @@
-{}
+{
+  "FvttPartyResources.Dashboard.SubtractButtonTitle": "Вычесть сумму",
+  "FvttPartyResources.Dashboard.DeleteButtonTitle": "Удалить ресурс",
+  "FvttPartyResources.Dashboard.EditButtonTitle": "Редактировать ресурс",
+  "FvttPartyResources.ResourceForm.CreateResource": "Создать ресурс",
+  "FvttPartyResources.Dashboard.MakeInvisibleButtonTitle": "Скрыть этот ресурс от игроков",
+  "FvttPartyResources.Dashboard.MakeVisibleButtonTitle": "Показать этот ресурс игрокам",
+  "FvttPartyResources.FirstTimeNotification": "Добро пожаловать в <strong>Ресурсы партии v{version}</strong>!<br>Вы впервые используете этот модуль.<br>{anchor} чтобы перейти к панели ресурсов.",
+  "FvttPartyResources.Dashboard.BlankWarning": "Блоки ресурсов будут появляться здесь после их добавления."
+}
