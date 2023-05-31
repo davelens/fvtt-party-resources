@@ -1,7 +1,10 @@
-1.5.1
+1.6.0
 --
+* Paved the way for FoundryVTT version 11
 * Added the French translation, thanks to @Elfenduil !
 * Added the Polish translation, thanks to @gbursson !
+* Added the Spanish translation, thanks to @WallaceMcGregor !
+* Added the Russian translation, thanks to @Kikimor !
 * Updated the Chinese translation, thanks to @TravelingK !
 
 
