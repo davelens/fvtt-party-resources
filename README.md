@@ -8,6 +8,11 @@
 
 Party Resources is a system-agnostic FoundryVTT module that allows you to manage party-wide, numeric values that persist between sessions.
 
+## State of development (2024 and onwards)
+Currently, development on this module is on indefinite hiatus due to certain lifestyle changes I had to make for my health. I will do what is necessary to keep the module play nice with Foundry's major updates, at least until they decide to overhaul the way the module stores its data. Pull requests without major changes (translations, typos, CSS bugs,...) will continue to be reviewed and merged, with the occassional release.
+
+Thank you for understanding!
+
 ## Features
 * Add/Edit/Delete custom resources, with optional icon images
 * Increment/decrement resource values
