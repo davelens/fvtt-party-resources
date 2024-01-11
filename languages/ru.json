@@ -6,5 +6,13 @@
   "FvttPartyResources.Dashboard.MakeInvisibleButtonTitle": "Скрыть этот ресурс от игроков",
   "FvttPartyResources.Dashboard.MakeVisibleButtonTitle": "Показать этот ресурс игрокам",
   "FvttPartyResources.FirstTimeNotification": "Добро пожаловать в <strong>Ресурсы партии v{version}</strong>!<br>Вы впервые используете этот модуль.<br>{anchor} чтобы перейти к панели ресурсов.",
-  "FvttPartyResources.Dashboard.BlankWarning": "Блоки ресурсов будут появляться здесь после их добавления."
+  "FvttPartyResources.Dashboard.BlankWarning": "Блоки ресурсов будут появляться здесь после их добавления.",
+  "FvttPartyResources.ResourceForm.AddFormTitle": "Добавить новый ресурс",
+  "FvttPartyResources.ResourceForm.AllowPlayersToModifySettings": "Разрешить игрокам редактировать настройки конфигурации",
+  "FvttPartyResources.ResourceForm.DefaultValue": "Количество по умолчанию",
+  "FvttPartyResources.ResourceForm.DefaultValueHint": "Начальное количество ресурса.",
+  "FvttPartyResources.ResourceForm.Dnd5eResource": "Отслеживать ресурсы D&D 5e",
+  "FvttPartyResources.ResourceForm.Dnd5eResources.Gold": "Золото",
+  "FvttPartyResources.ResourceForm.Dnd5eResources.ItemName": "Имя предмета",
+  "FvttPartyResources.ResourceForm.Dnd5eResources.Item": "Определённый предмет (Рационы, Зелья лечения,...)"
 }
