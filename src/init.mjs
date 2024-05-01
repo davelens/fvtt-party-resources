@@ -1,5 +1,6 @@
 import ModuleSettings from "./settings.mjs";
 import ResourcesApi from "./resources_api.mjs";
+import PartyResources from "./resources_api_wrapper.mjs";
 import DashboardDirections from "./dashboard_directions.mjs";
 import ResourceNotifications from "./resource_notifications.mjs"
 import ResourcesDashboard from "./apps/resources_dashboard.mjs"
@@ -16,6 +17,7 @@ Hooks.once('init', () => {
 
   loadTemplates(templates())
   ModuleSettings.register()
+  window.PartyResources = PartyResources
 })
 
 Hooks.once('ready', () => {
