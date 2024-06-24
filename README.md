@@ -2,7 +2,7 @@
 
 ![Latest release](https://img.shields.io/github/v/release/davelens/fvtt-party-resources?style=for-the-badge&refreshplx=1)
 ![GitHub all releases](https://img.shields.io/github/downloads/davelens/fvtt-party-resources/total?color=blue&style=for-the-badge)
-![GitHub release (by tag)](https://img.shields.io/github/downloads/davelens/fvtt-party-resources/1.6.0/total?color=blue&style=for-the-badge&refreshplx=2)
+![GitHub release (by tag)](https://img.shields.io/github/downloads/davelens/fvtt-party-resources/1.7.0/total?color=blue&style=for-the-badge&refreshplx=2)
 [![Donate](https://img.shields.io/static/v1?label=Tip&message=PayPal&color=green&style=for-the-badge)](https://www.paypal.com/donate/?business=S4YPUE3P8ZK52&no_recurring=0&item_name=I+maintain+Party+Resources+in+my+%28limited%29+free+time.+Donations+are+not+necessary%2C+but+very+welcome+and+encouraging!&currency_code=EUR)
 [![Donate](https://img.shields.io/static/v1?label=Tip&message=Ko-Fi&color=green&style=for-the-badge)](https://www.ko-fi.com/davelens)
 

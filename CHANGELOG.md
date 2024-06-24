@@ -1,3 +1,8 @@
+1.7.0
+--
+* Change the compatibility to Foundry version 12.
+
+
 1.6.0
 --
 * Paved the way for FoundryVTT version 11
