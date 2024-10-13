@@ -73,6 +73,11 @@
       "lang": "pt-BR",
       "name": "Português",
       "path": "languages/pt.json"
+    },
+    {
+      "lang": "cs",
+      "name": "Čeština",
+      "path": "languages/cs.json"
     }
   ],
   "esmodules": [
