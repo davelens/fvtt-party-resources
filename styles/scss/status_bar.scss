@@ -38,6 +38,7 @@
       }
 
       img {
+        display: inline-block;
         vertical-align: top;
         pointer-events: none;
         height: $resource_line_height;

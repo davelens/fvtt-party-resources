@@ -173,6 +173,7 @@
   pointer-events: none;
 }
 #fvtt-party-resources-status-bar ul li img {
+  display: inline-block;
   vertical-align: top;
   pointer-events: none;
   height: 32px;
