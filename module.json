@@ -18,11 +18,11 @@
   "download": "https://github.com/davelens/fvtt-party-resources/releases/download/1.7.0/module.zip",
   "version": "1.7.0",
   "minimumCoreVersion": "9",
-  "compatibleCoreVersion": "12",
+  "compatibleCoreVersion": "13",
   "compatibility": {
     "minimum": "9",
-    "verified": "12",
-    "maximum": "12"
+    "verified": "13",
+    "maximum": "13"
   },
   "languages": [
     {
