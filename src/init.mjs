@@ -41,7 +41,7 @@ Hooks.on('renderActorDirectory', async (app, html, data) => {
     'modules/fvtt-party-resources/src/views/dashboard_button.html'
   )
 
-  html
+  $(html)
     .find('.directory-header')
     .prepend(button)
     .promise()
