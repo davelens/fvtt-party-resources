@@ -5,7 +5,8 @@
   "description": "Create and track custom party resources.",
   "authors": [
     {
-      "name": "Dave Lens"
+      "name": "Dave Lens",
+      "discord": ".pretzl"
     },
     {
       "name": "Kit",
