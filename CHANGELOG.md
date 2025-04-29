@@ -1,3 +1,17 @@
+1.8.1
+--
+In addition to the compatibility release, this is a bugfix release for v13:
+* Fix the broken "first time"-notification modal:
+  * Fix broken "Click here", which was due to `renderActorDirectory` no longer passing the `html` callback argument as an object.
+  * Fix the broken click trigger for the actors directory
+  * Re-align the bouncing arrow to actually point to the height of the Party Resources button again.
+* Fix the distorted status bar:
+  * Removed the `flexrow` class from the `li` elements.
+  * Set `li > img` to display as inline blocks (was set to `block` in v13).
+  * Remove the excess padding/margin accumulated since v11.
+* Fix the deprecation warnings for v14 caused by `mergeObject`, which will move to the `foundry.utils` namespace.
+
+
 1.8.0
 --
 * Change the compatibility to Foundry version 13.
