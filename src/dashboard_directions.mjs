@@ -8,7 +8,7 @@ export default class DashboardDirections {
       $('body').append(this.container_html())
     }
 
-    $('[data-tab="actors"].item')[0].click()
+    $('button[data-tab="actors"]').trigger('click')
     $('#btn-dashboard').addClass('highlight')
     return $('#fvtt-party-resources-directions')
   }
