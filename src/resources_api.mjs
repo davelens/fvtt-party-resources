@@ -84,7 +84,7 @@ export default class ResourcesApi {
     game.settings.register(
       'fvtt-party-resources',
       name,
-      mergeObject(properties, options || {})
+      foundry.utils.mergeObject(properties, options || {})
     )
   }
 

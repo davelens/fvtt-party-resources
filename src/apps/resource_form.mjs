@@ -82,7 +82,7 @@ export default class ResourceForm extends FormApplication {
    * @returns {Object}
    */
   static get defaultOptions() {
-    return mergeObject(super.defaultOptions, {
+    return foundry.utils.mergeObject(super.defaultOptions, {
       id: "fvtt-party-resources-form",
       classes: ["fvtt-party-resources"],
       template: "modules/fvtt-party-resources/src/views/resource_form.html",
@@ -98,7 +98,7 @@ export default class ResourceForm extends FormApplication {
       dnd5e: game.system.id == 'dnd5e',
       allowed_to_modify_settings: game.permissions.SETTINGS_MODIFY.includes(1)
     }
-    return mergeObject(defaults, this.object)
+    return foundry.utils.mergeObject(defaults, this.object)
   }
 
   /**

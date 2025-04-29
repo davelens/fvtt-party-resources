@@ -7,7 +7,7 @@ import ActorDnd5eResources from "./../actor_dnd5e_resources.mjs";
 
 export default class ResourcesDashboard extends Application {
   static get defaultOptions() {
-    return mergeObject(super.defaultOptions, {
+    return foundry.utils.mergeObject(super.defaultOptions, {
       id: "fvtt-party-resources-dashboard",
       classes: ["fvtt-party-resources"],
       template: "modules/fvtt-party-resources/src/views/resources_dashboard.html",
@@ -85,7 +85,7 @@ export default class ResourcesDashboard extends Application {
   }
 
   getData() {
-    return mergeObject(window.pr.api.resources(), {
+    return foundry.utils.mergeObject(window.pr.api.resources(), {
       is_gm: game.user.isGM,
       version: window.pr.version
     })
