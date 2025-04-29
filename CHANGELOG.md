@@ -1,3 +1,9 @@
+1.8.0
+--
+* Change the compatibility to Foundry version 13.
+* Added the Czech translation through Weblate.
+
+
 1.7.0
 --
 * Change the compatibility to Foundry version 12.
