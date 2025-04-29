@@ -21,10 +21,10 @@
   "readme": "https://github.com/davelens/fvtt-party-resources/blob/master/README.md",
   "license": "https://github.com/davelens/fvtt-party-resources/blob/master/LICENSE",
   "version": "1.8.1",
-  "minimumCoreVersion": "9",
+  "minimumCoreVersion": "13",
   "compatibleCoreVersion": "13",
   "compatibility": {
-    "minimum": "9",
+    "minimum": "13",
     "verified": "13",
     "maximum": "13"
   },
