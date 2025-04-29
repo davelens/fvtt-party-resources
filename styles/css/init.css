@@ -140,7 +140,7 @@
 
 #fvtt-party-resources-status-bar {
   background-color: rgba(0, 0, 0, 0.5);
-  padding: 6px 10px;
+  /* padding: 6px 10px; */
   pointer-events: auto;
   cursor: pointer;
 }
@@ -162,13 +162,14 @@
   float: left;
   font-size: 1rem;
   margin-right: 20px;
+  margin-bottom: 0;
 }
 #fvtt-party-resources-status-bar ul li:hover {
   background: rgba(100, 100, 100, 0.5);
 }
 #fvtt-party-resources-status-bar ul li span {
-  min-height: 32px;
-  line-height: 32px;
+  min-height: 30px;
+  line-height: 30px;
   padding: 0 5px;
   pointer-events: none;
 }
@@ -176,8 +177,8 @@
   display: inline-block;
   vertical-align: top;
   pointer-events: none;
-  height: 32px;
-  width: 32px;
+  height: 30px;
+  width: 30px;
 }
 
 #fvtt-party-resources-directions {

@@ -1,6 +1,6 @@
 #fvtt-party-resources-status-bar {
   background-color: rgba(0, 0, 0, 0.5);
-  padding: 6px 10px;
+  /* padding: 6px 10px; */
   pointer-events: auto;
   cursor: pointer;
 
@@ -23,12 +23,13 @@
       float: left;
       font-size: 1rem;
       margin-right: 20px;
+      margin-bottom: 0;
 
       &:hover {
         background:rgba(100, 100, 100, 0.5);
       }
 
-      $resource_line_height: 32px;
+      $resource_line_height: 30px;
 
       span {
         min-height: $resource_line_height;
