@@ -1,3 +1,7 @@
-@import 'dashboard.scss', 'resource_form.scss', 'cursor_tooltip.scss';
-@import 'status_bar.scss', 'directions.scss', 'resource_notifications.scss';
-@import 'draggable_resources.scss';
+@forward 'cursor_tooltip.scss';
+@forward 'dashboard.scss';
+@forward 'directions.scss';
+@forward 'draggable_resources.scss';
+@forward 'resource_form.scss';
+@forward 'resource_notifications.scss';
+@forward 'status_bar.scss';
