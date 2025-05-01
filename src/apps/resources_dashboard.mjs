@@ -1,3 +1,4 @@
+const { ApplicationV2 } = foundry.applications.api
 import ResourceForm from "./resource_form.mjs";
 import ResourcesList from "./../resources_list.mjs";
 import DashboardDirections from "./../dashboard_directions.mjs";
