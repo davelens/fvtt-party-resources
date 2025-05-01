@@ -1,3 +1,13 @@
+1.8.2
+--
+- [ ] Remove some keys from the manifest that have been deprecated since v10. That should get rid of the warnings in v13's setup screen.
+- [ ] Lower the font-size of the text labels in the status bar slightly (1rem -> 0.9rem).
+- [ ] Use `ui.actors.render()` instead of the now defunct `ActorDirectory.collection.render()`; this fixes the broken "change status bar location"-setting in v13.
+- [ ] Fix the chat textarea overlapping with the status bar when the sidebar is expanded with the chatbox visible.
+- [ ] Fix the broken image alignment of the "text below image"-setting in v13.
+- [ ] Fix a bunch of deprecation warnings related to major future Foundry versions (v15+).
+
+
 1.8.1
 --
 In addition to the compatibility release, this is a bugfix release for v13:
