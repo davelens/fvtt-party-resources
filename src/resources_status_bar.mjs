@@ -21,10 +21,15 @@ export default class ResourcesStatusBar {
     $('#fvtt-party-resources-status-bar').remove()
 
     if(ModuleSettings.get('status_bar_location') == 'on_top') {
+      $('#chat-notifications').css('margin-bottom', '0')
       $('header#ui-top').prepend(status_bar)
     }
 
     if(ModuleSettings.get('status_bar_location') == 'at_bottom') {
+      // Having the actors (or similar) directory listing open, will move the
+      // message textarea to the left, right over the status bar. This moves
+      // the notifications 30px upwards to prevent that.
+      $('#chat-notifications').css('margin-bottom', '30px')
       $('footer#ui-bottom').append(status_bar)
     }
 
