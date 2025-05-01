@@ -1,6 +1,5 @@
 {
   "id": "fvtt-party-resources",
-  "name": "fvtt-party-resources",
   "title": "Party Resources",
   "description": "Create and track custom party resources.",
   "authors": [
@@ -21,8 +20,6 @@
   "readme": "https://github.com/davelens/fvtt-party-resources/blob/master/README.md",
   "license": "https://github.com/davelens/fvtt-party-resources/blob/master/LICENSE",
   "version": "1.8.1",
-  "minimumCoreVersion": "13",
-  "compatibleCoreVersion": "13",
   "compatibility": {
     "minimum": "13",
     "verified": "13",
