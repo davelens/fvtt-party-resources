@@ -14,7 +14,7 @@ Hooks.once('init', () => {
     status_bar: ResourcesStatusBar
   }
 
-  loadTemplates(templates())
+  foundry.applications.handlebars.loadTemplates(templates())
   ModuleSettings.register()
 })
 
@@ -37,7 +37,7 @@ Hooks.on('renderActorDirectory', async (app, html, data) => {
   if(!game.user.isGM && !ModuleSettings.get('toggle_actors_button_for_players'))
     return
 
-  let button = await renderTemplate(
+  let button = await foundry.applications.handlebars.renderTemplate(
     'modules/fvtt-party-resources/src/views/dashboard_button.html'
   )
 

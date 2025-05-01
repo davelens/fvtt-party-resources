@@ -16,7 +16,7 @@ export default class ResourcesApi {
     if(new_value < value) message = this.get(name.concat('_notify_chat_decrement_message'))
 
     const template = 'modules/fvtt-party-resources/src/views/notification.html'
-    const notification_html = await renderTemplate(template, {
+    const notification_html = await foundry.applications.handlebars.renderTemplate(template, {
       message: message,
       resource: resource,
       color: color,

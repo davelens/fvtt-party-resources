@@ -12,7 +12,7 @@ export default class DraggableResources {
   }
 
   static controller() {
-    return new DragDrop({
+    return new foundry.applications.ux.DragDrop.implementation({
       dragSelector: '.resource',
       dropSelector: '.resource',
       callbacks: {
