@@ -89,6 +89,7 @@
   text-shadow: 2px 0 0 black, -2px 0 0 black, 0 2px 0 black, 0 -2px 0 black, 1px 1px black, -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black;
 }
 #fvtt-party-resources-dashboard .window-content .resources .resource .info .image.text-below img {
+  margin: 0 auto;
   width: 50px;
 }
 #fvtt-party-resources-dashboard .window-content .resources .resource .info .image.text-below .value {
