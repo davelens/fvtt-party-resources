@@ -27,7 +27,7 @@ export default class ModuleSettings {
       hint: game.i18n.localize('FvttPartyResources.GMSettingsForm.ShowActorsButtonForPlayersHint'),
       default: true,
       type: Boolean,
-      onChange: value => ActorDirectory.collection.render('actors')
+      onChange: value => ui.actors.render()
     });
 
     this.add('icon_images_orientation', {
