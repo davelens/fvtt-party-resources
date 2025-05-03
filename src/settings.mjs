@@ -51,14 +51,6 @@ export default class ModuleSettings {
       onChange: value => window.pr.status_bar.render()
     })
 
-    this.add('toggle_status_bar_full_width', {
-      name: game.i18n.localize('FvttPartyResources.GMSettingsForm.StatusBarFullWidth'),
-      hint: game.i18n.localize('FvttPartyResources.GMSettingsForm.StatusBarFullWidthHint'),
-      default: false,
-      type: Boolean,
-      onChange: value => window.pr.status_bar.render()
-    })
-
     this.add('status_bar_location', {
       name: game.i18n.localize('FvttPartyResources.GMSettingsForm.StatusBarLocation'),
       hint: game.i18n.localize('FvttPartyResources.GMSettingsForm.StatusBarLocationHint'),
@@ -72,7 +64,27 @@ export default class ModuleSettings {
       onChange: value => window.pr.status_bar.render()
     })
 
-    // TODO: status_bar_size
+    this.add('toggle_status_bar_full_width', {
+      name: game.i18n.localize('FvttPartyResources.GMSettingsForm.StatusBarFullWidth'),
+      default: false,
+      type: Boolean,
+      onChange: value => window.pr.status_bar.render()
+    })
+
+    this.add('status_bar_align', {
+      name: game.i18n.localize('FvttPartyResources.GMSettingsForm.StatusBarAlign'),
+      hint: game.i18n.localize('FvttPartyResources.GMSettingsForm.StatusBarAlignHint'),
+      default: 'center',
+      disabled: true,
+      type: String,
+      isSelect: true,
+      choices: {
+        'align-center': game.i18n.localize('FvttPartyResources.GMSettingsForm.StatusBarAlignCenter'),
+        'align-left': game.i18n.localize('FvttPartyResources.GMSettingsForm.StatusBarAlignLeft'),
+        'align-right': game.i18n.localize('FvttPartyResources.GMSettingsForm.StatusBarAlignRight')
+      },
+      onChange: value => window.pr.status_bar.render()
+    })
 
   }
 }
