@@ -51,6 +51,14 @@ export default class ModuleSettings {
       onChange: value => window.pr.status_bar.render()
     });
 
+    this.add('toggle_status_bar_full_width', {
+      name: game.i18n.localize('FvttPartyResources.GMSettingsForm.StatusBarFullWidth'),
+      hint: game.i18n.localize('FvttPartyResources.GMSettingsForm.StatusBarFullWidthHint'),
+      default: false,
+      type: Boolean,
+      onChange: value => window.pr.status_bar.render()
+    });
+
     this.add('status_bar_location', {
       name: game.i18n.localize('FvttPartyResources.GMSettingsForm.StatusBarLocation'),
       hint: game.i18n.localize('FvttPartyResources.GMSettingsForm.StatusBarLocationHint'),

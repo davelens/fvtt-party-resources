@@ -7,7 +7,8 @@ export default class ResourcesStatusBar {
       ...window.pr.api.resources(),
       ...{
         is_gm: game.user.isGM,
-        status_bar: ModuleSettings.get('toggle_status_bar')
+        status_bar: ModuleSettings.get('toggle_status_bar'),
+        status_bar_full_width: ModuleSettings.get('toggle_status_bar_full_width')
       }
     }
   }
