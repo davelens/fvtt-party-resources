@@ -226,6 +226,9 @@
   pointer-events: auto;
   cursor: pointer;
 }
+#fvtt-party-resources-status-bar .full-width {
+  width: 100%;
+}
 #fvtt-party-resources-status-bar ul {
   list-style: none;
   margin: 0;
