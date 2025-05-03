@@ -1,3 +1,8 @@
+1.8.3
+--
+- The default status bar is "not full width". You can make it full width again in the module's settings.
+
+
 1.8.2
 --
 - Remove some keys from the manifest that have been deprecated since v10. That should get rid of the warnings in v13's setup screen.
