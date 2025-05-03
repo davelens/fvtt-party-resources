@@ -21,6 +21,9 @@
       visibility: hidden;
     }
 
+    li:last-child {
+  }
+
     li {
       color: white;
       display: table-cell;
@@ -28,6 +31,10 @@
       font-size: .9rem;
       margin-right: 20px;
       margin-bottom: 0;
+
+      &:last-child {
+        margin-right: 0;
+      }
 
       &:hover {
         background:rgba(100, 100, 100, 0.5);
