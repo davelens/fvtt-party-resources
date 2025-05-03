@@ -1,6 +1,6 @@
 {{#if status_bar }}
   {{#if resources }}
-<section id="fvtt-party-resources-status-bar" class="{{#if status_bar_full_width}}full-width{{/if}}">
+<section id="fvtt-party-resources-status-bar" class="{{ status_bar_classes }}">
 
       <ul class="clearfix">
         {{#each resources as |r|}}

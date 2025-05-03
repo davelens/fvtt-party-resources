@@ -2,7 +2,7 @@
 --
 - Added a module setting to opt into a full width status bar. The default is "not full width".
 - Added a module setting to align "not full width" status bars to the left, right, or center (default).
-- Removed Settings Extender as a dependency in favour of Foundry's built in FilePicker (FINALLY! 😉)
+- Removed Settings Extender as a dependency in favour of Foundry's built in FilePicker (FINALLY! 😉).
 
 
 1.8.2

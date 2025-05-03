@@ -8,9 +8,17 @@ export default class ResourcesStatusBar {
       ...{
         is_gm: game.user.isGM,
         status_bar: ModuleSettings.get('toggle_status_bar'),
-        status_bar_full_width: ModuleSettings.get('toggle_status_bar_full_width')
+        status_bar_full_width: ModuleSettings.get('toggle_status_bar_full_width'),
+        status_bar_classes: this.classes()
       }
     }
+  }
+
+  static classes() {
+    return [
+      (ModuleSettings.get('status_bar_align') ? ModuleSettings.get('status_bar_align') : 'align-center'),
+      (ModuleSettings.get('toggle_status_bar_full_width') ? 'full-width' : ''),
+    ].join(' ')
   }
 
   static async render() {
