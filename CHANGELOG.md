@@ -1,41 +1,43 @@
 1.8.3
 --
-- The default status bar is "not full width". You can make it full width again in the module's settings.
+- Added a module setting to opt into a full width status bar. The default is "not full width".
+- Added a module setting to align "not full width" status bars to the left, right, or center (default).
+- Removed Settings Extender as a dependency in favour of Foundry's built in FilePicker (FINALLY! 😉)
 
 
 1.8.2
 --
-- Remove some keys from the manifest that have been deprecated since v10. That should get rid of the warnings in v13's setup screen.
-- Lower the font-size of the text labels in the status bar slightly (1rem -> 0.9rem).
-- Use `ui.actors.render()` instead of the now defunct `ActorDirectory.collection.render()`; this fixes the broken "change status bar location"-setting in v13.
-- Fix the chat textarea overlapping with the status bar when the sidebar is expanded with the chatbox visible.
-- Fix the broken image alignment of the "text below image"-setting in v13.
-- Fix a bunch of deprecation warnings related to major future Foundry versions (v15+).
+- Removed some keys from the manifest that have been deprecated since v10. That should get rid of the warnings in v13's setup screen.
+- Lowered the font-size of the text labels in the status bar slightly (1rem -> 0.9rem).
+- Used `ui.actors.render()` instead of the now defunct `ActorDirectory.collection.render()`; this fixes the broken "change status bar location"-setting in v13.
+- Fixed the chat textarea overlapping with the status bar when the sidebar is expanded with the chatbox visible.
+- Fixed the broken image alignment of the "text below image"-setting in v13.
+- Fixed a bunch of deprecation warnings related to major future Foundry versions (v15+).
 
 
 1.8.1
 --
 In addition to the compatibility release, this is a bugfix release for v13:
-* Fix the broken "first time"-notification modal:
-  * Fix broken "Click here", which was due to `renderActorDirectory` no longer passing the `html` callback argument as an object.
-  * Fix the broken click trigger for the actors directory
-  * Re-align the bouncing arrow to actually point to the height of the Party Resources button again.
-* Fix the distorted status bar:
+* Fixed the broken "first time"-notification modal:
+  * Fixed broken "Click here", which was due to `renderActorDirectory` no longer passing the `html` callback argument as an object.
+  * Fixed the broken click trigger for the actors directory
+  * Re-aligned the bouncing arrow to actually point to the height of the Party Resources button again.
+* Fixed the distorted status bar:
   * Removed the `flexrow` class from the `li` elements.
   * Set `li > img` to display as inline blocks (was set to `block` in v13).
-  * Remove the excess padding/margin accumulated since v11.
-* Fix the deprecation warnings for v14 caused by `mergeObject`, which will move to the `foundry.utils` namespace.
+  * Removed the excess padding/margin accumulated since v11.
+* Fixed the deprecation warnings for v14 caused by `mergeObject`, which will move to the `foundry.utils` namespace.
 
 
 1.8.0
 --
-* Change the compatibility to Foundry version 13.
+* Changed the compatibility to Foundry version 13.
 * Added the Czech translation through Weblate.
 
 
 1.7.0
 --
-* Change the compatibility to Foundry version 12.
+* Changed the compatibility to Foundry version 12.
 
 
 1.6.0
