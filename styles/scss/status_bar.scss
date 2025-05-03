@@ -4,9 +4,10 @@
   pointer-events: auto;
   cursor: pointer;
 
-  &.full-width {
-    width: 100%;
-  }
+  &.full-width { width: 100%; }
+  &.align-left { align-self: flex-start; }
+  &.align-center { align-self: center; }
+  &.align-right { align-self: flex-end; }
 
   ul {
     list-style: none;
@@ -20,9 +21,6 @@
       height: 0;
       visibility: hidden;
     }
-
-    li:last-child {
-  }
 
     li {
       color: white;
@@ -58,4 +56,23 @@
       }
     }
   }
+
+  // Overrides from this point on
+  &.full-width {
+    &.align-left {
+      align-self: inherit;
+      ul { margin: 0; }
+    }
+
+    &.align-center {
+      align-self: inherit;
+      ul { margin: 0 auto; width: fit-content; }
+    }
+
+    &.align-right { 
+      align-self: inherit;
+      ul { margin: 0 0 0 auto; width: fit-content; }
+    }
+  }
+
 }
