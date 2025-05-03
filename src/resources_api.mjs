@@ -1,6 +1,5 @@
 import ResourcesList from "./resources_list.mjs";
 import ActorDnd5eResources from "./actor_dnd5e_resources.mjs";
-import ExtraTypes from '../../settings-extender/settings-extender.js'
 
 export default class ResourcesApi {
   async notify_chat(name, value, new_value) {
@@ -91,7 +90,7 @@ export default class ResourcesApi {
   register_resource(resource) {
     this.register_setting(resource, { type: Number, default: 0 })
     this.register_setting(resource.concat('_name'), { type: String, default: '' })
-    this.register_setting(resource.concat('_icon'), { type: ExtraTypes.FilePickerImage, default: '' })
+    this.register_setting(resource.concat('_icon'), { type: String, filePicker: 'image', default: 'icons/svg/mystery-man.svg' })
     this.register_setting(resource.concat('_use_icon'), { Type: Boolean, default: false })
     this.register_setting(resource.concat('_visible'), { Type: Boolean, default: true })
     this.register_setting(resource.concat('_notify_chat'), { Type: Boolean, default: false })

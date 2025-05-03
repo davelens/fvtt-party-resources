@@ -88,13 +88,5 @@
   "styles": [
     "./styles/css/init.css"
   ],
-  "relationships": {
-    "requires": [
-      {
-        "id": "settings-extender",
-        "type": "module"
-      }
-    ]
-  },
   "socket": true
 }
