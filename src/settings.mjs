@@ -28,7 +28,7 @@ export default class ModuleSettings {
       default: true,
       type: Boolean,
       onChange: value => ui.actors.render()
-    });
+    })
 
     this.add('icon_images_orientation', {
       name: game.i18n.localize('FvttPartyResources.GMSettingsForm.IconImagesOrientation'),
@@ -41,7 +41,7 @@ export default class ModuleSettings {
         below: game.i18n.localize('FvttPartyResources.GMSettingsForm.IconImagesOrientationBelow')
       },
       onChange: value => window.pr.dashboard.redraw()
-    });
+    })
 
     this.add('toggle_status_bar', {
       name: game.i18n.localize('FvttPartyResources.GMSettingsForm.ShowStatusBar'),
@@ -49,7 +49,7 @@ export default class ModuleSettings {
       default: true,
       type: Boolean,
       onChange: value => window.pr.status_bar.render()
-    });
+    })
 
     this.add('toggle_status_bar_full_width', {
       name: game.i18n.localize('FvttPartyResources.GMSettingsForm.StatusBarFullWidth'),
@@ -57,7 +57,7 @@ export default class ModuleSettings {
       default: false,
       type: Boolean,
       onChange: value => window.pr.status_bar.render()
-    });
+    })
 
     this.add('status_bar_location', {
       name: game.i18n.localize('FvttPartyResources.GMSettingsForm.StatusBarLocation'),
@@ -70,7 +70,7 @@ export default class ModuleSettings {
         at_bottom: game.i18n.localize('FvttPartyResources.GMSettingsForm.StatusBarLocationAtBottom')
       },
       onChange: value => window.pr.status_bar.render()
-    });
+    })
 
     // TODO: status_bar_size
 
