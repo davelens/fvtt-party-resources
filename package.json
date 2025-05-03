@@ -3,7 +3,8 @@
   "version": "1.8.2",
   "scripts": {
     "build": "sass styles/scss:styles/css",
-    "build:watch": "yarn build --watch"
+    "build:watch": "yarn build --watch",
+    "deploy": "yarn build && [ -f ./bin/copy-to-module ] && ./bin/copy-to-module"
   },
   "engines": {
     "yarn": ">= 1.22.0"
