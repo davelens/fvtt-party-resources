@@ -56,5 +56,11 @@
   "FvttPartyResources.GMSettingsForm.IconImagesOrientation": "Verander de layout van icoonafbeeldingen.",
   "FvttPartyResources.GMSettingsForm.IconImagesOrientationHint": "Dit verandert hoe icoonafbeeldingen worden weergegeven in het dashboard. Je kan kiezen om tekst bovenop de afbeelding te laten zweven, of onder de afbeelding te tonen.",
   "FvttPartyResources.GMSettingsForm.IconImagesOrientationOnTop": "Tekst bovenop de afbeelding",
-  "FvttPartyResources.GMSettingsForm.ShowActorsButtonForPlayersHint": "Wanneer dit vak niet aangevinkt is, zullen spelers de Party Resources knop bovenaan de Actors Directory niet meer zien. Alleen de GM zal deze kunnen zien en gebruiken."
+  "FvttPartyResources.GMSettingsForm.ShowActorsButtonForPlayersHint": "Wanneer dit vak niet aangevinkt is, zullen spelers de Party Resources knop bovenaan de Actors Directory niet meer zien. Alleen de GM zal deze kunnen zien en gebruiken.",
+  "FvttPartyResources.GMSettingsForm.StatusBarFullWidth": "Make the status bar full width",
+  "FvttPartyResources.GMSettingsForm.StatusBarAlign": "How to align the status bar",
+  "FvttPartyResources.GMSettingsForm.StatusBarAlignCenter": "Center",
+  "FvttPartyResources.GMSettingsForm.StatusBarAlignHint": "When the status bar is full width, this will align the resources within accordingly instead.",
+  "FvttPartyResources.GMSettingsForm.StatusBarAlignLeft": "Left",
+  "FvttPartyResources.GMSettingsForm.StatusBarAlignRight": "Right",
 }

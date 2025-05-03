@@ -56,5 +56,11 @@
   "FvttPartyResources.Title": "Zdroje družiny",
   "FvttPartyResources.ResourceForm.NotifyChatDecrementMessageHint": "V chatu se zobrazí zpráva pokud dojde k negativní změně hodnoty.",
   "FvttPartyResources.ResourceForm.PlayerManagedHint": "Povolení tohoto umožní hráčům měnit hodnotu tohoto zdroje.",
-  "FvttPartyResources.GMSettingsForm.ShowStatusBarHint": "V horní části obrazovky se zobrazí stavový řádek jako ve videohře. Zobrazuje aktuální hodnotu každého zdroje."
+  "FvttPartyResources.GMSettingsForm.ShowStatusBarHint": "V horní části obrazovky se zobrazí stavový řádek jako ve videohře. Zobrazuje aktuální hodnotu každého zdroje.",
+  "FvttPartyResources.GMSettingsForm.StatusBarFullWidth": "Make the status bar full width",
+  "FvttPartyResources.GMSettingsForm.StatusBarAlign": "How to align the status bar",
+  "FvttPartyResources.GMSettingsForm.StatusBarAlignCenter": "Center",
+  "FvttPartyResources.GMSettingsForm.StatusBarAlignHint": "When the status bar is full width, this will align the resources within accordingly instead.",
+  "FvttPartyResources.GMSettingsForm.StatusBarAlignLeft": "Left",
+  "FvttPartyResources.GMSettingsForm.StatusBarAlignRight": "Right",
 }

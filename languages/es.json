@@ -56,5 +56,11 @@
   "FvttPartyResources.ResourceForm.NotifyChatDecrementMessageHint": "El mensaje que se muestra en el chat cuando se produce una reducción del valor.",
   "FvttPartyResources.ResourceForm.PlayerManagedHint": "Al activar esta opción, los jugadores podrán cambiar el valor de este recurso.",
   "FvttPartyResources.GMSettingsForm.IconImagesOrientationHint": "Esto afecta a cómo se muestran las imágenes de los iconos en el panel de control de recursos. Puede elegir entre mostrar el texto encima de la imagen del icono o alinear el texto debajo.",
-  "FvttPartyResources.GMSettingsForm.StatusBarLocationHint": "Establece dónde se muestra la barra de estado en el lienzo de la partida."
+  "FvttPartyResources.GMSettingsForm.StatusBarLocationHint": "Establece dónde se muestra la barra de estado en el lienzo de la partida.",
+  "FvttPartyResources.GMSettingsForm.StatusBarFullWidth": "Make the status bar full width",
+  "FvttPartyResources.GMSettingsForm.StatusBarAlign": "How to align the status bar",
+  "FvttPartyResources.GMSettingsForm.StatusBarAlignCenter": "Center",
+  "FvttPartyResources.GMSettingsForm.StatusBarAlignHint": "When the status bar is full width, this will align the resources within accordingly instead.",
+  "FvttPartyResources.GMSettingsForm.StatusBarAlignLeft": "Left",
+  "FvttPartyResources.GMSettingsForm.StatusBarAlignRight": "Right",
 }

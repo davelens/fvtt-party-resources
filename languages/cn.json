@@ -56,5 +56,11 @@
   "FvttPartyResources.ResourceForm.Dnd5eResource": "跟踪 D&D 5e 资源",
   "FvttPartyResources.ResourceForm.Dnd5eResources.Gold": "金",
   "FvttPartyResources.ResourceForm.Dnd5eResources.Item": "特殊物品（口粮、治疗药水等等）",
-  "FvttPartyResources.ResourceForm.Dnd5eResources.ItemName": "物品名称"
+  "FvttPartyResources.ResourceForm.Dnd5eResources.ItemName": "物品名称",
+  "FvttPartyResources.GMSettingsForm.StatusBarFullWidth": "Make the status bar full width",
+  "FvttPartyResources.GMSettingsForm.StatusBarAlign": "How to align the status bar",
+  "FvttPartyResources.GMSettingsForm.StatusBarAlignCenter": "Center",
+  "FvttPartyResources.GMSettingsForm.StatusBarAlignHint": "When the status bar is full width, this will align the resources within accordingly instead.",
+  "FvttPartyResources.GMSettingsForm.StatusBarAlignLeft": "Left",
+  "FvttPartyResources.GMSettingsForm.StatusBarAlignRight": "Right",
 }

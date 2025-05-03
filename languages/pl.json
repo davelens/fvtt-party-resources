@@ -56,5 +56,11 @@
   "FvttPartyResources.ResourceForm.DefaultValueHint": "Wartość początkowa zasobu.",
   "FvttPartyResources.ResourceForm.Dnd5eResources.ItemNameHint": "Nazwa przemiotu/ów, która będzie wyświetlana w ekwipunku gracza. Oddziel wielokrotne wartości średnikiem (;).",
   "FvttPartyResources.ResourceForm.NotifyChatDecrementMessageHint": "Wiadomość pojawiająca się w czacie, kiedy wartość jest zmniejszana.",
-  "FvttPartyResources.Dashboard.BlankWarning": "Tutaj pojawią się Zasoby po dodaniu."
+  "FvttPartyResources.Dashboard.BlankWarning": "Tutaj pojawią się Zasoby po dodaniu.",
+  "FvttPartyResources.GMSettingsForm.StatusBarFullWidth": "Make the status bar full width",
+  "FvttPartyResources.GMSettingsForm.StatusBarAlign": "How to align the status bar",
+  "FvttPartyResources.GMSettingsForm.StatusBarAlignCenter": "Center",
+  "FvttPartyResources.GMSettingsForm.StatusBarAlignHint": "When the status bar is full width, this will align the resources within accordingly instead.",
+  "FvttPartyResources.GMSettingsForm.StatusBarAlignLeft": "Left",
+  "FvttPartyResources.GMSettingsForm.StatusBarAlignRight": "Right",
 }

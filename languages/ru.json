@@ -14,5 +14,11 @@
   "FvttPartyResources.ResourceForm.Dnd5eResource": "Отслеживать ресурсы D&D 5e",
   "FvttPartyResources.ResourceForm.Dnd5eResources.Gold": "Золото",
   "FvttPartyResources.ResourceForm.Dnd5eResources.ItemName": "Имя предмета",
-  "FvttPartyResources.ResourceForm.Dnd5eResources.Item": "Определённый предмет (Рационы, Зелья лечения,...)"
+  "FvttPartyResources.ResourceForm.Dnd5eResources.Item": "Определённый предмет (Рационы, Зелья лечения,...)",
+  "FvttPartyResources.GMSettingsForm.StatusBarFullWidth": "Make the status bar full width",
+  "FvttPartyResources.GMSettingsForm.StatusBarAlign": "How to align the status bar",
+  "FvttPartyResources.GMSettingsForm.StatusBarAlignCenter": "Center",
+  "FvttPartyResources.GMSettingsForm.StatusBarAlignHint": "When the status bar is full width, this will align the resources within accordingly instead.",
+  "FvttPartyResources.GMSettingsForm.StatusBarAlignLeft": "Left",
+  "FvttPartyResources.GMSettingsForm.StatusBarAlignRight": "Right",
 }

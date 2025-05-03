@@ -50,5 +50,11 @@
   "FvttPartyResources.GMSettingsForm.StatusBarLocationHint": "Determines where the status bar gets drawn onto the game canvas.",
   "FvttPartyResources.GMSettingsForm.StatusBarLocationAtBottom": "At the bottom",
   "FvttPartyResources.GMSettingsForm.StatusBarLocationOnTop": "On top",
-  "FvttPartyResources.Title": "パーティリソース"
+  "FvttPartyResources.Title": "パーティリソース",
+  "FvttPartyResources.GMSettingsForm.StatusBarFullWidth": "Make the status bar full width",
+  "FvttPartyResources.GMSettingsForm.StatusBarAlign": "How to align the status bar",
+  "FvttPartyResources.GMSettingsForm.StatusBarAlignCenter": "Center",
+  "FvttPartyResources.GMSettingsForm.StatusBarAlignHint": "When the status bar is full width, this will align the resources within accordingly instead.",
+  "FvttPartyResources.GMSettingsForm.StatusBarAlignLeft": "Left",
+  "FvttPartyResources.GMSettingsForm.StatusBarAlignRight": "Right",
 }
