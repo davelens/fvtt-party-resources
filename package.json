@@ -2,7 +2,7 @@
   "name": "fvtt-party-resources",
   "version": "1.8.2",
   "scripts": {
-    "build": "sass styles/scss:styles/css",
+    "build": "sass styles/scss/init.scss:styles/css/init.css",
     "build:watch": "yarn build --watch",
     "deploy": "yarn build && [ -f ./bin/copy-to-module ] && ./bin/copy-to-module"
   },
