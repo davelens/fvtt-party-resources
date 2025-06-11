@@ -80,6 +80,11 @@
       "lang": "cs",
       "name": "Čeština",
       "path": "languages/cs.json"
+    },
+    {
+      "lang": "uk",
+      "name": "українська",
+      "path": "languages/uk.json"
     }
   ],
   "esmodules": [
