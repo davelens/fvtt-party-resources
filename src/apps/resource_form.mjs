@@ -29,7 +29,7 @@ export default class ResourceForm extends FormApplication {
       event.preventDefault()
 
       let permissions = game.settings.get('core', 'permissions')
-      permissions.SETTINGS_MODIFY.push(1)
+      permissions.SETTINGS_MODIFY.push(1, 2)
       game.settings.set('core', 'permissions', permissions)
 
       if(this.id == 'edit-resource-form') {
