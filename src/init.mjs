@@ -22,6 +22,16 @@ Hooks.once('ready', () => {
   if(game.user.isGM && !window.pr.api.get('first-time-startup-notification-shown'))
     first_time_startup_notification()
 
+  // This is a patch that makes sure the "Trusted Player" permission level can
+  // also modify resources whenever the regular Player level can.
+  let permissions = game.settings.get('core', 'permissions')
+  let settings_modify = permissions.SETTINGS_MODIFY
+
+  if(settings_modify.includes(1) && !settings_modify.includes(2)) {
+    permissions.SETTINGS_MODIFY.push(2)
+    game.settings.set('core', 'permissions', permissions)
+  }
+
   ResourcesStatusBar.render()
 })
 
