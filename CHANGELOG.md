@@ -1,3 +1,9 @@
+1.8.4
+--
+- Fixes an issue where the Party Resources button would appear twice in the actors directory (this occurred mainly in pf2e, but should be fixed for other systems as well).
+- Ukrainian language template was added through Weblate.
+
+
 1.8.3
 --
 - Added a module setting to opt into a full width status bar. The default is "not full width".
