@@ -37,6 +37,9 @@ Hooks.on('renderActorDirectory', async (app, html, data) => {
   if(!game.user.isGM && !ModuleSettings.get('toggle_actors_button_for_players'))
     return
 
+  if($('#btn-dashboard').length > 0)
+    return
+
   let button = await foundry.applications.handlebars.renderTemplate(
     'modules/fvtt-party-resources/src/views/dashboard_button.html'
   )
