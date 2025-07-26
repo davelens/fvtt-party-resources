@@ -1,6 +1,12 @@
+1.8.5
+--
+- Made it so whenever permission is granted for players to modify resources, it also explicity includes the `Trusted Player` level.
+- Added a patch on init that makes sure the "Trusted Player" permission level can modify resources whenever the regular Player level can.
+
+
 1.8.4
 --
-- Fixes an issue where the Party Resources button would appear twice in the actors directory (this occurred mainly in pf2e, but should be fixed for other systems as well).
+- Fixed an issue where the Party Resources button would appear twice in the actors directory (this occurred mainly in pf2e, but should be fixed for other systems as well).
 - Ukrainian language template was added through Weblate.
 
 
