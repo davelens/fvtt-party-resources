@@ -1,3 +1,9 @@
+1.8.6
+--
+- Added a workaround for Foundry's chat logs being stuck on theme-light, when your preferred theme is dark.
+  It will look for a parent that correctly sets the dark theme, and then styles the chat log accordingly.
+
+
 1.8.5
 --
 - Made it so whenever permission is granted for players to modify resources, it also explicity includes the `Trusted Player` level.

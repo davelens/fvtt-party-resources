@@ -1,6 +1,6 @@
 {
   "name": "fvtt-party-resources",
-  "version": "1.8.5",
+  "version": "1.8.6",
   "scripts": {
     "build": "sass styles/scss/init.scss:styles/css/init.css",
     "build:watch": "yarn build --watch",
