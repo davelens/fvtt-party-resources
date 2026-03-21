@@ -2,6 +2,7 @@
 --
 - Added a workaround for Foundry's chat logs being stuck on theme-light, when your preferred theme is dark.
   It will look for a parent that correctly sets the dark theme, and then styles the chat log accordingly.
+- Updated the Spanish translation through Weblate.
 
 
 1.8.5
