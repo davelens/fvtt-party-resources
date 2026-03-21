@@ -33,6 +33,7 @@ Hooks.once('ready', () => {
   }
 
   ResourcesStatusBar.render()
+  setTimeout(() => sync_all_chat_log_themes(), 0)
 })
 
 // Because system-specific totals need to be updated as currency or item totals
@@ -63,6 +64,15 @@ Hooks.on('renderActorDirectory', async (app, html, data) => {
     })
 })
 
+Hooks.on('renderChatLog', (app, html, data) => {
+  sync_chat_log_theme(html)
+})
+
+Hooks.on('renderSidebarTab', (app, html) => {
+  if(app?.tabName != 'chat' && app?.options?.id != 'chat') return
+  sync_chat_log_theme(html)
+})
+
 function first_time_startup_notification() {
   let message = game.i18n.format('FvttPartyResources.FirstTimeNotification', {
     anchor: '<a class="guide-me" href="#">Click here</a>',
@@ -91,4 +101,23 @@ function templates() {
 function render_resources() {
   window.pr.dashboard.redraw()
   window.pr.status_bar.render()
+}
+
+function sync_all_chat_log_themes() {
+  sync_chat_log_theme(document.body)
+}
+
+function sync_chat_log_theme(html) {
+  const context = html ? $(html) : $(document.body)
+  const chat_logs = context.is('ol.chat-log.themed')
+    ? context
+    : context.find('ol.chat-log.themed')
+
+  chat_logs.each((index, chat_log) => {
+    const element = $(chat_log)
+    const dark_parent_exists = element.parents('.theme-dark').length > 0
+
+    element.toggleClass('theme-dark', dark_parent_exists)
+    element.toggleClass('theme-light', !dark_parent_exists)
+  })
 }
