@@ -1,3 +1,8 @@
+1.8.7
+--
+- Replaces the workaround for the chat logs made in 1.8.6 with a style override to prevent light/dark mode settings from interfering with how the notifications look. See #112 and #114 for context.
+
+
 1.8.6
 --
 - Added a workaround for Foundry's chat logs being stuck on theme-light, when your preferred theme is dark.
