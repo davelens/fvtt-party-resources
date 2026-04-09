@@ -35,6 +35,11 @@ Hooks.once('ready', () => {
   ResourcesStatusBar.render()
 })
 
+const render_resources = foundry.utils.debounce(() => {
+  window.pr.dashboard.redraw()
+  window.pr.status_bar.render()
+}, 25)
+
 // Because system-specific totals need to be updated as currency or item totals
 // get modified.
 Hooks.on('createItem', render_resources)
@@ -86,9 +91,4 @@ function templates() {
     'modules/fvtt-party-resources/src/views/dashboard_button.html',
     'modules/fvtt-party-resources/src/views/status_bar.html'
   ]
-}
-
-function render_resources() {
-  window.pr.dashboard.redraw()
-  window.pr.status_bar.render()
 }
