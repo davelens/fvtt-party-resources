@@ -1,3 +1,9 @@
+1.9.0
+--
+- Debounce re-rendering caused by document updates (credit goes to @CarlosFdez).
+- Refactored the status bar's `render()` to replace bar contents instead of removing/readding the entire bar element (credit goes to @CarlosFdez for bringing it up and profiling the solution).
+
+
 1.8.7
 --
 - Replaces the workaround for the chat logs made in 1.8.6 with a style override to prevent light/dark mode settings from interfering with how the notifications look. See #112 and #114 for context.
