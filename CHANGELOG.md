@@ -1,3 +1,8 @@
+1.9.0a
+--
+* Set max verified version to Foundry v14.
+
+
 1.9.0
 --
 - Debounce re-rendering caused by document updates (credit goes to @CarlosFdez).
