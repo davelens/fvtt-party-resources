@@ -1,3 +1,8 @@
+1.9.1
+--
+* Bump the version to 1.9.1 so as not to break The Forge's compatibility list
+
+
 1.9.0a
 --
 * Set max verified version to Foundry v14.
